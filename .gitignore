@@ -1,1 +1,8 @@
 target/*
+Shop.iml
+Shop.ipr
+Shop.iws
+/target/
+.classpath
+.project
+.settings/*

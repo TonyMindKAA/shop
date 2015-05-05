@@ -14,7 +14,6 @@ import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
 import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor;
-import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.service.UserService;
 import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
