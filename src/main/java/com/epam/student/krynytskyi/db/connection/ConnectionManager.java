@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.dao;
+package com.epam.student.krynytskyi.db.connection;
 
 import java.beans.PropertyVetoException;
 import java.io.IOException;

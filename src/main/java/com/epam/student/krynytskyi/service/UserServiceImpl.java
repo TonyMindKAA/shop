@@ -2,7 +2,7 @@ package com.epam.student.krynytskyi.service;
 
 import java.util.List;
 
-import com.epam.student.krynytskyi.dao.UserDao;
+import com.epam.student.krynytskyi.db.dao.UserDao;
 import com.epam.student.krynytskyi.entity.User;
 
 public class UserServiceImpl implements UserService {

@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.dao;
+package com.epam.student.krynytskyi.db.dao;
 
 import java.util.List;
 
