@@ -8,7 +8,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import com.epam.student.krynytskyi.containers.handler.CaptchaCleanerThread;
-import com.epam.student.krynytskyi.db.dao.UserDaoImpl;
+import com.epam.student.krynytskyi.db.dao.UserLocalDaoImpl;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.provider.CaptchaProviderFactory;
@@ -99,7 +99,7 @@ public class ContextListener implements ServletContextListener {
 			}
 		};
 		servletContext.setAttribute("userService", new UserServiceImpl(
-				new UserDaoImpl(users)));
+				new UserLocalDaoImpl(users)));
 	}
 
 	private String getCapchaProviderItem(ServletContext servletContext) {

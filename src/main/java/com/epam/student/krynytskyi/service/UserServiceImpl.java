@@ -2,13 +2,13 @@ package com.epam.student.krynytskyi.service;
 
 import java.util.List;
 
-import com.epam.student.krynytskyi.db.dao.UserDao;
+import com.epam.student.krynytskyi.db.dao.UserLocalDao;
 import com.epam.student.krynytskyi.entity.User;
 
 public class UserServiceImpl implements UserService {
-	private UserDao userDao;
+	private UserLocalDao userDao;
 
-	public UserServiceImpl(UserDao userDao) {
+	public UserServiceImpl(UserLocalDao userDao) {
 		super();
 		this.userDao = userDao;
 	}

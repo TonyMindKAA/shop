@@ -6,14 +6,14 @@ import java.util.List;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.util.ObjectUtil;
 
-public class UserDaoImpl implements UserDao {
+public class UserLocalDaoImpl implements UserLocalDao {
 	private List<User> users;
 
-	public UserDaoImpl() {
+	public UserLocalDaoImpl() {
 		this.users = new ArrayList<User>();
 	}
 
-	public UserDaoImpl(List<User> users) {
+	public UserLocalDaoImpl(List<User> users) {
 		this.users = users;
 	}
 

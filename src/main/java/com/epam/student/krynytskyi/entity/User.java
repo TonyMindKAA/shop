@@ -7,6 +7,25 @@ public class User {
 	private String email;
 	private String password;
 	private String phone;
+	private String img;
+	private int roleId;
+	
+	
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public int getRoleId() {
+		return roleId;
+	}
+
+	public void setRoleId(int roleId) {
+		this.roleId = roleId;
+	}
 
 	public String getName() {
 		return name;
@@ -73,4 +92,10 @@ public class User {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", lastName=" + lastName + ", email="
+				+ email + ", password=" + password + ", phone=" + phone
+				+ ", img=" + img + ", roleId=" + roleId + "]";
+	}
 }

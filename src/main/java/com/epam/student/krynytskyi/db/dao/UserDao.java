@@ -1,13 +1,19 @@
 package com.epam.student.krynytskyi.db.dao;
 
+import java.sql.Connection;
 import java.util.List;
 
+import com.epam.student.krynytskyi.db.dao.exception.DAOException;
 import com.epam.student.krynytskyi.entity.User;
 
 public interface UserDao {
-	List<User> getAll();
+	public User findUserByEmail(Connection conn, String email) throws DAOException;
 
-	boolean add(User user);
+	public List<User> getAll(Connection conn) throws DAOException;
 
-	User getByEmail(String email);
+	public void insertUser(Connection conn, User user) throws DAOException;
+
+	public void updateUser(Connection conn, User user) throws DAOException;
+
+	public void removeUser(Connection conn, String email) throws DAOException;
 }

@@ -11,6 +11,7 @@ import com.epam.student.krynytskyi.db.dao.exception.DAOException;
 public class TransactionManagerImpl implements TransactionManager {
 
 	private static final Logger log = Logger.getLogger(TransactionManagerImpl.class);
+	private String message = "";
 
 	@Override
 	public Object doInTransaction(TransactionOperation operation) throws Exception{
@@ -34,7 +35,7 @@ public class TransactionManagerImpl implements TransactionManager {
 			if (conn != null)
 				conn.rollback();
 		} catch (Exception e) {
-			String message = "Cannot rollback";
+			message = "Cannot rollback";
 			log.error(message, e);
 			throw new DAOException(message, e);
 		}
@@ -44,7 +45,7 @@ public class TransactionManagerImpl implements TransactionManager {
 		try {
 			conn.commit();
 		} catch (Exception e) {
-			String message = "Cannot commit connection";
+			message = "Cannot commit connection";
 			log.error(message, e);
 			throw new DAOException(message, e);
 		}
@@ -56,7 +57,7 @@ public class TransactionManagerImpl implements TransactionManager {
 				conn.close();
 			}
 		} catch (Exception e) {
-			String message = "Cannot close connection";
+			message = "Cannot close connection";
 			log.error(message, e);
 			throw new DAOException(message, e);
 		}
