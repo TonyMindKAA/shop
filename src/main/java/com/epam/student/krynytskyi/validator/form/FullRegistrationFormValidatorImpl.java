@@ -32,7 +32,6 @@ public class FullRegistrationFormValidatorImpl implements
 		isValide(new CaptchaTimeOutValidator().validate(capthcaBean.getCreateTime(),timeOut));
 		return isValid;
 	}
-
 	private void isValide(boolean value) {
 		if (value == false)
 			isValid = false;

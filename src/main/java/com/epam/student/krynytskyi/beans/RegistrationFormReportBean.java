@@ -11,6 +11,15 @@ public class RegistrationFormReportBean {
 	private boolean isPhoneValid;
 	private boolean isCapchaValid;
 	private boolean isValid;
+	private boolean isAvatarValid;
+
+	public boolean getAvatarValid() {
+		return isAvatarValid;
+	}
+
+	public void setAvatarValid(boolean isAvatarValid) {
+		this.isAvatarValid = isAvatarValid;
+	}
 
 	public RegistrationFormBean getRegistrationFormBean() {
 		return registrationFormBean;
@@ -104,7 +113,7 @@ public class RegistrationFormReportBean {
 
 	@Override
 	public String toString() {
-		return "RegistrationFormReportBeam [registrationFormBean="
+		return "RegistrationFormReportBean [registrationFormBean="
 				+ registrationFormBean + ", isNameValid=" + isNameValid
 				+ ", isLastNameValid=" + isLastNameValid
 				+ ", isEmailAddressValid=" + isEmailAddressValid
@@ -112,6 +121,8 @@ public class RegistrationFormReportBean {
 				+ ", isPasswordValid=" + isPasswordValid
 				+ ", isConfirmPasswordValid=" + isConfirmPasswordValid
 				+ ", isPhoneValid=" + isPhoneValid + ", isCapchaValid="
-				+ isCapchaValid + ", isValid=" + isValid + "]";
+				+ isCapchaValid + ", isValid=" + isValid + ", isAvatarValid="
+				+ isAvatarValid + "]";
 	}
+
 }

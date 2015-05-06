@@ -29,7 +29,7 @@ import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
 import com.epam.student.krynytskyi.validator.report.RegistrationFormValidationReport;
 
 public class RegistrationPageControllerTest {
-
+	private static final String LOGIN_SERVLET = "login";
 	@InjectMocks
 	private RegistrationPageController controller;
 
@@ -93,7 +93,7 @@ public class RegistrationPageControllerTest {
 
 		Mockito.verify(validator).validate(validateDataRegistrationForm);
 		Mockito.verify(userServiceImpl).insertUser(user);
-		Mockito.verify(response).sendRedirect("main.jsp");
+		Mockito.verify(response).sendRedirect(LOGIN_SERVLET);
 	}
 
 	@Test

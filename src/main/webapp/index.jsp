@@ -7,18 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>KAA-Pro</h1>
-	<img alt="" src="http://localhost:8080/Task_8/captcha.png">
-	<c:out value="${kaa}" />
-	sdsd
-	<br>
-	ook
-	<c:out value="${capchasId}" />
-	<br>
-	<c:out value="${capchasValue}" />
-	<br>
-	<c:out value="${val}" />
-	
-	<img alt="" src="data:image/png;base64,<c:out value="${img}" />">
+	<form action="uploadFile" enctype="multipart/form-data" method="post">
+    <input type="file" name="uploadFile" />
+    <input type="submit" />
+</form>
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.epam.student.krynytskyi.beans;
 
+import javax.servlet.http.Part;
+
 public class RegistrationFormBean {
 	private String name = "";
 	private String lastName = "";
@@ -9,6 +11,15 @@ public class RegistrationFormBean {
 	private String confirmPassword = "";
 	private String phone = "";
 	private String captcha = "";
+	private Part avatar;
+
+	public Part getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(Part avatar) {
+		this.avatar = avatar;
+	}
 
 	public String getCaptcha() {
 		return captcha;

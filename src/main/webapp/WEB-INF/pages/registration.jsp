@@ -57,7 +57,7 @@
 			<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="registration" method="post" id="registrationForm">
+						<form action="registration" method="post" enctype="multipart/form-data" id="registrationForm">
 							<div class="${registrationFormReport.nameValid? ' ': 'errorClass'}">
 								<input type="text" id="name" name="name"  value="${registrationFormReport.registrationFormBean.name}" placeholder="Name"/>
 							</div>
@@ -80,6 +80,7 @@
 								<input type="text" id="phone" name="phone" value="${registrationFormReport.registrationFormBean.phone}"  placeholder="Phone"/>
 							</div>						
 							<reg:capthcaTags />
+							<input type="file" name="avatar" name="uploadFile" />
 							<button type="submit" class="btn btn-default" id="registratinSubmit">Signup</button>
 						</form>
 					</div><!--/sign up form-->
