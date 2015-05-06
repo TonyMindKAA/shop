@@ -15,7 +15,7 @@ import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
 import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
-import com.epam.student.krynytskyi.service.UserService;
+import com.epam.student.krynytskyi.service.StaticUserService;
 import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
 import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
@@ -29,7 +29,7 @@ public class RegistrationPageController extends HttpServlet {
 	private static final String CAPTCHA_PROVIDER = "captchaProvider";
 	private static final String REGISTRATION_PAGE = "/WEB-INF/pages/login.jsp";
 	private static final long serialVersionUID = 1L;
-	private UserService userServiceImpl ;
+	private StaticUserService userServiceImpl ;
 	private CaptchaProvider capthcaPrvider;
 	private RegistrationFormValidationReport reportObject = new RegistrationFormValidationReportImpl();
 	private RegistrationFormBeanToUserConvertor convertor = new RegistrationFormBeanToUserConvertor();
@@ -40,7 +40,7 @@ public class RegistrationPageController extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		capthcaPrvider =  (CaptchaProvider) getServletContext().getAttribute(CAPTCHA_PROVIDER);
-		userServiceImpl = (UserService) getServletContext().getAttribute(USER_SERVICE);
+		userServiceImpl = (StaticUserService) getServletContext().getAttribute(USER_SERVICE);
 	}
 	
 

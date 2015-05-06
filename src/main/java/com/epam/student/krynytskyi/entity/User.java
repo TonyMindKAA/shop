@@ -8,9 +8,17 @@ public class User {
 	private String password;
 	private String phone;
 	private String img;
+	private String userId;
 	private int roleId;
 	
-	
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	public String getImg() {
 		return img;
 	}
@@ -67,11 +75,15 @@ public class User {
 		this.phone = phone;
 	}
 
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
 		return result;
 	}
 
@@ -89,6 +101,11 @@ public class User {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
+		if (userId == null) {
+			if (other.userId != null)
+				return false;
+		} else if (!userId.equals(other.userId))
+			return false;
 		return true;
 	}
 
@@ -96,6 +113,8 @@ public class User {
 	public String toString() {
 		return "User [name=" + name + ", lastName=" + lastName + ", email="
 				+ email + ", password=" + password + ", phone=" + phone
-				+ ", img=" + img + ", roleId=" + roleId + "]";
+				+ ", img=" + img + ", userId=" + userId + ", roleId=" + roleId
+				+ "]";
 	}
+
 }

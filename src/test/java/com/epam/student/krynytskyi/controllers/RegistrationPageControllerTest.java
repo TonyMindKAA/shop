@@ -23,7 +23,7 @@ import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
-import com.epam.student.krynytskyi.service.UserService;
+import com.epam.student.krynytskyi.service.StaticUserService;
 import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
 import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
@@ -41,7 +41,7 @@ public class RegistrationPageControllerTest {
 	private CaptchaProvider capthcaPrvider;
 
 	@Mock
-	private UserService userServiceImpl;
+	private StaticUserService userServiceImpl;
 
 	@Mock
 	private FullRegistrationFormValidator validator;

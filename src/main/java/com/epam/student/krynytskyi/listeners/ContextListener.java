@@ -14,7 +14,7 @@ import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.provider.CaptchaProviderFactory;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaCookieProvider;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaHiddenProvider;
-import com.epam.student.krynytskyi.service.UserServiceImpl;
+import com.epam.student.krynytskyi.service.StaticUserServiceImpl;
 
 public class ContextListener implements ServletContextListener {
 
@@ -98,7 +98,7 @@ public class ContextListener implements ServletContextListener {
 				add(user);
 			}
 		};
-		servletContext.setAttribute("userService", new UserServiceImpl(
+		servletContext.setAttribute("userService", new StaticUserServiceImpl(
 				new UserLocalDaoImpl(users)));
 	}
 

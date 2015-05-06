@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.db.dao;
+package com.epam.student.krynytskyi.db.dao.mysql;
 
 import java.sql.Connection;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import com.epam.student.krynytskyi.db.dao.exception.DAOException;
 import com.epam.student.krynytskyi.entity.User;
 
-public interface UserDao {
-	public User findUserByEmail(Connection conn, String email) throws DAOException;
+public interface MySqlUserDao {
+	public User getUserByEmail(Connection conn, String email) throws DAOException;
 
 	public List<User> getAll(Connection conn) throws DAOException;
 
