@@ -17,9 +17,7 @@ import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
 import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
-import com.epam.student.krynytskyi.service.StaticUserService;
 import com.epam.student.krynytskyi.service.UserService;
-import com.epam.student.krynytskyi.service.UserServiceImpl;
 import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
 import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
@@ -29,10 +27,11 @@ import com.epam.student.krynytskyi.validator.report.RegistrationFormValidationRe
 
 @WebServlet("/registration")
 public class RegistrationPageController extends HttpServlet {
+	private static final String REGISTRATION_PAGE = "/WEB-INF/pages/registration.jsp";
+	private static final String LOGIN_SERVLET = "login";
 	private static final Logger log = Logger.getLogger(RegistrationPageController.class);
 	private static final String USER_SERVICE = "userService";
 	private static final String CAPTCHA_PROVIDER = "captchaProvider";
-	private static final String REGISTRATION_PAGE = "/WEB-INF/pages/login.jsp";
 	private static final long serialVersionUID = 1L;
 	private UserService userService;
 	private CaptchaProvider capthcaPrvider;
@@ -70,7 +69,7 @@ public class RegistrationPageController extends HttpServlet {
 		ValidateDataRegistrationForm validateDateRegistrationForm = createValidateDataRegistrationForm(request);
 		if(validator.validate(validateDateRegistrationForm)){
 			registrateUser(request, validateDateRegistrationForm.getFormBean());
-			response.sendRedirect("main.jsp");
+			response.sendRedirect(LOGIN_SERVLET);
 		}else{
 			forwarBackWithReport(request, response, validateDateRegistrationForm.getFormBean());
 		}

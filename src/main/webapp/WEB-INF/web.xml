@@ -19,9 +19,20 @@
         <servlet-name>Captcha</servlet-name>
         <servlet-class>com.epam.student.krynytskyi.controllers.CapchaController</servlet-class>
     </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>LoginController</display-name>
+   	<servlet-name>LoginController</servlet-name>
+   	<servlet-class>com.epam.student.krynytskyi.controllers.LoginController</servlet-class>
+   </servlet>
     <servlet-mapping>
         <servlet-name>Captcha</servlet-name>
         <url-pattern>/captcha</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>LoginController</servlet-name>
+    	<url-pattern>/LoginController</url-pattern>
     </servlet-mapping>
   
    <listener>
