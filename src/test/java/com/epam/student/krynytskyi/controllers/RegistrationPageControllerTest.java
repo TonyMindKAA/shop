@@ -23,6 +23,7 @@ import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.service.UserService;
+import com.epam.student.krynytskyi.util.AvatarWriter;
 import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
 import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
@@ -32,6 +33,9 @@ public class RegistrationPageControllerTest {
 	private static final String LOGIN_SERVLET = "login";
 	@InjectMocks
 	private RegistrationPageController controller;
+	
+	@Mock
+	private AvatarWriter avatarWriter;
 
 	@Mock
 	private RegistrationFormValidationReport reportObject;
@@ -86,6 +90,7 @@ public class RegistrationPageControllerTest {
 		Mockito.when(formBeanCreator.cretate(request)).thenReturn(formBean);
 		Mockito.when(dateRegistrationFormCreator.create(formBean, request)).thenReturn(validateDataRegistrationForm);
 		Mockito.when(validator.validate(validateDataRegistrationForm)).thenReturn(true);
+		Mockito.when(avatarWriter.writeAvatar(formBean, request)).thenReturn("default.png");
 		Mockito.when(convertor.convert(formBean)).thenReturn(user);
 		Mockito.when(userServiceImpl.insertUser(user)).thenReturn(true);
 
