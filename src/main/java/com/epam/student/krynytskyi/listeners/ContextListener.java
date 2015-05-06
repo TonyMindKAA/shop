@@ -1,20 +1,15 @@
 package com.epam.student.krynytskyi.listeners;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 import com.epam.student.krynytskyi.containers.handler.CaptchaCleanerThread;
-import com.epam.student.krynytskyi.db.dao.UserLocalDaoImpl;
-import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.provider.CaptchaProviderFactory;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaCookieProvider;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaHiddenProvider;
-import com.epam.student.krynytskyi.service.StaticUserServiceImpl;
+import com.epam.student.krynytskyi.service.UserServiceImpl;
 
 public class ContextListener implements ServletContextListener {
 
@@ -83,23 +78,7 @@ public class ContextListener implements ServletContextListener {
 	}
 
 	private void setToContextUserService(ServletContext servletContext) {
-		List<User> users = new ArrayList<User>() {
-			private static final long serialVersionUID = 1L;
-			{
-				User user = new User();
-				user.setEmail("kaa@mail.ru");
-				user.setName("tony");
-				user.setPassword("kaapro");
-				add(user);
-				user = new User();
-				user.setEmail("bob@mail.ru");
-				user.setName("bob");
-				user.setPassword("bobpro");
-				add(user);
-			}
-		};
-		servletContext.setAttribute("userService", new StaticUserServiceImpl(
-				new UserLocalDaoImpl(users)));
+		servletContext.setAttribute("userService", new UserServiceImpl());
 	}
 
 	private String getCapchaProviderItem(ServletContext servletContext) {

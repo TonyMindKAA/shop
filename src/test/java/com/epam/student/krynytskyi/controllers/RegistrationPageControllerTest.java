@@ -24,6 +24,7 @@ import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.service.StaticUserService;
+import com.epam.student.krynytskyi.service.UserService;
 import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
 import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
@@ -41,7 +42,7 @@ public class RegistrationPageControllerTest {
 	private CaptchaProvider capthcaPrvider;
 
 	@Mock
-	private StaticUserService userServiceImpl;
+	private UserService userServiceImpl;
 
 	@Mock
 	private FullRegistrationFormValidator validator;
@@ -78,7 +79,7 @@ public class RegistrationPageControllerTest {
 
 	@Test
 	public void testShouldInvokeAddMethodFromUserServiceWhenValidMethodFromFullRegistrationFormValidatorReturnTrue()
-			throws ServletException, IOException {
+			throws Exception {
 		User user = new User();
 		RegistrationFormBean formBean = new RegistrationFormBean();
 		ValidateDataRegistrationForm validateDataRegistrationForm= new ValidateDataRegistrationForm();
@@ -88,12 +89,12 @@ public class RegistrationPageControllerTest {
 		Mockito.when(dateRegistrationFormCreator.create(formBean, request)).thenReturn(validateDataRegistrationForm);
 		Mockito.when(validator.validate(validateDataRegistrationForm)).thenReturn(true);
 		Mockito.when(convertor.convert(formBean)).thenReturn(user);
-		Mockito.when(userServiceImpl.add(user)).thenReturn(true);
+		Mockito.when(userServiceImpl.insertUser(user)).thenReturn(true);
 
 		controller.doPost(request, response);
 
 		Mockito.verify(validator).validate(validateDataRegistrationForm);
-		Mockito.verify(userServiceImpl).add(user);
+		Mockito.verify(userServiceImpl).insertUser(user);
 		Mockito.verify(response).sendRedirect("main.jsp");
 	}
 

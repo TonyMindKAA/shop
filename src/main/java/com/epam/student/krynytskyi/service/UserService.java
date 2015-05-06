@@ -7,7 +7,7 @@ public interface UserService {
 
 	public boolean isExistUser(String email) throws Exception;
 
-	public boolean addUser(User newUser) throws Exception;
+	public boolean insertUser(User newUser) throws Exception;
 
 	public User getUserByEmail(String email) throws Exception;
 

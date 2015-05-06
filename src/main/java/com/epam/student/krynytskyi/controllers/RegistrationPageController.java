@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.epam.student.krynytskyi.beans.CapthcaBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
@@ -16,6 +18,8 @@ import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.service.StaticUserService;
+import com.epam.student.krynytskyi.service.UserService;
+import com.epam.student.krynytskyi.service.UserServiceImpl;
 import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
 import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
@@ -25,11 +29,12 @@ import com.epam.student.krynytskyi.validator.report.RegistrationFormValidationRe
 
 @WebServlet("/registration")
 public class RegistrationPageController extends HttpServlet {
+	private static final Logger log = Logger.getLogger(RegistrationPageController.class);
 	private static final String USER_SERVICE = "userService";
 	private static final String CAPTCHA_PROVIDER = "captchaProvider";
 	private static final String REGISTRATION_PAGE = "/WEB-INF/pages/login.jsp";
 	private static final long serialVersionUID = 1L;
-	private StaticUserService userServiceImpl ;
+	private UserService userService;
 	private CaptchaProvider capthcaPrvider;
 	private RegistrationFormValidationReport reportObject = new RegistrationFormValidationReportImpl();
 	private RegistrationFormBeanToUserConvertor convertor = new RegistrationFormBeanToUserConvertor();
@@ -40,7 +45,7 @@ public class RegistrationPageController extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		capthcaPrvider =  (CaptchaProvider) getServletContext().getAttribute(CAPTCHA_PROVIDER);
-		userServiceImpl = (StaticUserService) getServletContext().getAttribute(USER_SERVICE);
+		userService = (UserService)getServletContext().getAttribute(USER_SERVICE);
 	}
 	
 
@@ -80,7 +85,11 @@ public class RegistrationPageController extends HttpServlet {
 
 	private void registrateUser(HttpServletRequest request,
 			RegistrationFormBean formBean) {
-		userServiceImpl.add(convertor.convert(formBean));
+		try {
+			userService.insertUser(convertor.convert(formBean));
+		} catch (Exception e) {
+			log.trace("Can not insert new user to db.");
+		}
 	}
 
 	private void forwarBackWithReport(HttpServletRequest request,

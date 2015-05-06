@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean addUser(final User newUser) throws Exception {
+	public boolean insertUser(final User newUser) throws Exception {
 		if (isExistUser(newUser.getEmail())) {
 			String message = "User with given email already exist";
 			log.info(message);

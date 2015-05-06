@@ -8,15 +8,23 @@ public class User {
 	private String password;
 	private String phone;
 	private String img;
-	private String userId;
-	private int roleId;
-	
-	public String getUserId() {
-		return userId;
+	private String id;
+	private Role role;
+
+	public Role getRole() {
+		return role;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String userId) {
+		this.id = userId;
 	}
 
 	public String getImg() {
@@ -25,14 +33,6 @@ public class User {
 
 	public void setImg(String img) {
 		this.img = img;
-	}
-
-	public int getRoleId() {
-		return roleId;
-	}
-
-	public void setRoleId(int roleId) {
-		this.roleId = roleId;
 	}
 
 	public String getName() {
@@ -75,15 +75,12 @@ public class User {
 		this.phone = phone;
 	}
 
-	
-	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -101,10 +98,10 @@ public class User {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (userId == null) {
-			if (other.userId != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!userId.equals(other.userId))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
@@ -113,7 +110,7 @@ public class User {
 	public String toString() {
 		return "User [name=" + name + ", lastName=" + lastName + ", email="
 				+ email + ", password=" + password + ", phone=" + phone
-				+ ", img=" + img + ", userId=" + userId + ", roleId=" + roleId
+				+ ", img=" + img + ", userId=" + id + ", role=" + role
 				+ "]";
 	}
 
