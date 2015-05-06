@@ -26,6 +26,13 @@
    	<servlet-name>LoginController</servlet-name>
    	<servlet-class>com.epam.student.krynytskyi.controllers.LoginController</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>LogOutController</display-name>
+   	<servlet-name>LogOutController</servlet-name>
+   	<servlet-class>com.epam.student.krynytskyi.controllers.LogOutController</servlet-class>
+   </servlet>
     <servlet-mapping>
         <servlet-name>Captcha</servlet-name>
         <url-pattern>/captcha</url-pattern>
@@ -33,6 +40,10 @@
     <servlet-mapping>
     	<servlet-name>LoginController</servlet-name>
     	<url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>LogOutController</servlet-name>
+    	<url-pattern>/LogOutController</url-pattern>
     </servlet-mapping>
   
    <listener>
