@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.db.dao.mysql;
+package com.epam.student.krynytskyi.db.dao.mysql.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +12,7 @@ import java.util.UUID;
 import org.apache.log4j.Logger;
 
 import com.epam.student.krynytskyi.db.dao.exception.DAOException;
+import com.epam.student.krynytskyi.db.dao.mysql.MySqlUserDao;
 import com.epam.student.krynytskyi.entity.Role;
 import com.epam.student.krynytskyi.entity.User;
 
