@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+#price-main-page{
+	  padding-left: 9%;
+}
+
+#submit-button-main-page {
+  display: inline-block;
+  padding: 10px 60px;
+  margin-bottom: 0px;
+  
+}
+
+.price-range {
+  margin-top: 0px;
+}
