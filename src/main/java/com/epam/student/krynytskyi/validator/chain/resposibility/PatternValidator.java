@@ -11,7 +11,7 @@ public class PatternValidator extends Validator {
 	}
 
 	@Override
-	protected boolean isValide(String string) {
+	protected boolean isValid(String string) {
 		return string.matches(pattern);
 	}
 

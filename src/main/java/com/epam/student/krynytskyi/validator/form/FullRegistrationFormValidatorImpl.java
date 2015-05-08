@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.validator.form;
 
-import com.epam.student.krynytskyi.beans.CapthcaBean;
+import com.epam.student.krynytskyi.beans.CaptchaBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
 import com.epam.student.krynytskyi.validator.form.field.impl.ConfirmFieldsValidator;
@@ -20,7 +20,7 @@ public class FullRegistrationFormValidatorImpl implements
 		isValid = true;
 		RegistrationFormBean formBean = validateDateRegistrationForm.getFormBean();
 		long timeOut = validateDateRegistrationForm.getTimeOut();
-		CapthcaBean capthcaBean = validateDateRegistrationForm.getCapthcaBean();
+		CaptchaBean capthcaBean = validateDateRegistrationForm.getCapthcaBean();
 		isValide(new EmailFieldValidator().validate(formBean.getEmailAddress()));
 		isValide(new LastNameFieldValidator().validate(formBean.getLastName()));
 		isValide(new NameFieldValidator().validate(formBean.getName()));

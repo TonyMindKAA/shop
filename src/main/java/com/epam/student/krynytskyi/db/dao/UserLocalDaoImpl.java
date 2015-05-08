@@ -1,16 +1,16 @@
 package com.epam.student.krynytskyi.db.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.util.ObjectUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserLocalDaoImpl implements UserLocalDao {
 	private List<User> users;
 
 	public UserLocalDaoImpl() {
-		this.users = new ArrayList<User>();
+		this.users = new ArrayList<>();
 	}
 
 	public UserLocalDaoImpl(List<User> users) {

@@ -2,7 +2,7 @@ package com.epam.student.krynytskyi.beans;
 
 public class ValidateDataRegistrationForm {
 	private RegistrationFormBean formBean;
-	private CapthcaBean capthcaBean;
+	private CaptchaBean capthcaBean;
 	private long timeOut;
 
 	public RegistrationFormBean getFormBean() {
@@ -13,11 +13,11 @@ public class ValidateDataRegistrationForm {
 		this.formBean = formBean;
 	}
 
-	public CapthcaBean getCapthcaBean() {
+	public CaptchaBean getCapthcaBean() {
 		return capthcaBean;
 	}
 
-	public void setCapthcaBean(CapthcaBean capthcaBean) {
+	public void setCapthcaBean(CaptchaBean capthcaBean) {
 		this.capthcaBean = capthcaBean;
 	}
 

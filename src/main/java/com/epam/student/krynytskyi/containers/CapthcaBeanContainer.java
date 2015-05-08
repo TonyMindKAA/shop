@@ -1,15 +1,15 @@
 package com.epam.student.krynytskyi.containers;
 
-import com.epam.student.krynytskyi.beans.CapthcaBean;
+import com.epam.student.krynytskyi.beans.CaptchaBean;
 
 public interface CapthcaBeanContainer {
-	CapthcaBean getById(int id);
+	CaptchaBean getById(int id);
 
-	CapthcaBean getById(String id);
+	CaptchaBean getById(String id);
 
-	CapthcaBean insert(CapthcaBean capthcaBean);
+	CaptchaBean insert(CaptchaBean capthcaBean);
 
-	int remove(CapthcaBean capthcaBean);
+	int remove(CaptchaBean capthcaBean);
 
 	int remove(int id);
 

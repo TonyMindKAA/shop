@@ -2,7 +2,7 @@ package com.epam.student.krynytskyi.beans;
 
 import java.util.Date;
 
-public class CapthcaBean {
+public class CaptchaBean {
 	private String captchaValue;
 	private String id;
 	private Date createTime = new Date();

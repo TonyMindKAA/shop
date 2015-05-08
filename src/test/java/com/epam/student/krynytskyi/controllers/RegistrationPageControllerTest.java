@@ -19,7 +19,7 @@ import org.mockito.MockitoAnnotations;
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
 import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
-import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConvertor;
+import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConverter;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.service.UserService;
@@ -71,7 +71,7 @@ public class RegistrationPageControllerTest {
 	private ValidateDataRegistrationFormCreator dateRegistrationFormCreator;
 	
 	@Mock
-	private RegistrationFormBeanToUserConvertor convertor;
+	private RegistrationFormBeanToUserConverter convertor;
 
 	@Before
 	public void setUp() throws Exception {

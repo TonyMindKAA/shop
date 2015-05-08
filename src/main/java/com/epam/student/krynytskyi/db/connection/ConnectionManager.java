@@ -15,13 +15,11 @@ import org.apache.log4j.Logger;
 public class ConnectionManager {
     private static final Logger log = Logger.getLogger(ConnectionManager.class);
     private static DataSource dataSource;
-    private static InitialContext initContext;
-    private static Context envContext;
 
     private static void init() throws NamingException {
        try {
-            initContext = new InitialContext();
-            envContext = (Context) initContext.lookup("java:/comp/env");
+           InitialContext initContext = new InitialContext();
+           Context envContext = (Context) initContext.lookup("java:/comp/env");
             dataSource = (DataSource) (envContext.lookup("jdbc/krynytskyiSop"));
         } catch (NamingException ex) {
             log.error("Cannot init pool of connection", ex);

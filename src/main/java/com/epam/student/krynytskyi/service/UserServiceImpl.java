@@ -1,15 +1,14 @@
 package com.epam.student.krynytskyi.service;
 
-import java.sql.Connection;
-
-import org.apache.log4j.Logger;
-
 import com.epam.student.krynytskyi.db.dao.mysql.MySqlUserDao;
 import com.epam.student.krynytskyi.db.dao.mysql.impl.MySqlUserDaoImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionManager;
 import com.epam.student.krynytskyi.db.transaction.TransactionManagerImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionOperation;
 import com.epam.student.krynytskyi.entity.User;
+import org.apache.log4j.Logger;
+
+import java.sql.Connection;
 
 public class UserServiceImpl implements UserService {
 	private static final Logger log = Logger.getLogger(UserServiceImpl.class);

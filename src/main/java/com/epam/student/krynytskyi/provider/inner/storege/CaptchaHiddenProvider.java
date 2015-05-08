@@ -3,12 +3,12 @@ package com.epam.student.krynytskyi.provider.inner.storege;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.epam.student.krynytskyi.beans.CapthcaBean;
+import com.epam.student.krynytskyi.beans.CaptchaBean;
 import com.epam.student.krynytskyi.containers.CapthcaBeanContainer;
 
 public class CaptchaHiddenProvider extends AbstractCaptchaInnerStoregeProvider {
 	@Override
-	public CapthcaBean getCaptcha(HttpServletRequest request) {
+	public CaptchaBean getCaptcha(HttpServletRequest request) {
 		String captchaId = getCaptchaId(request);
 		CapthcaBeanContainer capthcaBeanContainer = getCapthcaBeanContainer();
 		captchaId = (captchaId == null) ? "" : captchaId; 
@@ -21,7 +21,7 @@ public class CaptchaHiddenProvider extends AbstractCaptchaInnerStoregeProvider {
 
 	@Override
 	public void setCaptcha(HttpServletRequest request,
-			HttpServletResponse response, CapthcaBean captcha) {
+			HttpServletResponse response, CaptchaBean captcha) {
 		CapthcaBeanContainer capthcaBeanContainer = getCapthcaBeanContainer();
 		capthcaBeanContainer.insert(captcha);
 		request.setAttribute("captchaHiden", captcha.getId());

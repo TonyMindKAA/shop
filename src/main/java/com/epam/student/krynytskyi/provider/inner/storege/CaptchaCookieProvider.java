@@ -4,7 +4,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.epam.student.krynytskyi.beans.CapthcaBean;
+import com.epam.student.krynytskyi.beans.CaptchaBean;
 import com.epam.student.krynytskyi.containers.CapthcaBeanContainer;
 
 public  class CaptchaCookieProvider extends AbstractCaptchaInnerStoregeProvider {
@@ -12,7 +12,7 @@ public  class CaptchaCookieProvider extends AbstractCaptchaInnerStoregeProvider 
 	private static final int ONE_DAY = 60 * 60 * 24;
 
 	@Override
-	public CapthcaBean getCaptcha(HttpServletRequest request) {
+	public CaptchaBean getCaptcha(HttpServletRequest request) {
 		Cookie[] cookies = request.getCookies();
 		String captcha = null;
 		for (Cookie cookie : cookies) {
@@ -26,7 +26,7 @@ public  class CaptchaCookieProvider extends AbstractCaptchaInnerStoregeProvider 
 
 	@Override
 	public void setCaptcha(HttpServletRequest request,
-			HttpServletResponse response, CapthcaBean captcha) {
+			HttpServletResponse response, CaptchaBean captcha) {
 		Cookie cookie = new Cookie("captcha", captcha.getId());
 		cookie.setMaxAge(ONE_DAY);
 		response.addCookie(cookie);

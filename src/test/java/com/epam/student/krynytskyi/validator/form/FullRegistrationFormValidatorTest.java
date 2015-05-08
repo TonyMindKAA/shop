@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.epam.student.krynytskyi.beans.CapthcaBean;
+import com.epam.student.krynytskyi.beans.CaptchaBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
 
@@ -30,7 +30,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -53,7 +53,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -76,7 +76,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -99,7 +99,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("09541513");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -124,7 +124,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro222");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -147,7 +147,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -170,7 +170,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -193,7 +193,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -216,7 +216,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -239,7 +239,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -262,7 +262,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword(null);
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -285,7 +285,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone("0954151123");
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
@@ -308,7 +308,7 @@ public class FullRegistrationFormValidatorTest {
 		formBean.setPassword("0123654789");
 		formBean.setPhone(null);
 	
-		CapthcaBean capthcaBean = new CapthcaBean();
+		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
 		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();

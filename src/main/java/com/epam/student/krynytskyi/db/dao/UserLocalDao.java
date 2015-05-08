@@ -1,8 +1,8 @@
 package com.epam.student.krynytskyi.db.dao;
 
-import java.util.List;
-
 import com.epam.student.krynytskyi.entity.User;
+
+import java.util.List;
 
 public interface UserLocalDao {
 	List<User> getAll();
@@ -10,7 +10,4 @@ public interface UserLocalDao {
 	boolean add(User user);
 
 	User getByEmail(String email);
-	
-	
-	
 }

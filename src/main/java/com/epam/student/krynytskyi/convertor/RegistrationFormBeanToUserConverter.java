@@ -4,7 +4,7 @@ import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.entity.Role;
 import com.epam.student.krynytskyi.entity.User;
 
-public class RegistrationFormBeanToUserConvertor {
+public class RegistrationFormBeanToUserConverter {
 	private static final String CLIENT_ROLE_VALUE = "CLIENT";
 	private static final int CLIENT_ROLE_ID = 1;
 

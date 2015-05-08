@@ -12,7 +12,7 @@ public class ConfirmedValidator extends Validator {
 	}
 
 	@Override
-	protected boolean isValide(String string) {
+	protected boolean isValid(String string) {
 		return field.equals(string);
 	}
 }

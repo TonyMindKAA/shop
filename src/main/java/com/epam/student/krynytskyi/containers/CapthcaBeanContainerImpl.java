@@ -5,25 +5,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.epam.student.krynytskyi.beans.CapthcaBean;
+import com.epam.student.krynytskyi.beans.CaptchaBean;
 
 public class CapthcaBeanContainerImpl implements CapthcaBeanContainer {
 	
-	private Map<String, CapthcaBean> captchas = new HashMap<>();
+	private Map<String, CaptchaBean> captchas = new HashMap<>();
 
 	@Override
-	public CapthcaBean getById(int id) {
+	public CaptchaBean getById(int id) {
 		return getById(Integer.toString(id));
 	}
 
 	@Override
-	public CapthcaBean getById(String id) {
+	public CaptchaBean getById(String id) {
 		checkNull(id);
 		return captchas.get(id);
 	}
 
 	@Override
-	public CapthcaBean insert(CapthcaBean capthcaBean) {
+	public CaptchaBean insert(CaptchaBean capthcaBean) {
 		synchronized (captchas) {
 			captchas.put(capthcaBean.getId(), capthcaBean);
 			return capthcaBean;
@@ -31,7 +31,7 @@ public class CapthcaBeanContainerImpl implements CapthcaBeanContainer {
 	}
 
 	@Override
-	public int remove(CapthcaBean capthcaBean) {
+	public int remove(CaptchaBean capthcaBean) {
 		checkNull(capthcaBean);
 		return remove(capthcaBean.getId());
 	}
@@ -61,14 +61,14 @@ public class CapthcaBeanContainerImpl implements CapthcaBeanContainer {
 	@Override
 	public void cleanOld(long timeOut) {
 		synchronized (captchas) {
-			java.util.Iterator<Entry<String, CapthcaBean>> iterator = captchas.entrySet().iterator();
+			java.util.Iterator<Entry<String, CaptchaBean>> iterator = captchas.entrySet().iterator();
 			while(iterator.hasNext()) {
 				checkCaptcha(iterator,timeOut);
 			}
 		}
 	}
 
-	private void checkCaptcha(java.util.Iterator<Entry<String, CapthcaBean>> iterator, long timeOut) {
+	private void checkCaptcha(java.util.Iterator<Entry<String, CaptchaBean>> iterator, long timeOut) {
 		long time = iterator.next().getValue().getCreateTime().getTime();
 		long currentTime = new Date().getTime();
 		if((currentTime -time ) >timeOut){

@@ -36,6 +36,7 @@
 	</section>
 	
 	<section>
+		<form method="get" action="products">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-3">
@@ -43,18 +44,18 @@
 						<div class="price-range"><!-- find-->
 							<h2>Title</h2>
 							<div class="well">
-								 <div id="price-main-page">
-								 	<input type="text" size="20">
+								 <div class="price-main-page">
+								 	<input type="text" name="title" value="nokia" size="20">
 								 </div>
 							</div>
 						</div><!--/price-range-->
 						<div class="price-range"><!-- find-->
 							<h2>Price Range</h2>
 							<div class="well">
-								 <div id="price-main-page">
-								 <input type="text" size="6">
+								 <div class="price-main-page">
+								 <input type="text" name="priceFrom" size="6">
 								 to
-								 <input type="text" size="6">
+								 <input type="text" name="priceTo" size="6">
 								 </div>
 							</div>
 						</div><!--/price-range-->
@@ -100,14 +101,14 @@
 						<div class="price-range"><!--submit-button-->
 							<h2>Filtrate</h2>
 							<div class="well">
-								 <div id="price-main-page">
+								 <div 	class="price-main-page">
 								 <input type="submit" id="submit-button-main-page" class="btn-default add-to-cart" value="filtrate">
 								 </div>
 							</div>
 						</div><!--submit-button-->
 					</div>
 				</div>
-				
+				</form>
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
