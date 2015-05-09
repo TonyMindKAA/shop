@@ -25,6 +25,7 @@ public class MySqlProductDaoImpl implements MySqlProductDao {
     public List<Product> getByParams(Connection conn,
                                      Map<String, String> sqlQueryParts, List<ProductFormParamBean> params) throws Exception {
         String sqlQuery = buildQuery(sqlQueryParts, params);
+        log.debug(sqlQuery);
         List<Product> products = new ArrayList<>();
         try (PreparedStatement prst = conn.prepareStatement(sqlQuery)) {
             executeQuery(params, prst);

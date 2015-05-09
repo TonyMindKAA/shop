@@ -146,18 +146,9 @@
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
-		  <executions>
-			  <execution>
-				  <id>run-wars</id>
-				  <goals>
-					  <goal>run-war-only</goal>
-				  </goals>
-				  <phase>integration-test</phase>
-			  </execution>
-		  </executions>
         <configuration>
-          <port>9090</port>
-          <path>/</path>
+          <port>8080</port>
+          <path>/shop</path>
         </configuration>
       </plugin>
     </plugins>

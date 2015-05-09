@@ -2,6 +2,7 @@ package com.epam.student.krynytskyi.util;
 
 import com.epam.student.krynytskyi.beans.ProductFormBean;
 import com.epam.student.krynytskyi.beans.ProductFormParamBean;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
@@ -12,12 +13,13 @@ import static com.epam.student.krynytskyi.db.constant.ProductTypeConst.*;
  * Created by Anton_Krynytskyi on 5/8/2015.
  */
 public class ProductFormParametersParser {
+    private static final Logger log = Logger.getLogger(ProductFormParametersParser.class);
     public static final String FORM_PARAMETER_TITLE = "title";
     public static final String FORM_PARAMETER_PRICE_FROM = "priceFrom";
     public static final String FORM_PARAMETER_PRICE_TO = "priceTo";
     public static final String FORM_PARAMETER_AMBIENT = "AMBIENT";
     public static final String FROM_PARAMETER_PROTECTED = "PROTECTED";
-    public static final String FROM_PARAMETER_CHEAP = "ÑHEAP";
+    public static final String FROM_PARAMETER_CHEAP = "CHEAP";
     public static final String FROM_PARAMETER_NOKIA = "NOKIA";
     public static final String FROM_PARAMETER_SIGMA = "SIGMA";
     public static final String FROM_PARAMETER_APPLE = "APPLE";
@@ -26,7 +28,7 @@ public class ProductFormParametersParser {
     public ArrayList<ProductFormParamBean> parse(ProductFormBean productFormBean) {
         ArrayList<ProductFormParamBean> productFormParamBeans = new ArrayList<>();
         if (isParameterExist(productFormBean.getTitle())) {
-            setParameterFromBean(productFormParamBeans, FORM_PARAMETER_TITLE, "\"%" + productFormBean.getTitle() + "%\"");
+            setParameterFromBean(productFormParamBeans, FORM_PARAMETER_TITLE, productFormBean.getTitle());
         }
         if (isParameterExist(productFormBean.getPriceFrom())) {
             setParameterFromBean(productFormParamBeans, FORM_PARAMETER_PRICE_FROM, productFormBean.getPriceFrom());
@@ -56,7 +58,7 @@ public class ProductFormParametersParser {
     }
 
     private boolean isParameterExist(String parameter) {
-        String b = parameter + ": null :: " + (parameter != null) + " : empty ::" + (parameter != null && !parameter.isEmpty());
+        log.debug(parameter);
         return parameter != null && !parameter.isEmpty();
     }
 

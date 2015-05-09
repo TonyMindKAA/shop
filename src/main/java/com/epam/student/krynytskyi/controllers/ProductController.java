@@ -29,7 +29,7 @@ public class ProductController extends HttpServlet {
     public static final String FORM_PARAMETER_PRICE_TO = "priceTo";
     public static final String FORM_PARAMETER_AMBIENT = "AMBIENT";
     public static final String FROM_PARAMETER_PROTECTED = "PROTECTED";
-    public static final String FROM_PARAMETER_CHEAP = "ÑHEAP";
+    public static final String FROM_PARAMETER_CHEAP = "CHEAP";
     public static final String FROM_PARAMETER_NOKIA = "NOKIA";
     public static final String FROM_PARAMETER_SIGMA = "SIGMA";
     public static final String FROM_PARAMETER_APPLE = "APPLE";
@@ -41,19 +41,18 @@ public class ProductController extends HttpServlet {
     }
 
     private Map<String, String> getSqlQueryParts() {
-        Map<String, String> stringStringMap = new HashMap<>();
-        stringStringMap.put(FORM_PARAMETER_TITLE, " AND pr.name LIKE ?");
-        stringStringMap.put(FORM_PARAMETER_PRICE_FROM, " AND pr.price >= ?");
-        stringStringMap.put(FORM_PARAMETER_PRICE_TO, " AND pr.price <= ? ");
-        stringStringMap.put(FORM_PARAMETER_AMBIENT, " OR mn.manufacturer = ?");
-        stringStringMap.put(FROM_PARAMETER_PROTECTED, " OR mn.manufacturer = ?");
-        stringStringMap.put(FROM_PARAMETER_CHEAP, " OR mn.manufacturer = ?");
-        stringStringMap.put(FROM_PARAMETER_NOKIA, " OR prt.type = ?");
-        stringStringMap.put(FROM_PARAMETER_SIGMA, " OR prt.type = ?");
-        stringStringMap.put(FROM_PARAMETER_APPLE, " OR prt.type = ?");
-        return stringStringMap;
+        Map<String, String> partsOfSQLQuery = new HashMap<>();
+        partsOfSQLQuery.put(FORM_PARAMETER_TITLE, " AND pr.name LIKE '%' ? '%'");
+        partsOfSQLQuery.put(FORM_PARAMETER_PRICE_FROM, " AND pr.price >= ?");
+        partsOfSQLQuery.put(FORM_PARAMETER_PRICE_TO, " AND pr.price <= ? ");
+        partsOfSQLQuery.put(FORM_PARAMETER_AMBIENT, " OR mn.manufacturer = ?");
+        partsOfSQLQuery.put(FROM_PARAMETER_PROTECTED, " OR mn.manufacturer = ?");
+        partsOfSQLQuery.put(FROM_PARAMETER_CHEAP, " OR mn.manufacturer = ?");
+        partsOfSQLQuery.put(FROM_PARAMETER_NOKIA, " OR prt.type = ?");
+        partsOfSQLQuery.put(FROM_PARAMETER_SIGMA, " OR prt.type = ?");
+        partsOfSQLQuery.put(FROM_PARAMETER_APPLE, " OR prt.type = ?");
+        return partsOfSQLQuery;
     }
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

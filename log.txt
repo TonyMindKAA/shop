@@ -1,0 +1,1459 @@
+Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T14:57:37+03:00)
+Maven home: C:\Program Files\apache-maven-3.3.3\bin\..
+Java version: 1.8.0_45, vendor: Oracle Corporation
+Java home: C:\Program Files\Java\jdk1.8.0_45\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 7", version: "6.1", arch: "amd64", family: "dos"
+[DEBUG] Created new class realm maven.api
+[DEBUG] Importing foreign packages into class realm maven.api
+[DEBUG]   Imported: javax.enterprise.inject.* < plexus.core
+[DEBUG]   Imported: javax.enterprise.util.* < plexus.core
+[DEBUG]   Imported: javax.inject.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.artifact < plexus.core
+[DEBUG]   Imported: org.apache.maven.classrealm < plexus.core
+[DEBUG]   Imported: org.apache.maven.cli < plexus.core
+[DEBUG]   Imported: org.apache.maven.configuration < plexus.core
+[DEBUG]   Imported: org.apache.maven.exception < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution < plexus.core
+[DEBUG]   Imported: org.apache.maven.execution.scope < plexus.core
+[DEBUG]   Imported: org.apache.maven.lifecycle < plexus.core
+[DEBUG]   Imported: org.apache.maven.model < plexus.core
+[DEBUG]   Imported: org.apache.maven.monitor < plexus.core
+[DEBUG]   Imported: org.apache.maven.plugin < plexus.core
+[DEBUG]   Imported: org.apache.maven.profiles < plexus.core
+[DEBUG]   Imported: org.apache.maven.project < plexus.core
+[DEBUG]   Imported: org.apache.maven.reporting < plexus.core
+[DEBUG]   Imported: org.apache.maven.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.rtinfo < plexus.core
+[DEBUG]   Imported: org.apache.maven.settings < plexus.core
+[DEBUG]   Imported: org.apache.maven.toolchain < plexus.core
+[DEBUG]   Imported: org.apache.maven.usability < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.* < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authentication < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.authorization < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.events < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.observers < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.proxy < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.repository < plexus.core
+[DEBUG]   Imported: org.apache.maven.wagon.resource < plexus.core
+[DEBUG]   Imported: org.codehaus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.* < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.classworlds < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.component < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.configuration < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.container < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.context < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.lifecycle < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.logging < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.personality < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.Xpp3Dom < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParser < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlPullParserException < plexus.core
+[DEBUG]   Imported: org.codehaus.plexus.util.xml.pull.XmlSerializer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.* < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.artifact < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.collection < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.deployment < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.graph < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.installation < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.internal.impl < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.metadata < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.repository < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.resolution < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.spi < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.transfer < plexus.core
+[DEBUG]   Imported: org.eclipse.aether.version < plexus.core
+[DEBUG]   Imported: org.slf4j.* < plexus.core
+[DEBUG]   Imported: org.slf4j.spi.* < plexus.core
+[DEBUG] Populating class realm maven.api
+[INFO] Error stacktraces are turned on.
+[DEBUG] Reading global settings from C:\Program Files\apache-maven-3.3.3\bin\..\conf\settings.xml
+[DEBUG] Reading user settings from C:\Users\Mr.Green\.m2\settings.xml
+[DEBUG] Reading global toolchains from C:\Program Files\apache-maven-3.3.3\bin\..\conf\toolchains.xml
+[DEBUG] Reading user toolchains from C:\Users\Mr.Green\.m2\toolchains.xml
+[DEBUG] Using local repository at C:\Users\Mr.Green\.m2\repository
+[DEBUG] Using manager EnhancedLocalRepositoryManager with priority 10.0 for C:\Users\Mr.Green\.m2\repository
+[INFO] Scanning for projects...
+[DEBUG] Extension realms for project com.mkyong:Shop:war:1.0-SNAPSHOT: (none)
+[DEBUG] Looking up lifecyle mappings for packaging war from ClassRealm[plexus.core, parent: null]
+[DEBUG] === REACTOR BUILD PLAN ================================================
+[DEBUG] Project: com.mkyong:Shop:war:1.0-SNAPSHOT
+[DEBUG] Tasks:   [install]
+[DEBUG] Style:   Regular
+[DEBUG] =======================================================================
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Shop Maven Webapp 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
+[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
+[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
+[DEBUG] === PROJECT BUILD PLAN ================================================
+[DEBUG] Project:       com.mkyong:Shop:1.0-SNAPSHOT
+[DEBUG] Dependencies (collect): []
+[DEBUG] Dependencies (resolve): [compile, runtime, test]
+[DEBUG] Repositories (dependencies): [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] Repositories (plugins)     : [central (https://repo.maven.apache.org/maven2, default, releases)]
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:2.6:resources (default-resources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <escapeString>${maven.resources.escapeString}</escapeString>
+  <escapeWindowsPaths default-value="true">${maven.resources.escapeWindowsPaths}</escapeWindowsPaths>
+  <includeEmptyDirs default-value="false">${maven.resources.includeEmptyDirs}</includeEmptyDirs>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <overwrite default-value="false">${maven.resources.overwrite}</overwrite>
+  <project default-value="${project}"/>
+  <resources default-value="${project.resources}"/>
+  <session default-value="${session}"/>
+  <supportMultiLineFiltering default-value="false">${maven.resources.supportMultiLineFiltering}</supportMultiLineFiltering>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile (default-compile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <classpathElements default-value="${project.compileClasspathElements}"/>
+  <compileSourceRoots default-value="${project.compileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedSourcesDirectory default-value="${project.build.directory}/generated-sources/annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.outputDirectory}"/>
+  <outputFileName>${project.build.finalName}</outputFileName>
+  <projectArtifact default-value="${project.artifact}"/>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <source default-value="1.5">1.7</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.5">1.7</target>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-resources-plugin:2.6:testResources (default-testResources)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <buildFilters default-value="${project.build.filters}"/>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <escapeString>${maven.resources.escapeString}</escapeString>
+  <escapeWindowsPaths default-value="true">${maven.resources.escapeWindowsPaths}</escapeWindowsPaths>
+  <includeEmptyDirs default-value="false">${maven.resources.includeEmptyDirs}</includeEmptyDirs>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <overwrite default-value="false">${maven.resources.overwrite}</overwrite>
+  <project default-value="${project}"/>
+  <resources default-value="${project.testResources}"/>
+  <session default-value="${session}"/>
+  <skip>${maven.test.skip}</skip>
+  <supportMultiLineFiltering default-value="false">${maven.resources.supportMultiLineFiltering}</supportMultiLineFiltering>
+  <useBuildFilters default-value="true"/>
+  <useDefaultDelimiters default-value="true"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-compiler-plugin:2.3.2:testCompile (default-testCompile)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <basedir default-value="${basedir}"/>
+  <buildDirectory default-value="${project.build.directory}"/>
+  <classpathElements default-value="${project.testClasspathElements}"/>
+  <compileSourceRoots default-value="${project.testCompileSourceRoots}"/>
+  <compilerId default-value="javac">${maven.compiler.compilerId}</compilerId>
+  <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+  <debug default-value="true">${maven.compiler.debug}</debug>
+  <debuglevel>${maven.compiler.debuglevel}</debuglevel>
+  <encoding default-value="${project.build.sourceEncoding}">${encoding}</encoding>
+  <executable>${maven.compiler.executable}</executable>
+  <failOnError default-value="true">${maven.compiler.failOnError}</failOnError>
+  <fork default-value="false">${maven.compiler.fork}</fork>
+  <generatedTestSourcesDirectory default-value="${project.build.directory}/generated-sources/test-annotations"/>
+  <maxmem>${maven.compiler.maxmem}</maxmem>
+  <meminitial>${maven.compiler.meminitial}</meminitial>
+  <optimize default-value="false">${maven.compiler.optimize}</optimize>
+  <outputDirectory default-value="${project.build.testOutputDirectory}"/>
+  <outputFileName>${project.build.finalName}</outputFileName>
+  <session default-value="${session}"/>
+  <showDeprecation default-value="false">${maven.compiler.showDeprecation}</showDeprecation>
+  <showWarnings default-value="false">${maven.compiler.showWarnings}</showWarnings>
+  <skip>${maven.test.skip}</skip>
+  <source default-value="1.5">1.7</source>
+  <staleMillis default-value="0">${lastModGranularityMs}</staleMillis>
+  <target default-value="1.5">1.7</target>
+  <testSource>${maven.compiler.testSource}</testSource>
+  <testTarget>${maven.compiler.testTarget}</testTarget>
+  <verbose default-value="false">${maven.compiler.verbose}</verbose>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <argLine>${argLine}</argLine>
+  <basedir default-value="${basedir}"/>
+  <childDelegation default-value="false">${childDelegation}</childDelegation>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <debugForkedProcess>${maven.surefire.debug}</debugForkedProcess>
+  <disableXmlReport default-value="false">${disableXmlReport}</disableXmlReport>
+  <enableAssertions default-value="true">${enableAssertions}</enableAssertions>
+  <excludedGroups>${excludedGroups}</excludedGroups>
+  <failIfNoSpecifiedTests>${surefire.failIfNoSpecifiedTests}</failIfNoSpecifiedTests>
+  <failIfNoTests>${failIfNoTests}</failIfNoTests>
+  <forkMode default-value="once">${forkMode}</forkMode>
+  <forkedProcessTimeoutInSeconds>${surefire.timeout}</forkedProcessTimeoutInSeconds>
+  <groups>${groups}</groups>
+  <junitArtifactName default-value="junit:junit">${junitArtifactName}</junitArtifactName>
+  <jvm>${jvm}</jvm>
+  <localRepository default-value="${localRepository}"/>
+  <objectFactory>${objectFactory}</objectFactory>
+  <parallel>${parallel}</parallel>
+  <parallelMavenExecution default-value="${session.parallel}"/>
+  <perCoreThreadCount default-value="true">${perCoreThreadCount}</perCoreThreadCount>
+  <pluginArtifactMap>${plugin.artifactMap}</pluginArtifactMap>
+  <pluginDescriptor default-value="${plugin}"/>
+  <printSummary default-value="true">${surefire.printSummary}</printSummary>
+  <projectArtifactMap>${project.artifactMap}</projectArtifactMap>
+  <redirectTestOutputToFile default-value="false">${maven.test.redirectTestOutputToFile}</redirectTestOutputToFile>
+  <remoteRepositories default-value="${project.pluginArtifactRepositories}"/>
+  <reportFormat default-value="brief">${surefire.reportFormat}</reportFormat>
+  <reportNameSuffix default-value="">${surefire.reportNameSuffix}</reportNameSuffix>
+  <reportsDirectory default-value="${project.build.directory}/surefire-reports"/>
+  <runOrder default-value="filesystem"/>
+  <skip default-value="false">${maven.test.skip}</skip>
+  <skipExec>${maven.test.skip.exec}</skipExec>
+  <skipTests default-value="false">${skipTests}</skipTests>
+  <test>${test}</test>
+  <testClassesDirectory default-value="${project.build.testOutputDirectory}"/>
+  <testFailureIgnore default-value="false">${maven.test.failure.ignore}</testFailureIgnore>
+  <testNGArtifactName default-value="org.testng:testng">${testNGArtifactName}</testNGArtifactName>
+  <testSourceDirectory default-value="${project.build.testSourceDirectory}"/>
+  <threadCount>${threadCount}</threadCount>
+  <trimStackTrace default-value="true">${trimStackTrace}</trimStackTrace>
+  <useFile default-value="true">${surefire.useFile}</useFile>
+  <useManifestOnlyJar default-value="true">${surefire.useManifestOnlyJar}</useManifestOnlyJar>
+  <useSystemClassLoader default-value="true">${surefire.useSystemClassLoader}</useSystemClassLoader>
+  <useUnlimitedThreads default-value="false">${useUnlimitedThreads}</useUnlimitedThreads>
+  <workingDirectory>${basedir}</workingDirectory>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-war-plugin:2.2:war (default-war)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <archiveClasses default-value="false">${archiveClasses}</archiveClasses>
+  <attachClasses default-value="false"/>
+  <cacheFile default-value="${project.build.directory}/war/work/webapp-cache.xml"/>
+  <classesClassifier default-value="classes"/>
+  <classesDirectory default-value="${project.build.outputDirectory}"/>
+  <containerConfigXML>${maven.war.containerConfigXML}</containerConfigXML>
+  <escapeString>${maven.war.escapeString}</escapeString>
+  <escapedBackslashesInFilePath default-value="false">${maven.war.escapedBackslashesInFilePath}</escapedBackslashesInFilePath>
+  <failOnMissingWebXml default-value="true">${failOnMissingWebXml}</failOnMissingWebXml>
+  <filteringDeploymentDescriptors default-value="false">${maven.war.filteringDeploymentDescriptors}</filteringDeploymentDescriptors>
+  <outputDirectory default-value="${project.build.directory}"/>
+  <primaryArtifact default-value="true">${primaryArtifact}</primaryArtifact>
+  <project default-value="${project}"/>
+  <session default-value="${session}"/>
+  <useCache default-value="false">${useCache}</useCache>
+  <warName default-value="${project.build.finalName}"/>
+  <warSourceDirectory default-value="${basedir}/src/main/webapp"/>
+  <warSourceIncludes default-value="**"/>
+  <webXml>${maven.war.webxml}</webXml>
+  <webappDirectory default-value="${project.build.directory}/${project.build.finalName}"/>
+  <workDirectory default-value="${project.build.directory}/war/work"/>
+</configuration>
+[DEBUG] -----------------------------------------------------------------------
+[DEBUG] Goal:          org.apache.maven.plugins:maven-install-plugin:2.4:install (default-install)
+[DEBUG] Style:         Regular
+[DEBUG] Configuration: <?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <artifact default-value="${project.artifact}"/>
+  <attachedArtifacts default-value="${project.attachedArtifacts}"/>
+  <createChecksum default-value="false">${createChecksum}</createChecksum>
+  <localRepository>${localRepository}</localRepository>
+  <packaging default-value="${project.packaging}"/>
+  <pomFile default-value="${project.file}"/>
+  <skip default-value="false">${maven.install.skip}</skip>
+  <updateReleaseInfo default-value="false">${updateReleaseInfo}</updateReleaseInfo>
+</configuration>
+[DEBUG] =======================================================================
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=2, ConflictMarker.markTime=1, ConflictMarker.nodeCount=32, ConflictIdSorter.graphTime=1, ConflictIdSorter.topsortTime=1, ConflictIdSorter.conflictIdCount=24, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=10, ConflictResolver.conflictItemCount=30, DefaultDependencyCollector.collectTime=247, DefaultDependencyCollector.transformTime=19}
+[DEBUG] com.mkyong:Shop:war:1.0-SNAPSHOT
+[DEBUG]    c3p0:c3p0:jar:0.9.1.2:compile
+[DEBUG]    com.google.guava:guava:jar:18.0:compile
+[DEBUG]    com.github.cage:cage:jar:1.0:compile
+[DEBUG]    commons-codec:commons-codec:jar:1.9:compile
+[DEBUG]    com.google.code.gson:gson:jar:2.2.4:compile
+[DEBUG]    mysql:mysql-connector-java:jar:5.1.1:compile
+[DEBUG]    commons-fileupload:commons-fileupload:jar:1.3:compile
+[DEBUG]       commons-io:commons-io:jar:2.2:compile
+[DEBUG]    junit:junit:jar:4.11:test
+[DEBUG]       org.hamcrest:hamcrest-core:jar:1.3:test
+[DEBUG]    org.apache.tomcat:tomcat-jsp-api:jar:7.0.42:provided
+[DEBUG]       org.apache.tomcat:tomcat-el-api:jar:7.0.42:provided
+[DEBUG]       org.apache.tomcat:tomcat-servlet-api:jar:7.0.42:provided
+[DEBUG]    org.mockito:mockito-all:jar:1.9.5:test
+[DEBUG]    org.powermock:powermock-module-junit4:jar:1.5.1:test
+[DEBUG]       org.powermock:powermock-module-junit4-common:jar:1.5.1:test
+[DEBUG]          org.powermock:powermock-core:jar:1.5.1:test
+[DEBUG]             org.javassist:javassist:jar:3.18.0-GA:test
+[DEBUG]          org.powermock:powermock-reflect:jar:1.5.1:test
+[DEBUG]             org.objenesis:objenesis:jar:1.2:test
+[DEBUG]    org.powermock:powermock-api-mockito:jar:1.5.1:test
+[DEBUG]       org.powermock:powermock-api-support:jar:1.5.1:test
+[DEBUG]    jstl:jstl:jar:1.2:compile
+[DEBUG]    log4j:log4j:jar:1.2.17:compile
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ Shop ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=1, ConflictMarker.markTime=0, ConflictMarker.nodeCount=77, ConflictIdSorter.graphTime=1, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=26, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=8, ConflictResolver.conflictItemCount=74, DefaultDependencyCollector.collectTime=272, DefaultDependencyCollector.transformTime=10}
+[DEBUG] org.apache.maven.plugins:maven-resources-plugin:jar:2.6:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[DEBUG]       org.apache.maven.reporting:maven-reporting-api:jar:2.0.6:compile
+[DEBUG]          org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[DEBUG]       commons-cli:commons-cli:jar:1.0:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[DEBUG]       org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[DEBUG]       classworlds:classworlds:jar:1.1:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-monitor:jar:2.0.6:compile
+[DEBUG]    org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]       junit:junit:jar:3.8.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:2.0.5:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:1.1:compile
+[DEBUG]       org.sonatype.plexus:plexus-build-api:jar:0.0.4:compile
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.13:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.6
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.6
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-resources-plugin:2.6
+[DEBUG]   Included: org.apache.maven.plugins:maven-resources-plugin:jar:2.6
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.6
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[DEBUG]   Included: junit:junit:jar:3.8.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.5
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:1.1
+[DEBUG]   Included: org.sonatype.plexus:plexus-build-api:jar:0.0.4
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.13
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:2.6:resources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:2.6, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:2.6:resources' with basic configurator -->
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = D:\repo\shop\target\classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: com.mkyong:Shop:1.0-SNAPSHOT @ D:\repo\shop\pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: D:\repo\shop\src\main\resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@72bd06ca
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used {java.vendor=Oracle Corporation, env.SYSTEMROOT=C:\Windows, fileupload.version=1.3, org.apache.tomcat.version=7.0.42, sun.java.launcher=SUN_STANDARD, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, env.PROMPT=$P$G, env.TOMCAT7_PATH=C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61, env.WDIR=D:\, os.name=Windows 7, env.FP_NO_HOST_CHECK=NO, sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_45\jre\classes, env.COMPUTERNAME=MRGREEN-PC, javax.mail.version=1.4, env.ALLUSERSPROFILE=C:\ProgramData, sun.desktop=windows, java.vm.specification.vendor=Oracle Corporation, java.runtime.version=1.8.0_45-b14, env.HOMEPATH=\Users\Mr.Green, maven.buildhelper.plugin=1.8, user.name=Mr.Green, maven.build.version=Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T14:57:37+03:00), env.WINDOWS_TRACING_FLAGS=3, env.PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Java\jdk1.8.0_45;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\apache-maven-3.3.3\bin;C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61;, mockito.version=1.9.5, user.language=en, env.WINDIR=C:\Windows, sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_45\jre\bin, classworlds.conf=C:\Program Files\apache-maven-3.3.3\bin\..\bin\m2.conf, powermock.version=1.5.1, org.apache.tomcat.maven.version=2.1, java.version=1.8.0_45, env.PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 2, GenuineIntel, user.timezone=Europe/Helsinki, env.TEMP=C:\Users\MR72B6~1.GRE\AppData\Local\Temp, sun.arch.data.model=64, env.EXEC_DIR=D:\repo\shop, env.WINDOWS_TRACING_LOGFILE=C:\BVTBin\Tests\installpackage\csilogfile.log, java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_45\jre\lib\endorsed, sun.cpu.isalist=amd64, env.HOMEDRIVE=C:, sun.jnu.encoding=Cp1252, file.encoding.pkg=sun.io, env.SYSTEMDRIVE=C:, file.separator=\, java.specification.name=Java Platform API Specification, java.class.version=52.0, org.slf4j.simpleLogger.defaultLogLevel=debug, user.country=US, java.home=C:\Program Files\Java\jdk1.8.0_45\jre, env.APPDATA=C:\Users\Mr.Green\AppData\Roaming, env.PUBLIC=C:\Users\Public, java.vm.info=mixed mode, env.OS=Windows_NT, os.version=6.1, path.separator=;, java.vm.version=25.45-b02, user.variant=, env.USERPROFILE=C:\Users\Mr.Green, env.JAVA_HOME=C:\Program Files\Java\jdk1.8.0_45, java.awt.printerjob=sun.awt.windows.WPrinterJob, env.TMP=C:\Users\MR72B6~1.GRE\AppData\Local\Temp, env.PROGRAMFILES=C:\Program Files, sun.io.unicode.encoding=UnicodeLittle, awt.toolkit=sun.awt.windows.WToolkit, user.script=, user.home=C:\Users\Mr.Green, env.COMMONPROGRAMFILES=C:\Program Files\Common Files, java.specification.vendor=Oracle Corporation, env.M2_HOME=C:\Program Files\apache-maven-3.3.3\bin\.., env.NUMBER_OF_PROCESSORS=4, java.library.path=C:\Program Files\Java\jdk1.8.0_45\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Java\jdk1.8.0_45;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\apache-maven-3.3.3\bin;C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61;;., java.vendor.url=http://java.oracle.com/, env.COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files, env.PSMODULEPATH=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\, env.CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher, env.MAVEN_CMD_LINE_ARGS=install -X, java.vm.vendor=Oracle Corporation, maven.home=C:\Program Files\apache-maven-3.3.3\bin\.., java.runtime.name=Java(TM) SE Runtime Environment, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher install -X, java.class.path=C:\Program Files\apache-maven-3.3.3\bin\..\boot\plexus-classworlds-2.5.2.jar, env.PROGRAMW6432=C:\Program Files, maven.version=3.3.3, maven.surefire.plugin.version=2.16, env.PROGRAMFILES(X86)=C:\Program Files (x86), env.MAVEN_JAVA_EXE="C:\Program Files\Java\jdk1.8.0_45\bin\java.exe", java.vm.specification.name=Java Virtual Machine Specification, env.LOGONSERVER=\\MRGREEN-PC, java.vm.specification.version=1.8, env.PROCESSOR_ARCHITECTURE=AMD64, env.COMMONPROGRAMW6432=C:\Program Files\Common Files, sun.cpu.endian=little, sun.os.patch.level=Service Pack 1, env.HOME=C:\Users\Mr.Green, env.PROCESSOR_REVISION=2502, java.io.tmpdir=C:\Users\MR72B6~1.GRE\AppData\Local\Temp\, maven.compiler.plugin.version=3.1, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, maven.multiModuleProjectDirectory=D:\repo\shop, env.PROGRAMDATA=C:\ProgramData, env.COMSPEC=C:\Windows\system32\cmd.exe, mysql.connector.version=5.1.1, os.arch=amd64, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.ext.dirs=C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, env.=D:=D:\repo\shop, maven.resources.plugin.version=2.6, env.LOCALAPPDATA=C:\Users\Mr.Green\AppData\Local, user.dir=D:\repo\shop, com.google.code.gson.version=2.2.4, log4j.version=1.2.17, line.separator=
+, env.CLASSWORLDS_JAR="C:\Program Files\apache-maven-3.3.3\bin\..\boot\plexus-classworlds-2.5.2.jar", java.vm.name=Java HotSpot(TM) 64-Bit Server VM, env.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, env.ERROR_CODE=0, env.USERNAME=Mr.Green, sun.stderr.encoding=cp437, file.encoding=Cp1252, env.USERDOMAIN=MrGreen-PC, java.specification.version=1.8, junit.version=4.11, env.PROCESSOR_LEVEL=6, env.MAVEN_PROJECTBASEDIR=D:\repo\shop}
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[DEBUG] resource with targetPath null
+directory D:\repo\shop\src\main\resources
+excludes []
+includes []
+[DEBUG] ignoreDelta true
+[INFO] Copying 2 resources
+[DEBUG] file log4j.dtd has a filtered file extension
+[DEBUG] copy D:\repo\shop\src\main\resources\log4j.dtd to D:\repo\shop\target\classes\log4j.dtd
+[DEBUG] file log4j.xml has a filtered file extension
+[DEBUG] copy D:\repo\shop\src\main\resources\log4j.xml to D:\repo\shop\target\classes\log4j.xml
+[DEBUG] no use filter components
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ Shop ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=1, ConflictMarker.markTime=0, ConflictMarker.nodeCount=101, ConflictIdSorter.graphTime=1, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=27, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=2, ConflictResolver.conflictItemCount=49, DefaultDependencyCollector.collectTime=59, DefaultDependencyCollector.transformTime=4}
+[DEBUG] org.apache.maven.plugins:maven-compiler-plugin:jar:2.3.2:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-project:jar:2.0.6:compile
+[DEBUG]          org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-monitor:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-toolchain:jar:1.0:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:2.0.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-api:jar:1.8.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-manager:jar:1.8.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-compiler-javac:jar:1.8.1:runtime
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2
+[DEBUG]   Included: org.apache.maven.plugins:maven-compiler-plugin:jar:2.3.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:2.0.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-api:jar:1.8.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-manager:jar:1.8.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-compiler-javac:jar:1.8.1
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:2.3.2:compile' with basic configurator -->
+[DEBUG]   (f) basedir = D:\repo\shop
+[DEBUG]   (f) buildDirectory = D:\repo\shop\target
+[DEBUG]   (f) classpathElements = [D:\repo\shop\target\classes, C:\Users\Mr.Green\.m2\repository\c3p0\c3p0\0.9.1.2\c3p0-0.9.1.2.jar, C:\Users\Mr.Green\.m2\repository\com\google\guava\guava\18.0\guava-18.0.jar, C:\Users\Mr.Green\.m2\repository\com\github\cage\cage\1.0\cage-1.0.jar, C:\Users\Mr.Green\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar, C:\Users\Mr.Green\.m2\repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar, C:\Users\Mr.Green\.m2\repository\mysql\mysql-connector-java\5.1.1\mysql-connector-java-5.1.1.jar, C:\Users\Mr.Green\.m2\repository\commons-fileupload\commons-fileupload\1.3\commons-fileupload-1.3.jar, C:\Users\Mr.Green\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar, C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-jsp-api\7.0.42\tomcat-jsp-api-7.0.42.jar, C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-el-api\7.0.42\tomcat-el-api-7.0.42.jar, C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-servlet-api\7.0.42\tomcat-servlet-api-7.0.42.jar, C:\Users\Mr.Green\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar, C:\Users\Mr.Green\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar]
+[DEBUG]   (f) compileSourceRoots = [D:\repo\shop\src\main\java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedSourcesDirectory = D:\repo\shop\target\generated-sources\annotations
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = D:\repo\shop\target\classes
+[DEBUG]   (f) outputFileName = Shop-1.0-SNAPSHOT
+[DEBUG]   (f) projectArtifact = com.mkyong:Shop:war:1.0-SNAPSHOT
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@72bd06ca
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = false
+[DEBUG]   (f) source = 1.7
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (f) target = 1.7
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Source directories: [D:\repo\shop\src\main\java]
+[DEBUG] Classpath: [D:\repo\shop\target\classes
+ C:\Users\Mr.Green\.m2\repository\c3p0\c3p0\0.9.1.2\c3p0-0.9.1.2.jar
+ C:\Users\Mr.Green\.m2\repository\com\google\guava\guava\18.0\guava-18.0.jar
+ C:\Users\Mr.Green\.m2\repository\com\github\cage\cage\1.0\cage-1.0.jar
+ C:\Users\Mr.Green\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar
+ C:\Users\Mr.Green\.m2\repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar
+ C:\Users\Mr.Green\.m2\repository\mysql\mysql-connector-java\5.1.1\mysql-connector-java-5.1.1.jar
+ C:\Users\Mr.Green\.m2\repository\commons-fileupload\commons-fileupload\1.3\commons-fileupload-1.3.jar
+ C:\Users\Mr.Green\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar
+ C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-jsp-api\7.0.42\tomcat-jsp-api-7.0.42.jar
+ C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-el-api\7.0.42\tomcat-el-api-7.0.42.jar
+ C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-servlet-api\7.0.42\tomcat-servlet-api-7.0.42.jar
+ C:\Users\Mr.Green\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+ C:\Users\Mr.Green\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar]
+[DEBUG] Output directory: D:\repo\shop\target\classes
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ Shop ---
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-resources-plugin:2.6:testResources from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-resources-plugin:2.6, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-resources-plugin:2.6:testResources' with basic configurator -->
+[DEBUG]   (f) buildFilters = []
+[DEBUG]   (f) escapeWindowsPaths = true
+[DEBUG]   (s) includeEmptyDirs = false
+[DEBUG]   (s) outputDirectory = D:\repo\shop\target\test-classes
+[DEBUG]   (s) overwrite = false
+[DEBUG]   (f) project = MavenProject: com.mkyong:Shop:1.0-SNAPSHOT @ D:\repo\shop\pom.xml
+[DEBUG]   (s) resources = [Resource {targetPath: null, filtering: false, FileSet {directory: D:\repo\shop\src\test\resources, PatternSet [includes: {}, excludes: {}]}}]
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@72bd06ca
+[DEBUG]   (f) supportMultiLineFiltering = false
+[DEBUG]   (f) useBuildFilters = true
+[DEBUG]   (s) useDefaultDelimiters = true
+[DEBUG] -- end configuration --
+[DEBUG] properties used {java.vendor=Oracle Corporation, env.SYSTEMROOT=C:\Windows, fileupload.version=1.3, org.apache.tomcat.version=7.0.42, sun.java.launcher=SUN_STANDARD, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, env.PROMPT=$P$G, env.TOMCAT7_PATH=C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61, env.WDIR=D:\, os.name=Windows 7, env.FP_NO_HOST_CHECK=NO, sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_45\jre\classes, env.COMPUTERNAME=MRGREEN-PC, javax.mail.version=1.4, env.ALLUSERSPROFILE=C:\ProgramData, sun.desktop=windows, java.vm.specification.vendor=Oracle Corporation, java.runtime.version=1.8.0_45-b14, env.HOMEPATH=\Users\Mr.Green, maven.buildhelper.plugin=1.8, user.name=Mr.Green, maven.build.version=Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T14:57:37+03:00), env.WINDOWS_TRACING_FLAGS=3, env.PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Java\jdk1.8.0_45;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\apache-maven-3.3.3\bin;C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61;, mockito.version=1.9.5, user.language=en, env.WINDIR=C:\Windows, sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_45\jre\bin, classworlds.conf=C:\Program Files\apache-maven-3.3.3\bin\..\bin\m2.conf, powermock.version=1.5.1, org.apache.tomcat.maven.version=2.1, java.version=1.8.0_45, env.PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 2, GenuineIntel, user.timezone=Europe/Helsinki, env.TEMP=C:\Users\MR72B6~1.GRE\AppData\Local\Temp, sun.arch.data.model=64, env.EXEC_DIR=D:\repo\shop, env.WINDOWS_TRACING_LOGFILE=C:\BVTBin\Tests\installpackage\csilogfile.log, java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_45\jre\lib\endorsed, sun.cpu.isalist=amd64, env.HOMEDRIVE=C:, sun.jnu.encoding=Cp1252, file.encoding.pkg=sun.io, env.SYSTEMDRIVE=C:, file.separator=\, java.specification.name=Java Platform API Specification, java.class.version=52.0, org.slf4j.simpleLogger.defaultLogLevel=debug, user.country=US, java.home=C:\Program Files\Java\jdk1.8.0_45\jre, env.APPDATA=C:\Users\Mr.Green\AppData\Roaming, env.PUBLIC=C:\Users\Public, java.vm.info=mixed mode, env.OS=Windows_NT, os.version=6.1, path.separator=;, java.vm.version=25.45-b02, user.variant=, env.USERPROFILE=C:\Users\Mr.Green, env.JAVA_HOME=C:\Program Files\Java\jdk1.8.0_45, java.awt.printerjob=sun.awt.windows.WPrinterJob, env.TMP=C:\Users\MR72B6~1.GRE\AppData\Local\Temp, env.PROGRAMFILES=C:\Program Files, sun.io.unicode.encoding=UnicodeLittle, awt.toolkit=sun.awt.windows.WToolkit, user.script=, user.home=C:\Users\Mr.Green, env.COMMONPROGRAMFILES=C:\Program Files\Common Files, java.specification.vendor=Oracle Corporation, env.M2_HOME=C:\Program Files\apache-maven-3.3.3\bin\.., env.NUMBER_OF_PROCESSORS=4, java.library.path=C:\Program Files\Java\jdk1.8.0_45\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Java\jdk1.8.0_45;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\apache-maven-3.3.3\bin;C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61;;., java.vendor.url=http://java.oracle.com/, env.COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files, env.PSMODULEPATH=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\, env.CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher, env.MAVEN_CMD_LINE_ARGS=install -X, java.vm.vendor=Oracle Corporation, maven.home=C:\Program Files\apache-maven-3.3.3\bin\.., java.runtime.name=Java(TM) SE Runtime Environment, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher install -X, java.class.path=C:\Program Files\apache-maven-3.3.3\bin\..\boot\plexus-classworlds-2.5.2.jar, env.PROGRAMW6432=C:\Program Files, maven.version=3.3.3, maven.surefire.plugin.version=2.16, env.PROGRAMFILES(X86)=C:\Program Files (x86), env.MAVEN_JAVA_EXE="C:\Program Files\Java\jdk1.8.0_45\bin\java.exe", java.vm.specification.name=Java Virtual Machine Specification, env.LOGONSERVER=\\MRGREEN-PC, java.vm.specification.version=1.8, env.PROCESSOR_ARCHITECTURE=AMD64, env.COMMONPROGRAMW6432=C:\Program Files\Common Files, sun.cpu.endian=little, sun.os.patch.level=Service Pack 1, env.HOME=C:\Users\Mr.Green, env.PROCESSOR_REVISION=2502, java.io.tmpdir=C:\Users\MR72B6~1.GRE\AppData\Local\Temp\, maven.compiler.plugin.version=3.1, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, maven.multiModuleProjectDirectory=D:\repo\shop, env.PROGRAMDATA=C:\ProgramData, env.COMSPEC=C:\Windows\system32\cmd.exe, mysql.connector.version=5.1.1, os.arch=amd64, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.ext.dirs=C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, env.=D:=D:\repo\shop, maven.resources.plugin.version=2.6, env.LOCALAPPDATA=C:\Users\Mr.Green\AppData\Local, user.dir=D:\repo\shop, com.google.code.gson.version=2.2.4, log4j.version=1.2.17, line.separator=
+, env.CLASSWORLDS_JAR="C:\Program Files\apache-maven-3.3.3\bin\..\boot\plexus-classworlds-2.5.2.jar", java.vm.name=Java HotSpot(TM) 64-Bit Server VM, env.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, env.ERROR_CODE=0, env.USERNAME=Mr.Green, sun.stderr.encoding=cp437, file.encoding=Cp1252, env.USERDOMAIN=MrGreen-PC, java.specification.version=1.8, junit.version=4.11, env.PROCESSOR_LEVEL=6, env.MAVEN_PROJECTBASEDIR=D:\repo\shop}
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[DEBUG] resource with targetPath null
+directory D:\repo\shop\src\test\resources
+excludes []
+includes []
+[INFO] skip non existing resourceDirectory D:\repo\shop\src\test\resources
+[DEBUG] no use filter components
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ Shop ---
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-compiler-plugin:2.3.2:testCompile from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-compiler-plugin:2.3.2, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-compiler-plugin:2.3.2:testCompile' with basic configurator -->
+[DEBUG]   (f) basedir = D:\repo\shop
+[DEBUG]   (f) buildDirectory = D:\repo\shop\target
+[DEBUG]   (f) classpathElements = [D:\repo\shop\target\test-classes, D:\repo\shop\target\classes, C:\Users\Mr.Green\.m2\repository\c3p0\c3p0\0.9.1.2\c3p0-0.9.1.2.jar, C:\Users\Mr.Green\.m2\repository\com\google\guava\guava\18.0\guava-18.0.jar, C:\Users\Mr.Green\.m2\repository\com\github\cage\cage\1.0\cage-1.0.jar, C:\Users\Mr.Green\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar, C:\Users\Mr.Green\.m2\repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar, C:\Users\Mr.Green\.m2\repository\mysql\mysql-connector-java\5.1.1\mysql-connector-java-5.1.1.jar, C:\Users\Mr.Green\.m2\repository\commons-fileupload\commons-fileupload\1.3\commons-fileupload-1.3.jar, C:\Users\Mr.Green\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar, C:\Users\Mr.Green\.m2\repository\junit\junit\4.11\junit-4.11.jar, C:\Users\Mr.Green\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar, C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-jsp-api\7.0.42\tomcat-jsp-api-7.0.42.jar, C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-el-api\7.0.42\tomcat-el-api-7.0.42.jar, C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-servlet-api\7.0.42\tomcat-servlet-api-7.0.42.jar, C:\Users\Mr.Green\.m2\repository\org\mockito\mockito-all\1.9.5\mockito-all-1.9.5.jar, C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-module-junit4\1.5.1\powermock-module-junit4-1.5.1.jar, C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-module-junit4-common\1.5.1\powermock-module-junit4-common-1.5.1.jar, C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-core\1.5.1\powermock-core-1.5.1.jar, C:\Users\Mr.Green\.m2\repository\org\javassist\javassist\3.18.0-GA\javassist-3.18.0-GA.jar, C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-reflect\1.5.1\powermock-reflect-1.5.1.jar, C:\Users\Mr.Green\.m2\repository\org\objenesis\objenesis\1.2\objenesis-1.2.jar, C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-api-mockito\1.5.1\powermock-api-mockito-1.5.1.jar, C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-api-support\1.5.1\powermock-api-support-1.5.1.jar, C:\Users\Mr.Green\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar, C:\Users\Mr.Green\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar]
+[DEBUG]   (f) compileSourceRoots = [D:\repo\shop\src\test\java]
+[DEBUG]   (f) compilerId = javac
+[DEBUG]   (f) debug = true
+[DEBUG]   (f) failOnError = true
+[DEBUG]   (f) fork = false
+[DEBUG]   (f) generatedTestSourcesDirectory = D:\repo\shop\target\generated-sources\test-annotations
+[DEBUG]   (f) optimize = false
+[DEBUG]   (f) outputDirectory = D:\repo\shop\target\test-classes
+[DEBUG]   (f) outputFileName = Shop-1.0-SNAPSHOT
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@72bd06ca
+[DEBUG]   (f) showDeprecation = false
+[DEBUG]   (f) showWarnings = false
+[DEBUG]   (f) source = 1.7
+[DEBUG]   (f) staleMillis = 0
+[DEBUG]   (f) target = 1.7
+[DEBUG]   (f) verbose = false
+[DEBUG] -- end configuration --
+[DEBUG] Using compiler 'javac'.
+[DEBUG] Source directories: [D:\repo\shop\src\test\java]
+[DEBUG] Classpath: [D:\repo\shop\target\test-classes
+ D:\repo\shop\target\classes
+ C:\Users\Mr.Green\.m2\repository\c3p0\c3p0\0.9.1.2\c3p0-0.9.1.2.jar
+ C:\Users\Mr.Green\.m2\repository\com\google\guava\guava\18.0\guava-18.0.jar
+ C:\Users\Mr.Green\.m2\repository\com\github\cage\cage\1.0\cage-1.0.jar
+ C:\Users\Mr.Green\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar
+ C:\Users\Mr.Green\.m2\repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar
+ C:\Users\Mr.Green\.m2\repository\mysql\mysql-connector-java\5.1.1\mysql-connector-java-5.1.1.jar
+ C:\Users\Mr.Green\.m2\repository\commons-fileupload\commons-fileupload\1.3\commons-fileupload-1.3.jar
+ C:\Users\Mr.Green\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar
+ C:\Users\Mr.Green\.m2\repository\junit\junit\4.11\junit-4.11.jar
+ C:\Users\Mr.Green\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+ C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-jsp-api\7.0.42\tomcat-jsp-api-7.0.42.jar
+ C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-el-api\7.0.42\tomcat-el-api-7.0.42.jar
+ C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-servlet-api\7.0.42\tomcat-servlet-api-7.0.42.jar
+ C:\Users\Mr.Green\.m2\repository\org\mockito\mockito-all\1.9.5\mockito-all-1.9.5.jar
+ C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-module-junit4\1.5.1\powermock-module-junit4-1.5.1.jar
+ C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-module-junit4-common\1.5.1\powermock-module-junit4-common-1.5.1.jar
+ C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-core\1.5.1\powermock-core-1.5.1.jar
+ C:\Users\Mr.Green\.m2\repository\org\javassist\javassist\3.18.0-GA\javassist-3.18.0-GA.jar
+ C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-reflect\1.5.1\powermock-reflect-1.5.1.jar
+ C:\Users\Mr.Green\.m2\repository\org\objenesis\objenesis\1.2\objenesis-1.2.jar
+ C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-api-mockito\1.5.1\powermock-api-mockito-1.5.1.jar
+ C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-api-support\1.5.1\powermock-api-support-1.5.1.jar
+ C:\Users\Mr.Green\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+ C:\Users\Mr.Green\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar]
+[DEBUG] Output directory: D:\repo\shop\target\test-classes
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ Shop ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=1, ConflictMarker.nodeCount=132, ConflictIdSorter.graphTime=0, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=27, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=2, ConflictResolver.conflictItemCount=77, DefaultDependencyCollector.collectTime=430, DefaultDependencyCollector.transformTime=3}
+[DEBUG] org.apache.maven.plugins:maven-surefire-plugin:jar:2.12.4:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.9:compile
+[DEBUG]    org.apache.maven.surefire:surefire-booter:jar:2.12.4:compile
+[DEBUG]       org.apache.maven.surefire:surefire-api:jar:2.12.4:compile
+[DEBUG]    org.apache.maven.surefire:maven-surefire-common:jar:2.12.4:compile
+[DEBUG]       org.apache.commons:commons-lang3:jar:3.1:compile
+[DEBUG]       org.apache.maven.shared:maven-common-artifact-filters:jar:1.3:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.8:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.9:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-model:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.0.9:compile
+[DEBUG]       org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]          junit:junit:jar:3.8.1:test
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile
+[DEBUG]       org.apache.maven.reporting:maven-reporting-api:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile
+[DEBUG]       org.apache.maven:maven-monitor:jar:2.0.9:compile
+[DEBUG]       classworlds:classworlds:jar:1.1:compile
+[DEBUG]    org.apache.maven:maven-toolchain:jar:2.0.9:compile
+[DEBUG]    org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.1:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:2.12.4
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:2.12.4
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-surefire-plugin:2.12.4
+[DEBUG]   Included: org.apache.maven.plugins:maven-surefire-plugin:jar:2.12.4
+[DEBUG]   Included: org.apache.maven.surefire:surefire-booter:jar:2.12.4
+[DEBUG]   Included: org.apache.maven.surefire:surefire-api:jar:2.12.4
+[DEBUG]   Included: org.apache.maven.surefire:maven-surefire-common:jar:2.12.4
+[DEBUG]   Included: org.apache.commons:commons-lang3:jar:3.1
+[DEBUG]   Included: org.apache.maven.shared:maven-common-artifact-filters:jar:1.3
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.8
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.9
+[DEBUG]   Included: org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.1
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-surefire-plugin:2.12.4, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test' with basic configurator -->
+[DEBUG]   (s) basedir = D:\repo\shop
+[DEBUG]   (s) childDelegation = false
+[DEBUG]   (s) classesDirectory = D:\repo\shop\target\classes
+[DEBUG]   (s) disableXmlReport = false
+[DEBUG]   (s) enableAssertions = true
+[DEBUG]   (s) forkMode = once
+[DEBUG]   (s) junitArtifactName = junit:junit
+[DEBUG]   (s) localRepository =       id: local
+      url: file:///C:/Users/Mr.Green/.m2/repository/
+   layout: default
+snapshots: [enabled => true, update => always]
+ releases: [enabled => true, update => always]
+
+[DEBUG]   (f) parallelMavenExecution = false
+[DEBUG]   (s) perCoreThreadCount = true
+[DEBUG]   (s) pluginArtifactMap = {org.apache.maven.plugins:maven-surefire-plugin=org.apache.maven.plugins:maven-surefire-plugin:maven-plugin:2.12.4:, org.apache.maven:maven-plugin-api=org.apache.maven:maven-plugin-api:jar:2.0.9:compile, org.apache.maven.surefire:surefire-booter=org.apache.maven.surefire:surefire-booter:jar:2.12.4:compile, org.apache.maven.surefire:surefire-api=org.apache.maven.surefire:surefire-api:jar:2.12.4:compile, org.apache.maven.surefire:maven-surefire-common=org.apache.maven.surefire:maven-surefire-common:jar:2.12.4:compile, org.apache.commons:commons-lang3=org.apache.commons:commons-lang3:jar:3.1:compile, org.apache.maven.shared:maven-common-artifact-filters=org.apache.maven.shared:maven-common-artifact-filters:jar:1.3:compile, org.codehaus.plexus:plexus-utils=org.codehaus.plexus:plexus-utils:jar:3.0.8:compile, org.apache.maven:maven-artifact=org.apache.maven:maven-artifact:jar:2.0.9:compile, org.apache.maven:maven-project=org.apache.maven:maven-project:jar:2.0.9:compile, org.apache.maven:maven-settings=org.apache.maven:maven-settings:jar:2.0.9:compile, org.apache.maven:maven-profile=org.apache.maven:maven-profile:jar:2.0.9:compile, org.apache.maven:maven-model=org.apache.maven:maven-model:jar:2.0.9:compile, org.apache.maven:maven-artifact-manager=org.apache.maven:maven-artifact-manager:jar:2.0.9:compile, org.apache.maven:maven-plugin-registry=org.apache.maven:maven-plugin-registry:jar:2.0.9:compile, org.codehaus.plexus:plexus-container-default=org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile, org.apache.maven:maven-core=org.apache.maven:maven-core:jar:2.0.9:compile, org.apache.maven:maven-plugin-parameter-documenter=org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.9:compile, org.apache.maven.reporting:maven-reporting-api=org.apache.maven.reporting:maven-reporting-api:jar:2.0.9:compile, org.apache.maven:maven-repository-metadata=org.apache.maven:maven-repository-metadata:jar:2.0.9:compile, org.apache.maven:maven-error-diagnostics=org.apache.maven:maven-error-diagnostics:jar:2.0.9:compile, org.apache.maven:maven-plugin-descriptor=org.apache.maven:maven-plugin-descriptor:jar:2.0.9:compile, org.apache.maven:maven-monitor=org.apache.maven:maven-monitor:jar:2.0.9:compile, classworlds:classworlds=classworlds:classworlds:jar:1.1:compile, org.apache.maven:maven-toolchain=org.apache.maven:maven-toolchain:jar:2.0.9:compile, org.apache.maven.plugin-tools:maven-plugin-annotations=org.apache.maven.plugin-tools:maven-plugin-annotations:jar:3.1:compile}
+[DEBUG]   (f) pluginDescriptor = Component Descriptor: role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.HelpMojo', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:2.12.4:help'
+role: 'org.apache.maven.plugin.Mojo', implementation: 'org.apache.maven.plugin.surefire.SurefirePlugin', role hint: 'org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test'
+---
+[DEBUG]   (s) printSummary = true
+[DEBUG]   (s) projectArtifactMap = {c3p0:c3p0=c3p0:c3p0:jar:0.9.1.2:compile, com.google.guava:guava=com.google.guava:guava:jar:18.0:compile, com.github.cage:cage=com.github.cage:cage:jar:1.0:compile, commons-codec:commons-codec=commons-codec:commons-codec:jar:1.9:compile, com.google.code.gson:gson=com.google.code.gson:gson:jar:2.2.4:compile, mysql:mysql-connector-java=mysql:mysql-connector-java:jar:5.1.1:compile, commons-fileupload:commons-fileupload=commons-fileupload:commons-fileupload:jar:1.3:compile, commons-io:commons-io=commons-io:commons-io:jar:2.2:compile, junit:junit=junit:junit:jar:4.11:test, org.hamcrest:hamcrest-core=org.hamcrest:hamcrest-core:jar:1.3:test, org.apache.tomcat:tomcat-jsp-api=org.apache.tomcat:tomcat-jsp-api:jar:7.0.42:provided, org.apache.tomcat:tomcat-el-api=org.apache.tomcat:tomcat-el-api:jar:7.0.42:provided, org.apache.tomcat:tomcat-servlet-api=org.apache.tomcat:tomcat-servlet-api:jar:7.0.42:provided, org.mockito:mockito-all=org.mockito:mockito-all:jar:1.9.5:test, org.powermock:powermock-module-junit4=org.powermock:powermock-module-junit4:jar:1.5.1:test, org.powermock:powermock-module-junit4-common=org.powermock:powermock-module-junit4-common:jar:1.5.1:test, org.powermock:powermock-core=org.powermock:powermock-core:jar:1.5.1:test, org.javassist:javassist=org.javassist:javassist:jar:3.18.0-GA:test, org.powermock:powermock-reflect=org.powermock:powermock-reflect:jar:1.5.1:test, org.objenesis:objenesis=org.objenesis:objenesis:jar:1.2:test, org.powermock:powermock-api-mockito=org.powermock:powermock-api-mockito:jar:1.5.1:test, org.powermock:powermock-api-support=org.powermock:powermock-api-support:jar:1.5.1:test, jstl:jstl=jstl:jstl:jar:1.2:compile, log4j:log4j=log4j:log4j:jar:1.2.17:compile}
+[DEBUG]   (s) redirectTestOutputToFile = false
+[DEBUG]   (s) remoteRepositories = [      id: central
+      url: https://repo.maven.apache.org/maven2
+   layout: default
+snapshots: [enabled => false, update => daily]
+ releases: [enabled => true, update => never]
+]
+[DEBUG]   (s) reportFormat = brief
+[DEBUG]   (s) reportsDirectory = D:\repo\shop\target\surefire-reports
+[DEBUG]   (s) runOrder = filesystem
+[DEBUG]   (s) skip = false
+[DEBUG]   (s) skipTests = false
+[DEBUG]   (s) testClassesDirectory = D:\repo\shop\target\test-classes
+[DEBUG]   (s) testFailureIgnore = false
+[DEBUG]   (s) testNGArtifactName = org.testng:testng
+[DEBUG]   (s) testSourceDirectory = D:\repo\shop\src\test\java
+[DEBUG]   (s) trimStackTrace = true
+[DEBUG]   (s) useFile = true
+[DEBUG]   (s) useManifestOnlyJar = true
+[DEBUG]   (s) useSystemClassLoader = true
+[DEBUG]   (s) useUnlimitedThreads = false
+[DEBUG]   (s) workingDirectory = D:\repo\shop
+[DEBUG]   (s) project = MavenProject: com.mkyong:Shop:1.0-SNAPSHOT @ D:\repo\shop\pom.xml
+[DEBUG]   (s) session = org.apache.maven.execution.MavenSession@72bd06ca
+[DEBUG] -- end configuration --
+[INFO] Surefire report directory: D:\repo\shop\target\surefire-reports
+[DEBUG] Setting system property [user.dir]=[D:\repo\shop]
+[DEBUG] Setting system property [localRepository]=[C:\Users\Mr.Green\.m2\repository]
+[DEBUG] Setting system property [basedir]=[D:\repo\shop]
+[DEBUG] dummy:dummy:jar:1.0 (selected for null)
+[DEBUG]   org.apache.maven.surefire:surefire-booter:jar:2.12.4:compile (selected for compile)
+[DEBUG]     org.apache.maven.surefire:surefire-api:jar:2.12.4:compile (selected for compile)
+[DEBUG] Adding to surefire booter test classpath: C:\Users\Mr.Green\.m2\repository\org\apache\maven\surefire\surefire-booter\2.12.4\surefire-booter-2.12.4.jar Scope: compile
+[DEBUG] Adding to surefire booter test classpath: C:\Users\Mr.Green\.m2\repository\org\apache\maven\surefire\surefire-api\2.12.4\surefire-api-2.12.4.jar Scope: compile
+[DEBUG] Using JVM: C:\Program Files\Java\jdk1.8.0_45\jre\bin\java
+[DEBUG] dummy:dummy:jar:1.0 (selected for null)
+[DEBUG]   org.apache.maven.surefire:surefire-junit4:jar:2.12.4:test (selected for test)
+[DEBUG]     org.apache.maven.surefire:surefire-api:jar:2.12.4:test (selected for test)
+[DEBUG] Adding to surefire test classpath: C:\Users\Mr.Green\.m2\repository\org\apache\maven\surefire\surefire-junit4\2.12.4\surefire-junit4-2.12.4.jar Scope: test
+[DEBUG] Adding to surefire test classpath: C:\Users\Mr.Green\.m2\repository\org\apache\maven\surefire\surefire-api\2.12.4\surefire-api-2.12.4.jar Scope: test
+[DEBUG] test classpath classpath:
+[DEBUG]   D:\repo\shop\target\test-classes
+[DEBUG]   D:\repo\shop\target\classes
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\c3p0\c3p0\0.9.1.2\c3p0-0.9.1.2.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\com\google\guava\guava\18.0\guava-18.0.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\com\github\cage\cage\1.0\cage-1.0.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\mysql\mysql-connector-java\5.1.1\mysql-connector-java-5.1.1.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\commons-fileupload\commons-fileupload\1.3\commons-fileupload-1.3.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\commons-io\commons-io\2.2\commons-io-2.2.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\junit\junit\4.11\junit-4.11.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-jsp-api\7.0.42\tomcat-jsp-api-7.0.42.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-el-api\7.0.42\tomcat-el-api-7.0.42.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\apache\tomcat\tomcat-servlet-api\7.0.42\tomcat-servlet-api-7.0.42.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\mockito\mockito-all\1.9.5\mockito-all-1.9.5.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-module-junit4\1.5.1\powermock-module-junit4-1.5.1.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-module-junit4-common\1.5.1\powermock-module-junit4-common-1.5.1.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-core\1.5.1\powermock-core-1.5.1.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\javassist\javassist\3.18.0-GA\javassist-3.18.0-GA.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-reflect\1.5.1\powermock-reflect-1.5.1.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\objenesis\objenesis\1.2\objenesis-1.2.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-api-mockito\1.5.1\powermock-api-mockito-1.5.1.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\powermock\powermock-api-support\1.5.1\powermock-api-support-1.5.1.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\jstl\jstl\1.2\jstl-1.2.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar
+[DEBUG] provider classpath classpath:
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\apache\maven\surefire\surefire-junit4\2.12.4\surefire-junit4-2.12.4.jar
+[DEBUG]   C:\Users\Mr.Green\.m2\repository\org\apache\maven\surefire\surefire-api\2.12.4\surefire-api-2.12.4.jar
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Forking command line: cmd.exe /X /C ""C:\Program Files\Java\jdk1.8.0_45\jre\bin\java" -jar D:\repo\shop\target\surefire\surefirebooter6920307356352158952.jar D:\repo\shop\target\surefire\surefire2990542412122106469tmp D:\repo\shop\target\surefire\surefire_0173369827765303341tmp"
+Running com.epam.student.krynytskyi.controllers.RegistrationPageControllerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.735 sec
+Running com.epam.student.krynytskyi.validator.chain.resposibility.ConfirmedValidatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.epam.student.krynytskyi.validator.chain.resposibility.EmptyValidatorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.epam.student.krynytskyi.validator.chain.resposibility.PatternValidatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.epam.student.krynytskyi.validator.form.field.impl.ConfirmFieldsValidatorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidatorTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.epam.student.krynytskyi.validator.form.time.out.CaptchaTimeOutValidatorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+
+Results :
+
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ Shop ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=1, ConflictMarker.nodeCount=95, ConflictIdSorter.graphTime=1, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=30, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=2, ConflictResolver.conflictItemCount=87, DefaultDependencyCollector.collectTime=68, DefaultDependencyCollector.transformTime=4}
+[DEBUG] org.apache.maven.plugins:maven-war-plugin:jar:2.2:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-core:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-parameter-documenter:jar:2.0.6:compile
+[DEBUG]       org.apache.maven.reporting:maven-reporting-api:jar:2.0.6:compile
+[DEBUG]          org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-error-diagnostics:jar:2.0.6:compile
+[DEBUG]       commons-cli:commons-cli:jar:1.0:compile
+[DEBUG]       org.apache.maven:maven-plugin-descriptor:jar:2.0.6:compile
+[DEBUG]       org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4:compile
+[DEBUG]       classworlds:classworlds:jar:1.1:compile
+[DEBUG]    org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-monitor:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-archiver:jar:2.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-io:jar:2.0.2:compile
+[DEBUG]    org.codehaus.plexus:plexus-archiver:jar:2.1:compile
+[DEBUG]    org.codehaus.plexus:plexus-interpolation:jar:1.15:compile
+[DEBUG]    org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]       junit:junit:jar:3.8.1:compile
+[DEBUG]    com.thoughtworks.xstream:xstream:jar:1.3.1:compile
+[DEBUG]       xpp3:xpp3_min:jar:1.1.4c:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0:compile
+[DEBUG]    org.apache.maven.shared:maven-filtering:jar:1.0-beta-2:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-war-plugin:2.2
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-war-plugin:2.2
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-war-plugin:2.2
+[DEBUG]   Included: org.apache.maven.plugins:maven-war-plugin:jar:2.2
+[DEBUG]   Included: org.apache.maven.reporting:maven-reporting-api:jar:2.0.6
+[DEBUG]   Included: org.apache.maven.doxia:doxia-sink-api:jar:1.0-alpha-7
+[DEBUG]   Included: commons-cli:commons-cli:jar:1.0
+[DEBUG]   Included: org.codehaus.plexus:plexus-interactivity-api:jar:1.0-alpha-4
+[DEBUG]   Included: org.apache.maven:maven-archiver:jar:2.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-io:jar:2.0.2
+[DEBUG]   Included: org.codehaus.plexus:plexus-archiver:jar:2.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-interpolation:jar:1.15
+[DEBUG]   Included: junit:junit:jar:3.8.1
+[DEBUG]   Included: com.thoughtworks.xstream:xstream:jar:1.3.1
+[DEBUG]   Included: xpp3:xpp3_min:jar:1.1.4c
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0
+[DEBUG]   Included: org.apache.maven.shared:maven-filtering:jar:1.0-beta-2
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-war-plugin:2.2:war from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-war-plugin:2.2, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-war-plugin:2.2:war' with basic configurator -->
+[DEBUG]   (s) archiveClasses = false
+[DEBUG]   (s) attachClasses = false
+[DEBUG]   (s) cacheFile = D:\repo\shop\target\war\work\webapp-cache.xml
+[DEBUG]   (s) classesClassifier = classes
+[DEBUG]   (s) classesDirectory = D:\repo\shop\target\classes
+[DEBUG]   (f) escapedBackslashesInFilePath = false
+[DEBUG]   (s) failOnMissingWebXml = true
+[DEBUG]   (f) filteringDeploymentDescriptors = false
+[DEBUG]   (s) outputDirectory = D:\repo\shop\target
+[DEBUG]   (s) primaryArtifact = true
+[DEBUG]   (s) project = MavenProject: com.mkyong:Shop:1.0-SNAPSHOT @ D:\repo\shop\pom.xml
+[DEBUG]   (f) session = org.apache.maven.execution.MavenSession@72bd06ca
+[DEBUG]   (s) useCache = false
+[DEBUG]   (s) warName = Shop-1.0-SNAPSHOT
+[DEBUG]   (s) warSourceDirectory = D:\repo\shop\src\main\webapp
+[DEBUG]   (s) warSourceIncludes = **
+[DEBUG]   (s) webappDirectory = D:\repo\shop\target\Shop-1.0-SNAPSHOT
+[DEBUG]   (s) workDirectory = D:\repo\shop\target\war\work
+[DEBUG] -- end configuration --
+[INFO] Packaging webapp
+[INFO] Assembling webapp [Shop] in [D:\repo\shop\target\Shop-1.0-SNAPSHOT]
+[DEBUG] properties used {java.vendor=Oracle Corporation, env.SYSTEMROOT=C:\Windows, fileupload.version=1.3, org.apache.tomcat.version=7.0.42, sun.java.launcher=SUN_STANDARD, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, env.PROMPT=$P$G, env.TOMCAT7_PATH=C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61, env.WDIR=D:\, os.name=Windows 7, env.FP_NO_HOST_CHECK=NO, sun.boot.class.path=C:\Program Files\Java\jdk1.8.0_45\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_45\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_45\jre\classes, env.COMPUTERNAME=MRGREEN-PC, javax.mail.version=1.4, env.ALLUSERSPROFILE=C:\ProgramData, sun.desktop=windows, java.vm.specification.vendor=Oracle Corporation, java.runtime.version=1.8.0_45-b14, env.HOMEPATH=\Users\Mr.Green, maven.buildhelper.plugin=1.8, user.name=Mr.Green, maven.build.version=Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T14:57:37+03:00), env.WINDOWS_TRACING_FLAGS=3, env.PATH=C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Java\jdk1.8.0_45;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\apache-maven-3.3.3\bin;C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61;, mockito.version=1.9.5, user.language=en, env.WINDIR=C:\Windows, sun.boot.library.path=C:\Program Files\Java\jdk1.8.0_45\jre\bin, classworlds.conf=C:\Program Files\apache-maven-3.3.3\bin\..\bin\m2.conf, powermock.version=1.5.1, org.apache.tomcat.maven.version=2.1, java.version=1.8.0_45, env.PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 2, GenuineIntel, user.timezone=Europe/Helsinki, env.TEMP=C:\Users\MR72B6~1.GRE\AppData\Local\Temp, sun.arch.data.model=64, env.EXEC_DIR=D:\repo\shop, env.WINDOWS_TRACING_LOGFILE=C:\BVTBin\Tests\installpackage\csilogfile.log, java.endorsed.dirs=C:\Program Files\Java\jdk1.8.0_45\jre\lib\endorsed, sun.cpu.isalist=amd64, env.HOMEDRIVE=C:, sun.jnu.encoding=Cp1252, file.encoding.pkg=sun.io, env.SYSTEMDRIVE=C:, file.separator=\, java.specification.name=Java Platform API Specification, java.class.version=52.0, org.slf4j.simpleLogger.defaultLogLevel=debug, user.country=US, java.home=C:\Program Files\Java\jdk1.8.0_45\jre, env.APPDATA=C:\Users\Mr.Green\AppData\Roaming, env.PUBLIC=C:\Users\Public, java.vm.info=mixed mode, env.OS=Windows_NT, os.version=6.1, path.separator=;, java.vm.version=25.45-b02, user.variant=, env.USERPROFILE=C:\Users\Mr.Green, env.JAVA_HOME=C:\Program Files\Java\jdk1.8.0_45, java.awt.printerjob=sun.awt.windows.WPrinterJob, env.TMP=C:\Users\MR72B6~1.GRE\AppData\Local\Temp, env.PROGRAMFILES=C:\Program Files, sun.io.unicode.encoding=UnicodeLittle, awt.toolkit=sun.awt.windows.WToolkit, user.script=, user.home=C:\Users\Mr.Green, env.COMMONPROGRAMFILES=C:\Program Files\Common Files, java.specification.vendor=Oracle Corporation, env.M2_HOME=C:\Program Files\apache-maven-3.3.3\bin\.., java.vendor.url=http://java.oracle.com/, java.library.path=C:\Program Files\Java\jdk1.8.0_45\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\Java\jdk1.8.0_45;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\apache-maven-3.3.3\bin;C:\Users\Mr.Green\Desktop\apache-tomcat-7.0.61;;., env.NUMBER_OF_PROCESSORS=4, env.CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher, env.PSMODULEPATH=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\, env.COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files, env.MAVEN_CMD_LINE_ARGS=install -X, java.vm.vendor=Oracle Corporation, java.runtime.name=Java(TM) SE Runtime Environment, maven.home=C:\Program Files\apache-maven-3.3.3\bin\.., java.class.path=C:\Program Files\apache-maven-3.3.3\bin\..\boot\plexus-classworlds-2.5.2.jar, sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher install -X, env.PROGRAMW6432=C:\Program Files, maven.version=3.3.3, maven.surefire.plugin.version=2.16, env.MAVEN_JAVA_EXE="C:\Program Files\Java\jdk1.8.0_45\bin\java.exe", env.PROGRAMFILES(X86)=C:\Program Files (x86), java.vm.specification.name=Java Virtual Machine Specification, env.LOGONSERVER=\\MRGREEN-PC, env.PROCESSOR_ARCHITECTURE=AMD64, java.vm.specification.version=1.8, env.COMMONPROGRAMW6432=C:\Program Files\Common Files, sun.os.patch.level=Service Pack 1, sun.cpu.endian=little, env.HOME=C:\Users\Mr.Green, java.io.tmpdir=C:\Users\MR72B6~1.GRE\AppData\Local\Temp\, env.PROCESSOR_REVISION=2502, maven.compiler.plugin.version=3.1, maven.multiModuleProjectDirectory=D:\repo\shop, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, env.COMSPEC=C:\Windows\system32\cmd.exe, env.PROGRAMDATA=C:\ProgramData, mysql.connector.version=5.1.1, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, os.arch=amd64, env.=D:=D:\repo\shop, java.ext.dirs=C:\Program Files\Java\jdk1.8.0_45\jre\lib\ext;C:\Windows\Sun\Java\lib\ext, maven.resources.plugin.version=2.6, user.dir=D:\repo\shop, env.LOCALAPPDATA=C:\Users\Mr.Green\AppData\Local, com.google.code.gson.version=2.2.4, log4j.version=1.2.17, line.separator=
+, java.vm.name=Java HotSpot(TM) 64-Bit Server VM, env.CLASSWORLDS_JAR="C:\Program Files\apache-maven-3.3.3\bin\..\boot\plexus-classworlds-2.5.2.jar", env.PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, env.ERROR_CODE=0, env.USERNAME=Mr.Green, file.encoding=Cp1252, sun.stderr.encoding=cp437, env.USERDOMAIN=MrGreen-PC, java.specification.version=1.8, junit.version=4.11, env.MAVEN_PROJECTBASEDIR=D:\repo\shop, env.PROCESSOR_LEVEL=6}
+[INFO] Processing war project
+[INFO] Copying webapp resources [D:\repo\shop\src\main\webapp]
+[DEBUG]  + index.jsp has been copied.
+[DEBUG]  + META-INF/context.xml has been copied.
+[DEBUG]  + META-INF/MANIFEST.MF has been copied.
+[DEBUG]  + resources/avatars/default.png has been copied.
+[DEBUG]  + resources/css/animate.css has been copied.
+[DEBUG]  + resources/css/bootstrap.min.css has been copied.
+[DEBUG]  + resources/css/custom.css has been copied.
+[DEBUG]  + resources/css/error.css has been copied.
+[DEBUG]  + resources/css/font-awesome.min.css has been copied.
+[DEBUG]  + resources/css/main-page.css has been copied.
+[DEBUG]  + resources/css/main.css has been copied.
+[DEBUG]  + resources/css/prettyPhoto.css has been copied.
+[DEBUG]  + resources/css/price-range.css has been copied.
+[DEBUG]  + resources/css/responsive.css has been copied.
+[DEBUG]  + resources/fonts/fontawesome-webfont.svg has been copied.
+[DEBUG]  + resources/fonts/fontawesome-webfont.woff has been copied.
+[DEBUG]  + resources/fonts/FontAwesome.otf has been copied.
+[DEBUG]  + resources/fonts/glyphicons-halflings-regular.svg has been copied.
+[DEBUG]  + resources/fonts/glyphicons-halflings-regular.woff has been copied.
+[DEBUG]  + resources/images/404/404.png has been copied.
+[DEBUG]  + resources/images/blog/blog-one.jpg has been copied.
+[DEBUG]  + resources/images/blog/blog-three.jpg has been copied.
+[DEBUG]  + resources/images/blog/blog-two.jpg has been copied.
+[DEBUG]  + resources/images/blog/man-four.jpg has been copied.
+[DEBUG]  + resources/images/blog/man-one.jpg has been copied.
+[DEBUG]  + resources/images/blog/man-three.jpg has been copied.
+[DEBUG]  + resources/images/blog/man-two.jpg has been copied.
+[DEBUG]  + resources/images/blog/socials.png has been copied.
+[DEBUG]  + resources/images/cart/one.png has been copied.
+[DEBUG]  + resources/images/cart/three.png has been copied.
+[DEBUG]  + resources/images/cart/two.png has been copied.
+[DEBUG]  + resources/images/home/bg_border.png has been copied.
+[DEBUG]  + resources/images/home/gallery1.jpg has been copied.
+[DEBUG]  + resources/images/home/gallery2.jpg has been copied.
+[DEBUG]  + resources/images/home/gallery3.jpg has been copied.
+[DEBUG]  + resources/images/home/gallery4.jpg has been copied.
+[DEBUG]  + resources/images/home/girl1.jpg has been copied.
+[DEBUG]  + resources/images/home/girl2.jpg has been copied.
+[DEBUG]  + resources/images/home/girl3.jpg has been copied.
+[DEBUG]  + resources/images/home/iframe1.png has been copied.
+[DEBUG]  + resources/images/home/iframe2.png has been copied.
+[DEBUG]  + resources/images/home/iframe3.png has been copied.
+[DEBUG]  + resources/images/home/iframe4.png has been copied.
+[DEBUG]  + resources/images/home/logo.png has been copied.
+[DEBUG]  + resources/images/home/map.png has been copied.
+[DEBUG]  + resources/images/home/new.png has been copied.
+[DEBUG]  + resources/images/home/partner1.png has been copied.
+[DEBUG]  + resources/images/home/partner2.png has been copied.
+[DEBUG]  + resources/images/home/partner3.png has been copied.
+[DEBUG]  + resources/images/home/partner4.png has been copied.
+[DEBUG]  + resources/images/home/pricing.png has been copied.
+[DEBUG]  + resources/images/home/product1.jpg has been copied.
+[DEBUG]  + resources/images/home/product2.jpg has been copied.
+[DEBUG]  + resources/images/home/product3.jpg has been copied.
+[DEBUG]  + resources/images/home/product4.jpg has been copied.
+[DEBUG]  + resources/images/home/product5.jpg has been copied.
+[DEBUG]  + resources/images/home/product6.jpg has been copied.
+[DEBUG]  + resources/images/home/recommend1.jpg has been copied.
+[DEBUG]  + resources/images/home/recommend2.jpg has been copied.
+[DEBUG]  + resources/images/home/recommend3.jpg has been copied.
+[DEBUG]  + resources/images/home/sale.png has been copied.
+[DEBUG]  + resources/images/home/searchicon.png has been copied.
+[DEBUG]  + resources/images/home/shipping.jpg has been copied.
+[DEBUG]  + resources/images/ico/favicon.ico has been copied.
+[DEBUG]  + resources/images/product-details/1.jpg has been copied.
+[DEBUG]  + resources/images/product-details/new.jpg has been copied.
+[DEBUG]  + resources/images/product-details/rating.png has been copied.
+[DEBUG]  + resources/images/product-details/share.png has been copied.
+[DEBUG]  + resources/images/product-details/similar1.jpg has been copied.
+[DEBUG]  + resources/images/product-details/similar2.jpg has been copied.
+[DEBUG]  + resources/images/product-details/similar3.jpg has been copied.
+[DEBUG]  + resources/images/shop/advertisement.jpg has been copied.
+[DEBUG]  + resources/images/shop/product10.jpg has been copied.
+[DEBUG]  + resources/images/shop/product11.jpg has been copied.
+[DEBUG]  + resources/images/shop/product12.jpg has been copied.
+[DEBUG]  + resources/images/shop/product7.jpg has been copied.
+[DEBUG]  + resources/images/shop/product8.jpg has been copied.
+[DEBUG]  + resources/images/shop/product9.jpg has been copied.
+[DEBUG]  + resources/js/bootstrap.min.js has been copied.
+[DEBUG]  + resources/js/contact.js has been copied.
+[DEBUG]  + resources/js/gmaps.js has been copied.
+[DEBUG]  + resources/js/html5shiv.js has been copied.
+[DEBUG]  + resources/js/jquery-validator/validator.js has been copied.
+[DEBUG]  + resources/js/jquery.js has been copied.
+[DEBUG]  + resources/js/jquery.prettyPhoto.js has been copied.
+[DEBUG]  + resources/js/jquery.scrollUp.min.js has been copied.
+[DEBUG]  + resources/js/js-validator/validator.js has been copied.
+[DEBUG]  + resources/js/main.js has been copied.
+[DEBUG]  + resources/js/price-range.js has been copied.
+[DEBUG]  + WEB-INF/capthcaTags.tld has been copied.
+[DEBUG]  + WEB-INF/jspf/fotter.jspf has been copied.
+[DEBUG]  + WEB-INF/jspf/header.jspf has been copied.
+[DEBUG]  + WEB-INF/lib/jstl-1.2.jar has been copied.
+[DEBUG]  + WEB-INF/loginTags.tld has been copied.
+[DEBUG]  + WEB-INF/pages/404.html has been copied.
+[DEBUG]  + WEB-INF/pages/blog-single.html has been copied.
+[DEBUG]  + WEB-INF/pages/blog.html has been copied.
+[DEBUG]  + WEB-INF/pages/cart.html has been copied.
+[DEBUG]  + WEB-INF/pages/checkout.html has been copied.
+[DEBUG]  + WEB-INF/pages/contact-us.html has been copied.
+[DEBUG]  + WEB-INF/pages/index.html has been copied.
+[DEBUG]  + WEB-INF/pages/login.jsp has been copied.
+[DEBUG]  + WEB-INF/pages/product-details.html has been copied.
+[DEBUG]  + WEB-INF/pages/registration.jsp has been copied.
+[DEBUG]  + WEB-INF/pages/shop.jsp has been copied.
+[DEBUG]  + WEB-INF/web.xml has been copied.
+[DEBUG] Dump of the current build pathSet content -->
+[DEBUG] index.jsp
+[DEBUG] META-INF/context.xml
+[DEBUG] META-INF/MANIFEST.MF
+[DEBUG] resources/avatars/default.png
+[DEBUG] resources/css/animate.css
+[DEBUG] resources/css/bootstrap.min.css
+[DEBUG] resources/css/custom.css
+[DEBUG] resources/css/error.css
+[DEBUG] resources/css/font-awesome.min.css
+[DEBUG] resources/css/main-page.css
+[DEBUG] resources/css/main.css
+[DEBUG] resources/css/prettyPhoto.css
+[DEBUG] resources/css/price-range.css
+[DEBUG] resources/css/responsive.css
+[DEBUG] resources/fonts/fontawesome-webfont.svg
+[DEBUG] resources/fonts/fontawesome-webfont.woff
+[DEBUG] resources/fonts/FontAwesome.otf
+[DEBUG] resources/fonts/glyphicons-halflings-regular.svg
+[DEBUG] resources/fonts/glyphicons-halflings-regular.woff
+[DEBUG] resources/images/404/404.png
+[DEBUG] resources/images/blog/blog-one.jpg
+[DEBUG] resources/images/blog/blog-three.jpg
+[DEBUG] resources/images/blog/blog-two.jpg
+[DEBUG] resources/images/blog/man-four.jpg
+[DEBUG] resources/images/blog/man-one.jpg
+[DEBUG] resources/images/blog/man-three.jpg
+[DEBUG] resources/images/blog/man-two.jpg
+[DEBUG] resources/images/blog/socials.png
+[DEBUG] resources/images/cart/one.png
+[DEBUG] resources/images/cart/three.png
+[DEBUG] resources/images/cart/two.png
+[DEBUG] resources/images/home/bg_border.png
+[DEBUG] resources/images/home/gallery1.jpg
+[DEBUG] resources/images/home/gallery2.jpg
+[DEBUG] resources/images/home/gallery3.jpg
+[DEBUG] resources/images/home/gallery4.jpg
+[DEBUG] resources/images/home/girl1.jpg
+[DEBUG] resources/images/home/girl2.jpg
+[DEBUG] resources/images/home/girl3.jpg
+[DEBUG] resources/images/home/iframe1.png
+[DEBUG] resources/images/home/iframe2.png
+[DEBUG] resources/images/home/iframe3.png
+[DEBUG] resources/images/home/iframe4.png
+[DEBUG] resources/images/home/logo.png
+[DEBUG] resources/images/home/map.png
+[DEBUG] resources/images/home/new.png
+[DEBUG] resources/images/home/partner1.png
+[DEBUG] resources/images/home/partner2.png
+[DEBUG] resources/images/home/partner3.png
+[DEBUG] resources/images/home/partner4.png
+[DEBUG] resources/images/home/pricing.png
+[DEBUG] resources/images/home/product1.jpg
+[DEBUG] resources/images/home/product2.jpg
+[DEBUG] resources/images/home/product3.jpg
+[DEBUG] resources/images/home/product4.jpg
+[DEBUG] resources/images/home/product5.jpg
+[DEBUG] resources/images/home/product6.jpg
+[DEBUG] resources/images/home/recommend1.jpg
+[DEBUG] resources/images/home/recommend2.jpg
+[DEBUG] resources/images/home/recommend3.jpg
+[DEBUG] resources/images/home/sale.png
+[DEBUG] resources/images/home/searchicon.png
+[DEBUG] resources/images/home/shipping.jpg
+[DEBUG] resources/images/ico/favicon.ico
+[DEBUG] resources/images/product-details/1.jpg
+[DEBUG] resources/images/product-details/new.jpg
+[DEBUG] resources/images/product-details/rating.png
+[DEBUG] resources/images/product-details/share.png
+[DEBUG] resources/images/product-details/similar1.jpg
+[DEBUG] resources/images/product-details/similar2.jpg
+[DEBUG] resources/images/product-details/similar3.jpg
+[DEBUG] resources/images/shop/advertisement.jpg
+[DEBUG] resources/images/shop/product10.jpg
+[DEBUG] resources/images/shop/product11.jpg
+[DEBUG] resources/images/shop/product12.jpg
+[DEBUG] resources/images/shop/product7.jpg
+[DEBUG] resources/images/shop/product8.jpg
+[DEBUG] resources/images/shop/product9.jpg
+[DEBUG] resources/js/bootstrap.min.js
+[DEBUG] resources/js/contact.js
+[DEBUG] resources/js/gmaps.js
+[DEBUG] resources/js/html5shiv.js
+[DEBUG] resources/js/jquery-validator/validator.js
+[DEBUG] resources/js/jquery.js
+[DEBUG] resources/js/jquery.prettyPhoto.js
+[DEBUG] resources/js/jquery.scrollUp.min.js
+[DEBUG] resources/js/js-validator/validator.js
+[DEBUG] resources/js/main.js
+[DEBUG] resources/js/price-range.js
+[DEBUG] WEB-INF/capthcaTags.tld
+[DEBUG] WEB-INF/jspf/fotter.jspf
+[DEBUG] WEB-INF/jspf/header.jspf
+[DEBUG] WEB-INF/lib/jstl-1.2.jar
+[DEBUG] WEB-INF/loginTags.tld
+[DEBUG] WEB-INF/pages/404.html
+[DEBUG] WEB-INF/pages/blog-single.html
+[DEBUG] WEB-INF/pages/blog.html
+[DEBUG] WEB-INF/pages/cart.html
+[DEBUG] WEB-INF/pages/checkout.html
+[DEBUG] WEB-INF/pages/contact-us.html
+[DEBUG] WEB-INF/pages/index.html
+[DEBUG] WEB-INF/pages/login.jsp
+[DEBUG] WEB-INF/pages/product-details.html
+[DEBUG] WEB-INF/pages/registration.jsp
+[DEBUG] WEB-INF/pages/shop.jsp
+[DEBUG] WEB-INF/web.xml
+[DEBUG] -- end of dump --
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/beans/CaptchaBean.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/beans/LoginFormBean.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/beans/ProductFormBean.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/beans/ProductFormParamBean.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/beans/RegistrationFormBean.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/beans/RegistrationFormReportBean.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/beans/ValidateDataRegistrationForm.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/containers/CapthcaBeanContainer.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/containers/CapthcaBeanContainerImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/containers/handler/CaptchaCleanerThread.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/controllers/CapchaController.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/controllers/LoginController.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/controllers/LogOutController.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/controllers/ProductController.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/controllers/RegistrationPageController.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/convertor/RegistrationFormBeanToUserConverter.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/connection/ConnectionManager.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/constant/ProductManufactureConst.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/constant/ProductTypeConst.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dao/exception/DAOException.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/impl/MySqlProductDaoImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/impl/MySqlUserDaoImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/MySqlProductDao.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/MySqlUserDao.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dao/UserLocalDao.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dao/UserLocalDaoImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dto/ProductDTO.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/dto/ProductDTOImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/transaction/TransactionManager.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/transaction/TransactionManagerImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/db/transaction/TransactionOperation.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/entity/Manufacture.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/entity/Product.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/entity/ProductType.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/entity/Role.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/entity/User.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/listeners/ContextListener.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/provider/CaptchaProvider.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/provider/CaptchaProviderFactory.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/storege/AbstractCaptchaInnerStoregeProvider.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/storege/CaptchaCookieProvider.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/storege/CaptchaHiddenProvider.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/provider/session/CaptchaSessionProvider.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/ProductService.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/ProductServiceImpl$1.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/ProductServiceImpl$2.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/ProductServiceImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/StaticUserService.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/StaticUserServiceImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/UserService.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$1.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$2.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$3.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$4.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$5.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/tag/CaptchaTag.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/tag/LoginTag.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/AvatarWriter.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/CaptchaBeanGenerator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/GetProductByUserParamSQLQueryBuilder.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/ObjectUtil.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/ProductFormBeanCreator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/ProductFormParametersParser.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/RandomStringGenerator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/RegistrationFormBeanCreator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/Sha1HexGenerator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/util/ValidateDataRegistrationFormCreator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/ConfirmedValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/EmptyValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/PatternValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/Validator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/AvatarValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/ConfirmFieldValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/FieldValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/ConfirmFieldsValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/EmailFieldValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/LastNameFieldValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/NameFieldValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/PasswordFieldValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/PhoneFieldValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/FullRegistrationFormValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/FullRegistrationFormValidatorImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/time/out/impl/CaptchaTimeOutValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/form/time/out/TimeOutValidator.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/patterns/RegistrationFormValidationPatterns.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/report/RegistrationFormValidationReport.class has been copied.
+[DEBUG]  + WEB-INF/classes/com/epam/student/krynytskyi/validator/report/RegistrationFormValidationReportImpl.class has been copied.
+[DEBUG]  + WEB-INF/classes/log4j.dtd has been copied.
+[DEBUG]  + WEB-INF/classes/log4j.xml has been copied.
+[DEBUG] Processing: c3p0-0.9.1.2.jar
+[DEBUG]  + WEB-INF/lib/c3p0-0.9.1.2.jar has been copied.
+[DEBUG] Processing: guava-18.0.jar
+[DEBUG]  + WEB-INF/lib/guava-18.0.jar has been copied.
+[DEBUG] Processing: cage-1.0.jar
+[DEBUG]  + WEB-INF/lib/cage-1.0.jar has been copied.
+[DEBUG] Processing: commons-codec-1.9.jar
+[DEBUG]  + WEB-INF/lib/commons-codec-1.9.jar has been copied.
+[DEBUG] Processing: gson-2.2.4.jar
+[DEBUG]  + WEB-INF/lib/gson-2.2.4.jar has been copied.
+[DEBUG] Processing: mysql-connector-java-5.1.1.jar
+[DEBUG]  + WEB-INF/lib/mysql-connector-java-5.1.1.jar has been copied.
+[DEBUG] Processing: commons-fileupload-1.3.jar
+[DEBUG]  + WEB-INF/lib/commons-fileupload-1.3.jar has been copied.
+[DEBUG] Processing: commons-io-2.2.jar
+[DEBUG]  + WEB-INF/lib/commons-io-2.2.jar has been copied.
+[DEBUG] Processing: jstl-1.2.jar
+[DEBUG]  - WEB-INF/lib/jstl-1.2.jar wasn't copied because it has already been packaged for overlay [currentBuild].
+[DEBUG] Processing: log4j-1.2.17.jar
+[DEBUG]  + WEB-INF/lib/log4j-1.2.17.jar has been copied.
+[INFO] Webapp assembled in [406 msecs]
+[DEBUG] Excluding [] from the generated webapp archive.
+[DEBUG] Including [**] in the generated webapp archive.
+[INFO] Building war: D:\repo\shop\target\Shop-1.0-SNAPSHOT.war
+[DEBUG] adding directory META-INF/
+[DEBUG] adding entry META-INF/MANIFEST.MF
+[DEBUG] adding directory resources/
+[DEBUG] adding directory resources/avatars/
+[DEBUG] adding directory resources/css/
+[DEBUG] adding directory resources/fonts/
+[DEBUG] adding directory resources/images/
+[DEBUG] adding directory resources/images/404/
+[DEBUG] adding directory resources/images/blog/
+[DEBUG] adding directory resources/images/cart/
+[DEBUG] adding directory resources/images/home/
+[DEBUG] adding directory resources/images/ico/
+[DEBUG] adding directory resources/images/product-details/
+[DEBUG] adding directory resources/images/shop/
+[DEBUG] adding directory resources/js/
+[DEBUG] adding directory resources/js/jquery-validator/
+[DEBUG] adding directory resources/js/js-validator/
+[DEBUG] adding directory WEB-INF/
+[DEBUG] adding directory WEB-INF/classes/
+[DEBUG] adding directory WEB-INF/classes/com/
+[DEBUG] adding directory WEB-INF/classes/com/epam/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/beans/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/containers/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/containers/handler/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/controllers/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/convertor/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/connection/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/constant/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/dao/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/dao/exception/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/impl/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/dto/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/db/transaction/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/entity/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/listeners/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/provider/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/storege/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/provider/session/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/service/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/tag/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/util/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/form/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/form/time/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/form/time/out/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/form/time/out/impl/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/patterns/
+[DEBUG] adding directory WEB-INF/classes/com/epam/student/krynytskyi/validator/report/
+[DEBUG] adding directory WEB-INF/jspf/
+[DEBUG] adding directory WEB-INF/lib/
+[DEBUG] adding directory WEB-INF/pages/
+[DEBUG] adding entry index.jsp
+[DEBUG] adding entry META-INF/context.xml
+[DEBUG] adding entry resources/avatars/default.png
+[DEBUG] adding entry resources/css/animate.css
+[DEBUG] adding entry resources/css/bootstrap.min.css
+[DEBUG] adding entry resources/css/custom.css
+[DEBUG] adding entry resources/css/error.css
+[DEBUG] adding entry resources/css/font-awesome.min.css
+[DEBUG] adding entry resources/css/main-page.css
+[DEBUG] adding entry resources/css/main.css
+[DEBUG] adding entry resources/css/prettyPhoto.css
+[DEBUG] adding entry resources/css/price-range.css
+[DEBUG] adding entry resources/css/responsive.css
+[DEBUG] adding entry resources/fonts/fontawesome-webfont.svg
+[DEBUG] adding entry resources/fonts/fontawesome-webfont.woff
+[DEBUG] adding entry resources/fonts/FontAwesome.otf
+[DEBUG] adding entry resources/fonts/glyphicons-halflings-regular.svg
+[DEBUG] adding entry resources/fonts/glyphicons-halflings-regular.woff
+[DEBUG] adding entry resources/images/404/404.png
+[DEBUG] adding entry resources/images/blog/blog-one.jpg
+[DEBUG] adding entry resources/images/blog/blog-three.jpg
+[DEBUG] adding entry resources/images/blog/blog-two.jpg
+[DEBUG] adding entry resources/images/blog/man-four.jpg
+[DEBUG] adding entry resources/images/blog/man-one.jpg
+[DEBUG] adding entry resources/images/blog/man-three.jpg
+[DEBUG] adding entry resources/images/blog/man-two.jpg
+[DEBUG] adding entry resources/images/blog/socials.png
+[DEBUG] adding entry resources/images/cart/one.png
+[DEBUG] adding entry resources/images/cart/three.png
+[DEBUG] adding entry resources/images/cart/two.png
+[DEBUG] adding entry resources/images/home/bg_border.png
+[DEBUG] adding entry resources/images/home/gallery1.jpg
+[DEBUG] adding entry resources/images/home/gallery2.jpg
+[DEBUG] adding entry resources/images/home/gallery3.jpg
+[DEBUG] adding entry resources/images/home/gallery4.jpg
+[DEBUG] adding entry resources/images/home/girl1.jpg
+[DEBUG] adding entry resources/images/home/girl2.jpg
+[DEBUG] adding entry resources/images/home/girl3.jpg
+[DEBUG] adding entry resources/images/home/iframe1.png
+[DEBUG] adding entry resources/images/home/iframe2.png
+[DEBUG] adding entry resources/images/home/iframe3.png
+[DEBUG] adding entry resources/images/home/iframe4.png
+[DEBUG] adding entry resources/images/home/logo.png
+[DEBUG] adding entry resources/images/home/map.png
+[DEBUG] adding entry resources/images/home/new.png
+[DEBUG] adding entry resources/images/home/partner1.png
+[DEBUG] adding entry resources/images/home/partner2.png
+[DEBUG] adding entry resources/images/home/partner3.png
+[DEBUG] adding entry resources/images/home/partner4.png
+[DEBUG] adding entry resources/images/home/pricing.png
+[DEBUG] adding entry resources/images/home/product1.jpg
+[DEBUG] adding entry resources/images/home/product2.jpg
+[DEBUG] adding entry resources/images/home/product3.jpg
+[DEBUG] adding entry resources/images/home/product4.jpg
+[DEBUG] adding entry resources/images/home/product5.jpg
+[DEBUG] adding entry resources/images/home/product6.jpg
+[DEBUG] adding entry resources/images/home/recommend1.jpg
+[DEBUG] adding entry resources/images/home/recommend2.jpg
+[DEBUG] adding entry resources/images/home/recommend3.jpg
+[DEBUG] adding entry resources/images/home/sale.png
+[DEBUG] adding entry resources/images/home/searchicon.png
+[DEBUG] adding entry resources/images/home/shipping.jpg
+[DEBUG] adding entry resources/images/ico/favicon.ico
+[DEBUG] adding entry resources/images/product-details/1.jpg
+[DEBUG] adding entry resources/images/product-details/new.jpg
+[DEBUG] adding entry resources/images/product-details/rating.png
+[DEBUG] adding entry resources/images/product-details/share.png
+[DEBUG] adding entry resources/images/product-details/similar1.jpg
+[DEBUG] adding entry resources/images/product-details/similar2.jpg
+[DEBUG] adding entry resources/images/product-details/similar3.jpg
+[DEBUG] adding entry resources/images/shop/advertisement.jpg
+[DEBUG] adding entry resources/images/shop/product10.jpg
+[DEBUG] adding entry resources/images/shop/product11.jpg
+[DEBUG] adding entry resources/images/shop/product12.jpg
+[DEBUG] adding entry resources/images/shop/product7.jpg
+[DEBUG] adding entry resources/images/shop/product8.jpg
+[DEBUG] adding entry resources/images/shop/product9.jpg
+[DEBUG] adding entry resources/js/bootstrap.min.js
+[DEBUG] adding entry resources/js/contact.js
+[DEBUG] adding entry resources/js/gmaps.js
+[DEBUG] adding entry resources/js/html5shiv.js
+[DEBUG] adding entry resources/js/jquery-validator/validator.js
+[DEBUG] adding entry resources/js/jquery.js
+[DEBUG] adding entry resources/js/jquery.prettyPhoto.js
+[DEBUG] adding entry resources/js/jquery.scrollUp.min.js
+[DEBUG] adding entry resources/js/js-validator/validator.js
+[DEBUG] adding entry resources/js/main.js
+[DEBUG] adding entry resources/js/price-range.js
+[DEBUG] adding entry WEB-INF/capthcaTags.tld
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/beans/CaptchaBean.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/beans/LoginFormBean.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/beans/ProductFormBean.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/beans/ProductFormParamBean.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/beans/RegistrationFormBean.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/beans/RegistrationFormReportBean.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/beans/ValidateDataRegistrationForm.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/containers/CapthcaBeanContainer.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/containers/CapthcaBeanContainerImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/containers/handler/CaptchaCleanerThread.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/controllers/CapchaController.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/controllers/LoginController.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/controllers/LogOutController.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/controllers/ProductController.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/controllers/RegistrationPageController.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/convertor/RegistrationFormBeanToUserConverter.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/connection/ConnectionManager.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/constant/ProductManufactureConst.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/constant/ProductTypeConst.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dao/exception/DAOException.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/impl/MySqlProductDaoImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/impl/MySqlUserDaoImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/MySqlProductDao.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dao/mysql/MySqlUserDao.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dao/UserLocalDao.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dao/UserLocalDaoImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dto/ProductDTO.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/dto/ProductDTOImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/transaction/TransactionManager.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/transaction/TransactionManagerImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/db/transaction/TransactionOperation.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/entity/Manufacture.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/entity/Product.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/entity/ProductType.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/entity/Role.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/entity/User.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/listeners/ContextListener.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/provider/CaptchaProvider.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/provider/CaptchaProviderFactory.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/storege/AbstractCaptchaInnerStoregeProvider.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/storege/CaptchaCookieProvider.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/provider/inner/storege/CaptchaHiddenProvider.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/provider/session/CaptchaSessionProvider.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/ProductService.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/ProductServiceImpl$1.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/ProductServiceImpl$2.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/ProductServiceImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/StaticUserService.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/StaticUserServiceImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/UserService.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$1.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$2.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$3.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$4.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl$5.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/service/UserServiceImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/tag/CaptchaTag.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/tag/LoginTag.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/AvatarWriter.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/CaptchaBeanGenerator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/GetProductByUserParamSQLQueryBuilder.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/ObjectUtil.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/ProductFormBeanCreator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/ProductFormParametersParser.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/RandomStringGenerator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/RegistrationFormBeanCreator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/Sha1HexGenerator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/util/ValidateDataRegistrationFormCreator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/ConfirmedValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/EmptyValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/PatternValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/chain/resposibility/Validator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/AvatarValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/ConfirmFieldValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/FieldValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/ConfirmFieldsValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/EmailFieldValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/LastNameFieldValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/NameFieldValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/PasswordFieldValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/field/impl/PhoneFieldValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/FullRegistrationFormValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/FullRegistrationFormValidatorImpl.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/time/out/impl/CaptchaTimeOutValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/form/time/out/TimeOutValidator.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/patterns/RegistrationFormValidationPatterns.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/report/RegistrationFormValidationReport.class
+[DEBUG] adding entry WEB-INF/classes/com/epam/student/krynytskyi/validator/report/RegistrationFormValidationReportImpl.class
+[DEBUG] adding entry WEB-INF/classes/log4j.dtd
+[DEBUG] adding entry WEB-INF/classes/log4j.xml
+[DEBUG] adding entry WEB-INF/jspf/fotter.jspf
+[DEBUG] adding entry WEB-INF/jspf/header.jspf
+[DEBUG] adding entry WEB-INF/lib/c3p0-0.9.1.2.jar
+[DEBUG] adding entry WEB-INF/lib/cage-1.0.jar
+[DEBUG] adding entry WEB-INF/lib/commons-codec-1.9.jar
+[DEBUG] adding entry WEB-INF/lib/commons-fileupload-1.3.jar
+[DEBUG] adding entry WEB-INF/lib/commons-io-2.2.jar
+[DEBUG] adding entry WEB-INF/lib/gson-2.2.4.jar
+[DEBUG] adding entry WEB-INF/lib/guava-18.0.jar
+[DEBUG] adding entry WEB-INF/lib/jstl-1.2.jar
+[DEBUG] adding entry WEB-INF/lib/log4j-1.2.17.jar
+[DEBUG] adding entry WEB-INF/lib/mysql-connector-java-5.1.1.jar
+[DEBUG] adding entry WEB-INF/loginTags.tld
+[DEBUG] adding entry WEB-INF/pages/404.html
+[DEBUG] adding entry WEB-INF/pages/blog-single.html
+[DEBUG] adding entry WEB-INF/pages/blog.html
+[DEBUG] adding entry WEB-INF/pages/cart.html
+[DEBUG] adding entry WEB-INF/pages/checkout.html
+[DEBUG] adding entry WEB-INF/pages/contact-us.html
+[DEBUG] adding entry WEB-INF/pages/index.html
+[DEBUG] adding entry WEB-INF/pages/login.jsp
+[DEBUG] adding entry WEB-INF/pages/product-details.html
+[DEBUG] adding entry WEB-INF/pages/registration.jsp
+[DEBUG] adding entry WEB-INF/pages/shop.jsp
+[DEBUG] adding entry WEB-INF/web.xml
+[INFO] WEB-INF\web.xml already added, skipping
+[DEBUG] adding directory META-INF/maven/
+[DEBUG] adding directory META-INF/maven/com.mkyong/
+[DEBUG] adding directory META-INF/maven/com.mkyong/Shop/
+[DEBUG] adding entry META-INF/maven/com.mkyong/Shop/pom.xml
+[DEBUG] adding entry META-INF/maven/com.mkyong/Shop/pom.properties
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ Shop ---
+[DEBUG] Dependency collection stats: {ConflictMarker.analyzeTime=0, ConflictMarker.markTime=0, ConflictMarker.nodeCount=38, ConflictIdSorter.graphTime=1, ConflictIdSorter.topsortTime=0, ConflictIdSorter.conflictIdCount=15, ConflictIdSorter.conflictIdCycleCount=0, ConflictResolver.totalTime=1, ConflictResolver.conflictItemCount=35, DefaultDependencyCollector.collectTime=31, DefaultDependencyCollector.transformTime=2}
+[DEBUG] org.apache.maven.plugins:maven-install-plugin:jar:2.4:
+[DEBUG]    org.apache.maven:maven-plugin-api:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-project:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-settings:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-profile:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-plugin-registry:jar:2.0.6:compile
+[DEBUG]       org.codehaus.plexus:plexus-container-default:jar:1.0-alpha-9-stable-1:compile
+[DEBUG]          junit:junit:jar:3.8.1:compile
+[DEBUG]          classworlds:classworlds:jar:1.1-alpha-2:compile
+[DEBUG]    org.apache.maven:maven-model:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-artifact-manager:jar:2.0.6:compile
+[DEBUG]       org.apache.maven:maven-repository-metadata:jar:2.0.6:compile
+[DEBUG]    org.apache.maven:maven-artifact:jar:2.0.6:compile
+[DEBUG]    org.codehaus.plexus:plexus-utils:jar:3.0.5:compile
+[DEBUG]    org.codehaus.plexus:plexus-digest:jar:1.0:compile
+[DEBUG] Created new class realm plugin>org.apache.maven.plugins:maven-install-plugin:2.4
+[DEBUG] Importing foreign packages into class realm plugin>org.apache.maven.plugins:maven-install-plugin:2.4
+[DEBUG]   Imported:  < maven.api
+[DEBUG] Populating class realm plugin>org.apache.maven.plugins:maven-install-plugin:2.4
+[DEBUG]   Included: org.apache.maven.plugins:maven-install-plugin:jar:2.4
+[DEBUG]   Included: junit:junit:jar:3.8.1
+[DEBUG]   Included: org.codehaus.plexus:plexus-utils:jar:3.0.5
+[DEBUG]   Included: org.codehaus.plexus:plexus-digest:jar:1.0
+[DEBUG] Configuring mojo org.apache.maven.plugins:maven-install-plugin:2.4:install from plugin realm ClassRealm[plugin>org.apache.maven.plugins:maven-install-plugin:2.4, parent: sun.misc.Launcher$AppClassLoader@4e25154f]
+[DEBUG] Configuring mojo 'org.apache.maven.plugins:maven-install-plugin:2.4:install' with basic configurator -->
+[DEBUG]   (f) artifact = com.mkyong:Shop:war:1.0-SNAPSHOT
+[DEBUG]   (f) attachedArtifacts = []
+[DEBUG]   (f) createChecksum = false
+[DEBUG]   (f) localRepository =       id: local
+      url: file:///C:/Users/Mr.Green/.m2/repository/
+   layout: default
+snapshots: [enabled => true, update => always]
+ releases: [enabled => true, update => always]
+
+[DEBUG]   (f) packaging = war
+[DEBUG]   (f) pomFile = D:\repo\shop\pom.xml
+[DEBUG]   (s) skip = false
+[DEBUG]   (f) updateReleaseInfo = false
+[DEBUG] -- end configuration --
+[INFO] Installing D:\repo\shop\target\Shop-1.0-SNAPSHOT.war to C:\Users\Mr.Green\.m2\repository\com\mkyong\Shop\1.0-SNAPSHOT\Shop-1.0-SNAPSHOT.war
+[DEBUG] Writing tracking file C:\Users\Mr.Green\.m2\repository\com\mkyong\Shop\1.0-SNAPSHOT\_remote.repositories
+[INFO] Installing D:\repo\shop\pom.xml to C:\Users\Mr.Green\.m2\repository\com\mkyong\Shop\1.0-SNAPSHOT\Shop-1.0-SNAPSHOT.pom
+[DEBUG] Writing tracking file C:\Users\Mr.Green\.m2\repository\com\mkyong\Shop\1.0-SNAPSHOT\_remote.repositories
+[DEBUG] Installing com.mkyong:Shop:1.0-SNAPSHOT/maven-metadata.xml to C:\Users\Mr.Green\.m2\repository\com\mkyong\Shop\1.0-SNAPSHOT\maven-metadata-local.xml
+[DEBUG] Installing com.mkyong:Shop/maven-metadata.xml to C:\Users\Mr.Green\.m2\repository\com\mkyong\Shop\maven-metadata-local.xml
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.481 s
+[INFO] Finished at: 2015-05-09T14:22:15+03:00
+[INFO] Final Memory: 11M/172M
+[INFO] ------------------------------------------------------------------------
