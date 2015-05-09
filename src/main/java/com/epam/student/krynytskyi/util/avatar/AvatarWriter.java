@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.util;
+package com.epam.student.krynytskyi.util.avatar;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
+import com.epam.student.krynytskyi.util.hashcode.generator.Sha1HexGenerator;
 
 public class AvatarWriter {
 	private static final String DEFALUT_AVATAR_NAME = "default.jpg";

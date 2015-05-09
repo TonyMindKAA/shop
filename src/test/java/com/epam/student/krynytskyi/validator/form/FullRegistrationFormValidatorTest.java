@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import com.epam.student.krynytskyi.beans.CaptchaBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
+import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
 
 public class FullRegistrationFormValidatorTest {
 	private FullRegistrationFormValidator formValidator;
@@ -33,7 +33,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -56,7 +56,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -79,7 +79,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -102,7 +102,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -127,7 +127,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro222");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -150,7 +150,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -173,7 +173,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -196,7 +196,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -219,7 +219,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -242,7 +242,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -265,7 +265,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -288,7 +288,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);
@@ -311,7 +311,7 @@ public class FullRegistrationFormValidatorTest {
 		CaptchaBean capthcaBean = new CaptchaBean();
 		capthcaBean.setCaptchaValue("kaapro");
 
-		ValidateDataRegistrationForm dataRegistrationForm = new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean dataRegistrationForm = new ValidateDataRegistrationFormBean();
 		dataRegistrationForm.setTimeOut(2000000);
 		dataRegistrationForm.setCapthcaBean(capthcaBean);
 		dataRegistrationForm.setFormBean(formBean);

@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.util;
+package com.epam.student.krynytskyi.util.bean.creator;
 
 import com.epam.student.krynytskyi.beans.ProductFormBean;
 

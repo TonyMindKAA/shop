@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.util;
+package com.epam.student.krynytskyi.util.hashcode.generator;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

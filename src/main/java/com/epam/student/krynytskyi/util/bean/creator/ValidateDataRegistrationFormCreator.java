@@ -1,15 +1,15 @@
-package com.epam.student.krynytskyi.util;
+package com.epam.student.krynytskyi.util.bean.creator;
 
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
+import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class ValidateDataRegistrationFormCreator {
 
-	public ValidateDataRegistrationForm create(RegistrationFormBean formBean, HttpServletRequest request) {
-		ValidateDataRegistrationForm dateRegistrationForm = new ValidateDataRegistrationForm();
+	public ValidateDataRegistrationFormBean create(RegistrationFormBean formBean, HttpServletRequest request) {
+		ValidateDataRegistrationFormBean dateRegistrationForm = new ValidateDataRegistrationFormBean();
 		dateRegistrationForm.setFormBean(formBean);
 		CaptchaProvider capthcaPrvider = (CaptchaProvider) request.getServletContext().getAttribute("captchaProvider");
 		dateRegistrationForm.setCapthcaBean(capthcaPrvider.getCaptcha(request));

@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.util;
+package com.epam.student.krynytskyi.util.bean.creator;
 
 import java.io.IOException;
 

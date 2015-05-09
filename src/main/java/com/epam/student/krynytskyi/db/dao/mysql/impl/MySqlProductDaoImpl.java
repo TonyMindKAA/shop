@@ -5,7 +5,7 @@ import com.epam.student.krynytskyi.db.dao.mysql.MySqlProductDao;
 import com.epam.student.krynytskyi.db.dto.ProductDTO;
 import com.epam.student.krynytskyi.db.dto.ProductDTOImpl;
 import com.epam.student.krynytskyi.entity.Product;
-import com.epam.student.krynytskyi.util.GetProductByUserParamSQLQueryBuilder;
+import com.epam.student.krynytskyi.util.db.mysql.GetProductByUserParamSQLQueryBuilder;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;

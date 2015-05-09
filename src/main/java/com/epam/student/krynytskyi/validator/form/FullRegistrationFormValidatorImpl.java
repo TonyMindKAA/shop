@@ -2,7 +2,7 @@ package com.epam.student.krynytskyi.validator.form;
 
 import com.epam.student.krynytskyi.beans.CaptchaBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
+import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
 import com.epam.student.krynytskyi.validator.form.field.impl.ConfirmFieldsValidator;
 import com.epam.student.krynytskyi.validator.form.field.impl.EmailFieldValidator;
 import com.epam.student.krynytskyi.validator.form.field.impl.LastNameFieldValidator;
@@ -16,7 +16,7 @@ public class FullRegistrationFormValidatorImpl implements
 	private boolean isValid;
 
 	@Override
-	public boolean validate(ValidateDataRegistrationForm validateDateRegistrationForm) {
+	public boolean validate(ValidateDataRegistrationFormBean validateDateRegistrationForm) {
 		isValid = true;
 		RegistrationFormBean formBean = validateDateRegistrationForm.getFormBean();
 		long timeOut = validateDateRegistrationForm.getTimeOut();

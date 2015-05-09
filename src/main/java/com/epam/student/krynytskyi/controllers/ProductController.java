@@ -5,8 +5,8 @@ import com.epam.student.krynytskyi.beans.ProductFormParamBean;
 import com.epam.student.krynytskyi.entity.Product;
 import com.epam.student.krynytskyi.service.ProductService;
 import com.epam.student.krynytskyi.service.ProductServiceImpl;
-import com.epam.student.krynytskyi.util.ProductFormBeanCreator;
-import com.epam.student.krynytskyi.util.ProductFormParametersParser;
+import com.epam.student.krynytskyi.util.bean.creator.ProductFormBeanCreator;
+import com.epam.student.krynytskyi.util.db.mysql.ProductFormParametersParser;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;

@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.util;
+package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.ProductFormParamBean;
 
@@ -29,8 +29,7 @@ public class GetProductByUserParamSQLQueryBuilder {
     private void checkArguments(Map<String, String> sqlQueryParts,
                                 List<ProductFormParamBean> param) {
         checkArgument(sqlQueryParts != null, "sqlQueryParts must not be null");
-        checkArgument(param != null, "sqlQueryParts must not be null");
+        checkArgument(param != null, "parameters must not be null");
         checkArgument(!sqlQueryParts.isEmpty(), "sqlQueryParts must not be empty");
-        checkArgument(!param.isEmpty(), "sqlQueryParts must not be empty");
     }
 }

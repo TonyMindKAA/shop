@@ -3,15 +3,15 @@ package com.epam.student.krynytskyi.controllers;
 import com.epam.student.krynytskyi.beans.CaptchaBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
+import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConverter;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.service.UserService;
-import com.epam.student.krynytskyi.util.AvatarWriter;
-import com.epam.student.krynytskyi.util.CaptchaBeanGenerator;
-import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
-import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
+import com.epam.student.krynytskyi.util.avatar.AvatarWriter;
+import com.epam.student.krynytskyi.util.capthca.CaptchaBeanGenerator;
+import com.epam.student.krynytskyi.util.bean.creator.RegistrationFormBeanCreator;
+import com.epam.student.krynytskyi.util.bean.creator.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidatorImpl;
 import com.epam.student.krynytskyi.validator.report.RegistrationFormValidationReport;
@@ -60,7 +60,7 @@ public class RegistrationPageController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ValidateDataRegistrationForm validateDateRegistrationForm = createValidateDataRegistrationForm(request);
+        ValidateDataRegistrationFormBean validateDateRegistrationForm = createValidateDataRegistrationForm(request);
         if (validator.validate(validateDateRegistrationForm)) {
             if (RegisterUser(request, validateDateRegistrationForm.getFormBean()))
                 response.sendRedirect(LOGIN_SERVLET);
@@ -71,7 +71,7 @@ public class RegistrationPageController extends HttpServlet {
     }
 
 
-    private ValidateDataRegistrationForm createValidateDataRegistrationForm(
+    private ValidateDataRegistrationFormBean createValidateDataRegistrationForm(
             HttpServletRequest request) {
         RegistrationFormBean formBean = formBeanCreator.cretate(request);
         return dateRegistrationFormCreator.create(formBean, request);

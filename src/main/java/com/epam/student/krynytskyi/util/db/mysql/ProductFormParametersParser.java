@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.util;
+package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.ProductFormBean;
 import com.epam.student.krynytskyi.beans.ProductFormParamBean;

@@ -18,14 +18,14 @@ import org.mockito.MockitoAnnotations;
 
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationForm;
+import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConverter;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.service.UserService;
-import com.epam.student.krynytskyi.util.AvatarWriter;
-import com.epam.student.krynytskyi.util.RegistrationFormBeanCreator;
-import com.epam.student.krynytskyi.util.ValidateDataRegistrationFormCreator;
+import com.epam.student.krynytskyi.util.avatar.AvatarWriter;
+import com.epam.student.krynytskyi.util.bean.creator.RegistrationFormBeanCreator;
+import com.epam.student.krynytskyi.util.bean.creator.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
 import com.epam.student.krynytskyi.validator.report.RegistrationFormValidationReport;
 
@@ -84,7 +84,7 @@ public class RegistrationPageControllerTest {
 			throws Exception {
 		User user = new User();
 		RegistrationFormBean formBean = new RegistrationFormBean();
-		ValidateDataRegistrationForm validateDataRegistrationForm= new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean validateDataRegistrationForm= new ValidateDataRegistrationFormBean();
 		validateDataRegistrationForm.setFormBean(formBean);
 
 		Mockito.when(formBeanCreator.cretate(request)).thenReturn(formBean);
@@ -106,7 +106,7 @@ public class RegistrationPageControllerTest {
 			throws ServletException, IOException {
 		RegistrationFormReportBean report = new RegistrationFormReportBean();
 		RegistrationFormBean formBean = new RegistrationFormBean();
-		ValidateDataRegistrationForm validateDataRegistrationForm= new ValidateDataRegistrationForm();
+		ValidateDataRegistrationFormBean validateDataRegistrationForm= new ValidateDataRegistrationFormBean();
 		validateDataRegistrationForm.setFormBean(formBean);
 
 		Mockito.when(formBeanCreator.cretate(request)).thenReturn(formBean);

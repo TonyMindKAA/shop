@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.beans;
 
-public class ValidateDataRegistrationForm {
+public class ValidateDataRegistrationFormBean {
 	private RegistrationFormBean formBean;
 	private CaptchaBean capthcaBean;
 	private long timeOut;

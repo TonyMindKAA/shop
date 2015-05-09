@@ -45,7 +45,7 @@
 							<h2>Title</h2>
 							<div class="well">
 								 <div class="price-main-page">
-								 	<input type="text" name="title" value="nokia" size="20">
+								 	<input type="text" name="title" value="" size="20">
 								 </div>
 							</div>
 						</div><!--/price-range-->
