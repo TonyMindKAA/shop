@@ -7,5 +7,5 @@ public class ProductTypeConst {
     private ProductTypeConst(){}
     public static final String AMBIENT_PRODUCT_TYPE ="AMBIENT";
     public static final String PROTECTED_PRODUCT_TYPE ="PROTECTED";
-    public static final String ÑHEAP_PRODUCT_TYPE ="ÑHEAP";
+    public static final String CHEAP_PRODUCT_TYPE ="ÑHEAP";
 }

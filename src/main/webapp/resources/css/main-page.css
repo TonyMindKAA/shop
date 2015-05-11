@@ -1,15 +1,46 @@
 @CHARSET "UTF-8";
 .price-main-page{
-	  padding-left: 9%;
+
 }
 
 #submit-button-main-page {
-  display: inline-block;
-  padding: 10px 60px;
-  margin-bottom: 0px;
-  
+
 }
 
 .price-range {
-  margin-top: 0px;
+
+}
+
+#order-shop-main{
+
+}
+#order-shop-main-title{
+
+}
+#order-shop-main-select{
+
+}
+
+#result-shop-main{
+
+}
+#result-shop-main-title{
+
+}
+
+#result-shop-select{
+
+}
+
+#order-result-castum{
+  width: 200px;
+}
+
+#pagination-order-result{
+  margin-top: 5px;
+  margin-left: -7px;
+}
+
+#pagination-footer{
+  margin-left: 40%;
 }

@@ -5,7 +5,7 @@ import com.epam.student.krynytskyi.db.dao.mysql.MySqlProductDao;
 import com.epam.student.krynytskyi.db.dto.ProductDTO;
 import com.epam.student.krynytskyi.db.dto.ProductDTOImpl;
 import com.epam.student.krynytskyi.entity.Product;
-import com.epam.student.krynytskyi.util.db.mysql.GetProductByUserParamSQLQueryBuilder;
+import com.epam.student.krynytskyi.util.db.mysql.GetProductByUserParamSQLQueryBuilderImpl;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -49,7 +49,7 @@ public class MySqlProductDaoImpl implements MySqlProductDao {
     }
 
     private String buildQuery(Map<String, String> sqlQueryParts, List<ProductFormParamBean> params) {
-        GetProductByUserParamSQLQueryBuilder queryBuilder = new GetProductByUserParamSQLQueryBuilder();
+        GetProductByUserParamSQLQueryBuilderImpl queryBuilder = new GetProductByUserParamSQLQueryBuilderImpl();
         return queryBuilder.build(sqlQueryParts, params);
     }
 
