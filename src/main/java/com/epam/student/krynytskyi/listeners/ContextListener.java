@@ -1,15 +1,15 @@
 package com.epam.student.krynytskyi.listeners;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletContextEvent;
-import javax.servlet.ServletContextListener;
-
 import com.epam.student.krynytskyi.containers.handler.CaptchaCleanerThread;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.provider.CaptchaProviderFactory;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaCookieProvider;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaHiddenProvider;
 import com.epam.student.krynytskyi.service.UserServiceImpl;
+
+import javax.servlet.ServletContext;
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
 
 public class ContextListener implements ServletContextListener {
 
@@ -32,6 +32,7 @@ public class ContextListener implements ServletContextListener {
 		setToContextUserService(servletContext);
 		setToContextTimeVerification(servletContext);
 		setToContextProvider(servletContext);
+
 	}
 
 	private void setToContextTimeVerification(ServletContext servletContext) {

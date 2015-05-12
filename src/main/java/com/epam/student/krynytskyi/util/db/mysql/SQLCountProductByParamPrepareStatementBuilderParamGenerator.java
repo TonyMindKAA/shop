@@ -2,16 +2,15 @@ package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
 import com.epam.student.krynytskyi.beans.ProductFormBean;
-import com.epam.student.krynytskyi.db.constant.ProductOrderConst;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
+public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
 
-public class ProductFormParametersParser {
-    private static final Logger log = Logger.getLogger(ProductFormParametersParser.class);
-    private String SELECT_PRODUCT_BY_PARAMETER = "SELECT *, pr.id as pr_id " +
+    private static final Logger log = Logger.getLogger(SQLSelectByParamPrepareStatementBuilderParamGenerator.class);
+    private String SELECT_PRODUCT_BY_PARAMETER = "SELECT COUNT(pr.id) numberProduct " +
             "FROM shop.product as pr " +
             "inner join shop.product_type as prt on pr.product_type_id = prt.id " +
             "inner join shop.manufacturer as mn on pr.manufacture_id = mn.id " +
@@ -21,35 +20,22 @@ public class ProductFormParametersParser {
     private String sqlTittle = " pr.name LIKE '%' ? '%'";
     private String sqlType = " prt.type = ?";
     private String sqlManufacturer = "mn.manufacturer = ?";
-    private String sqlOrder = " order by";
-    private String sqlLimit = " limit";
     private List<String> types = new ArrayList<>();
     private List<String> manufacturers = new ArrayList<>();
     private String priceSQLPart = "";
     private String typeSQLPart = "";
     private String manufacturerSQLPart = "";
-    private String orderSQLPart = "";
-    private String limitSQLPart = "";
     private String tittleSQLPart = "";
     private String resultSQLQuery = "";
     private List<String> paramValues = new ArrayList<>();
 
 
-    public PrepareStatementBuilderParamsBean parse(ProductFormBean productFormBean) {
+    public PrepareStatementBuilderParamsBean generate(ProductFormBean productFormBean) {
         generateTittle(productFormBean);
-        log.debug(tittleSQLPart);
         generatePricePart(productFormBean);
-        log.debug(priceSQLPart);
         generateProductType(productFormBean);
-        log.debug(typeSQLPart);
         generateProductManufacture(productFormBean);
-        log.debug(manufacturerSQLPart);
-        generateProductOrder(productFormBean);
-        log.debug(orderSQLPart);
-        generateLimit(productFormBean);
-        log.debug(limitSQLPart);
         stickTogetherAllSQLPartToResultSQLQuery();
-        log.debug(resultSQLQuery );
         PrepareStatementBuilderParamsBean prepareStatementBuilderParamsBean = generatePrepareStatementBuilderParams();
         toDefaultValue();
         return prepareStatementBuilderParamsBean;
@@ -61,8 +47,6 @@ public class ProductFormParametersParser {
         priceSQLPart = "";
         typeSQLPart = "";
         manufacturerSQLPart = "";
-        orderSQLPart = "";
-        limitSQLPart = "";
         tittleSQLPart = "";
         resultSQLQuery = "";
         paramValues = new ArrayList<>();
@@ -77,42 +61,10 @@ public class ProductFormParametersParser {
 
     private void stickTogetherAllSQLPartToResultSQLQuery() {
         resultSQLQuery = SELECT_PRODUCT_BY_PARAMETER + tittleSQLPart + priceSQLPart + typeSQLPart +
-                manufacturerSQLPart + orderSQLPart + limitSQLPart + ";";
+                manufacturerSQLPart + ";";
     }
 
-    private void generateLimit(ProductFormBean productFormBean) {
-        if (isParameterExist(productFormBean.getNumberItems()) && isParameterExist(productFormBean.getCurrentPage())) {
-            limitSQLPart = sqlLimit+" "+productFormBean.getCurrentPage()+", "+productFormBean.getNumberItems();
-        }
-    }
 
-    private void generateProductOrder(ProductFormBean productFormBean) {
-        if (isParameterExist(productFormBean.getOrder())) {
-            if (productFormBean.getOrder().equals(ProductOrderConst.MANUFACTURE_A_TO_Z)) {
-                orderSQLPart += sqlOrder +" mn.manufacturer";
-                return;
-            }
-            if (productFormBean.getOrder().equals(ProductOrderConst.MANUFACTURE_Z_TO_A)) {
-                orderSQLPart += sqlOrder + " mn.manufacturer DESC";
-                return;
-            }
-            if (productFormBean.getOrder().equals(ProductOrderConst.PRICE_HEIGHT_LOW)) {
-                orderSQLPart += sqlOrder +" pr.price";
-                return;
-            }
-            if (productFormBean.getOrder().equals(ProductOrderConst.PRICE_LOW_HEIGHT)) {
-                orderSQLPart += sqlOrder + " pr.price DESC";
-                return;
-            }
-            if (productFormBean.getOrder().equals(ProductOrderConst.TYPE_A_TO_Z)) {
-                orderSQLPart += sqlOrder+ " prt.type";
-                return;
-            }
-            if (productFormBean.getOrder().equals(ProductOrderConst.TYPE_Z_TO_A)) {
-                orderSQLPart += sqlOrder + " prt.type DESC";
-            }
-        }
-    }
 
     private void generateTittle(ProductFormBean productFormBean) {
         if (isParameterExist(productFormBean.getTitle())) {

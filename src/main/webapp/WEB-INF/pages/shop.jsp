@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="reg" uri="http://koraytugay.com/paginationTags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,13 +138,13 @@
     </form>
     <div class="col-sm-9 padding-right">
         <br class="features_items"><!--features_items-->
-        <h2 class="title text-center">Features Items</h2>
+        <h2 class="title text-center">Features Items(<c:out value='${productNumber}'/>)</h2>
         <c:forEach items="${products}" var="product">
             <div class="col-sm-4">
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
-                            <img src="resources/products/<c:out value="${product.img}"/>" alt=""/>
+                            <img src="resources/products/<c:out value='${product.img}'/>" alt=""/>
 
                             <h2><c:out value="${product.price}"/></h2>
 
@@ -172,13 +173,7 @@
         </c:forEach>
     </div>
     <div id="pagination-footer">
-        <ul class="pagination">
-            <li class="active"><a class="paginationLi">1</a></li>
-            <li><a class="paginationLi">2</a></li>
-            <li><a class="paginationLi">3</a></li>
-            <li><a class="paginationStub">...</a></li>
-            <li><a class="paginationLi">27</a></li>
-        </ul>
+        <reg:paginationTags/>
     </div>
 </section>
 <%@include file="/WEB-INF/jspf/fotter.jspf" %>
