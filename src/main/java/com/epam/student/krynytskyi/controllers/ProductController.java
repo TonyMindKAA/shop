@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.controllers;
 
+import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
 import com.epam.student.krynytskyi.beans.ProductFormBean;
-import com.epam.student.krynytskyi.beans.ProductFormParamBean;
 import com.epam.student.krynytskyi.entity.Product;
 import com.epam.student.krynytskyi.service.ProductService;
 import com.epam.student.krynytskyi.service.ProductServiceImpl;
@@ -15,44 +15,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @WebServlet("/products")
 public class ProductController extends HttpServlet {
     private static final Logger log = Logger.getLogger(ProductController.class);
     private static final long serialVersionUID = 1L;
-    public static final String FORM_PARAMETER_TITLE = "title";
-    public static final String FORM_PARAMETER_PRICE_FROM = "priceFrom";
-    public static final String FORM_PARAMETER_PRICE_TO = "priceTo";
-    public static final String FORM_PARAMETER_AMBIENT = "AMBIENT";
-    public static final String FROM_PARAMETER_PROTECTED = "PROTECTED";
-    public static final String FROM_PARAMETER_CHEAP = "CHEAP";
-    public static final String FROM_PARAMETER_NOKIA = "NOKIA";
-    public static final String FROM_PARAMETER_SIGMA = "SIGMA";
-    public static final String FROM_PARAMETER_APPLE = "APPLE";
-    private ProductService productService;
-
-    @Override
-    public void init() throws ServletException {
-        productService = new ProductServiceImpl(getSqlQueryParts());
-    }
-
-    private Map<String, String> getSqlQueryParts() {
-        Map<String, String> partsOfSQLQuery = new HashMap<>();
-        partsOfSQLQuery.put(FORM_PARAMETER_TITLE, " AND pr.name LIKE '%' ? '%'");
-        partsOfSQLQuery.put(FORM_PARAMETER_PRICE_FROM, " AND pr.price >= ?");
-        partsOfSQLQuery.put(FORM_PARAMETER_PRICE_TO, " AND pr.price <= ? ");
-        partsOfSQLQuery.put(FORM_PARAMETER_AMBIENT, " OR mn.manufacturer = ?");
-        partsOfSQLQuery.put(FROM_PARAMETER_PROTECTED, " OR mn.manufacturer = ?");
-        partsOfSQLQuery.put(FROM_PARAMETER_CHEAP, " OR mn.manufacturer = ?");
-        partsOfSQLQuery.put(FROM_PARAMETER_NOKIA, " OR prt.type = ?");
-        partsOfSQLQuery.put(FROM_PARAMETER_SIGMA, " OR prt.type = ?");
-        partsOfSQLQuery.put(FROM_PARAMETER_APPLE, " OR prt.type = ?");
-        return partsOfSQLQuery;
-    }
+    private ProductService productService = new ProductServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -76,14 +45,15 @@ public class ProductController extends HttpServlet {
     private List<Product> getProductFormUserParams(ProductFormBean productFormBean, HttpServletResponse resp)
             throws IOException {
         ProductFormParametersParser parametersParser = new ProductFormParametersParser();
-        ArrayList<ProductFormParamBean> productFormParamBeans = parametersParser.parse(productFormBean);
+        PrepareStatementBuilderParamsBean builderParamsBean = parametersParser.parse(productFormBean);
+        log.debug(builderParamsBean.getSqlQuery());
         List<Product> products = null;
-        products = getProducts(resp, productFormParamBeans, products);
+        products = getProducts(resp, builderParamsBean, products);
         return products;
     }
 
     private List<Product> getProducts(
-            HttpServletResponse resp, ArrayList<ProductFormParamBean> productFormParamBeans, List<Product> products)
+            HttpServletResponse resp, PrepareStatementBuilderParamsBean productFormParamBeans, List<Product> products)
             throws IOException {
         try {
             products = productService.getByParams(productFormParamBeans);

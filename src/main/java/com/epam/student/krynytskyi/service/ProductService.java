@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.service;
 
-import com.epam.student.krynytskyi.beans.ProductFormParamBean;
+import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
 import com.epam.student.krynytskyi.entity.Product;
 
 import java.util.List;
@@ -11,5 +11,5 @@ import java.util.List;
 public interface ProductService {
     int countProducts() throws Exception;
 
-    List<Product> getByParams(List<ProductFormParamBean> param) throws Exception;
+    List<Product> getByParams(PrepareStatementBuilderParamsBean productFormParamBeans) throws Exception;
 }

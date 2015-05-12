@@ -1,20 +1,17 @@
 package com.epam.student.krynytskyi.db.dao.mysql.impl;
 
-import com.epam.student.krynytskyi.beans.ProductFormParamBean;
 import com.epam.student.krynytskyi.db.dao.mysql.MySqlProductDao;
 import com.epam.student.krynytskyi.db.dto.ProductDTO;
 import com.epam.student.krynytskyi.db.dto.ProductDTOImpl;
 import com.epam.student.krynytskyi.entity.Product;
-import com.epam.student.krynytskyi.util.db.mysql.GetProductByUserParamSQLQueryBuilderImpl;
+import com.epam.student.krynytskyi.util.db.mysql.PrepareStatementBuilder;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class MySqlProductDaoImpl implements MySqlProductDao {
     private static final Logger log = Logger.getLogger(MySqlProductDaoImpl.class);
@@ -22,13 +19,13 @@ public class MySqlProductDaoImpl implements MySqlProductDao {
     private ProductDTO productDTO = new ProductDTOImpl();
 
     @Override
-    public List<Product> getByParams(Connection conn,
-                                     Map<String, String> sqlQueryParts, List<ProductFormParamBean> params) throws Exception {
-        String sqlQuery = buildQuery(sqlQueryParts, params);
+    public List<Product> getByParams(Connection conn, PrepareStatementBuilder statementBuilder) throws Exception {
+        String sqlQuery = statementBuilder.getQuery();
         log.debug(sqlQuery);
         List<Product> products = new ArrayList<>();
-        try (PreparedStatement prst = conn.prepareStatement(sqlQuery)) {
-            executeQuery(params, prst);
+        try (PreparedStatement prst = conn.prepareStatement(sqlQuery)) {statementBuilder.build(prst);
+            statementBuilder.build(prst);
+            prst.executeQuery();
             ResultSet resSet = prst.getResultSet();
             while (resSet.next()) {
                 addProductToList(products, resSet);
@@ -41,24 +38,6 @@ public class MySqlProductDaoImpl implements MySqlProductDao {
 
     private void addProductToList(List<Product> products, ResultSet resSet) throws Exception {
         products.add(productDTO.extract(resSet));
-    }
-
-    private void executeQuery(List<ProductFormParamBean> params, PreparedStatement prst) throws SQLException {
-        initPreparedStatement(params, prst);
-        prst.executeQuery();
-    }
-
-    private String buildQuery(Map<String, String> sqlQueryParts, List<ProductFormParamBean> params) {
-        GetProductByUserParamSQLQueryBuilderImpl queryBuilder = new GetProductByUserParamSQLQueryBuilderImpl();
-        return queryBuilder.build(sqlQueryParts, params);
-    }
-
-    private void initPreparedStatement(List<ProductFormParamBean> params, PreparedStatement prst) throws SQLException {
-        for (int i = 1; i < params.size()+1; i++) {
-            log.debug(params.size() + " :: size() "+params.get(i - 1).getValue());
-            log.debug(i);
-            prst.setString(i, params.get(i - 1).getValue());
-        }
     }
 
     @Override

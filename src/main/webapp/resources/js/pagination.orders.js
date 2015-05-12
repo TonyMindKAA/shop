@@ -9,7 +9,7 @@ function turnOnOrderPaginationHandling (){
         changePaginationMarkerOnClick();
         $(this).parent().addClass("active");
         $("#currentPageHidden").val($(this).text());
-        /*$("#filterForm").submit();*/
+        $("#filterForm").submit();
     });
     function changePaginationMarkerOnClick(){
         var length = $( ".pagination" ).children().length;

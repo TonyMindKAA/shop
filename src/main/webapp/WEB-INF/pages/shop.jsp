@@ -82,8 +82,8 @@
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><input name="СHEAP" type="checkbox" <c:out
-                                            value="${empty productFormBean.cheapType ? ' ' : 'checked'}"/>> <a href="#">СHEAP</a>
+                                    <h4 class="panel-title"><input name="CHEAP" type="checkbox" <c:out
+                                            value="${empty productFormBean.cheapType ? ' ' : 'checked'}"/>> <a href="#">CHEAP</a>
                                     </h4>
                                 </div>
                             </div>

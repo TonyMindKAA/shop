@@ -1,87 +1,197 @@
 package com.epam.student.krynytskyi.util.db.mysql;
 
+import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
 import com.epam.student.krynytskyi.beans.ProductFormBean;
-import com.epam.student.krynytskyi.beans.ProductFormParamBean;
+import com.epam.student.krynytskyi.db.constant.ProductOrderConst;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.epam.student.krynytskyi.db.constant.ProductManufactureConst.*;
-import static com.epam.student.krynytskyi.db.constant.ProductTypeConst.*;
-
 
 public class ProductFormParametersParser {
     private static final Logger log = Logger.getLogger(ProductFormParametersParser.class);
-    public static final String FORM_PARAMETER_TITLE = "title";
-    public static final String FORM_PARAMETER_PRICE_FROM = "priceFrom";
-    public static final String FORM_PARAMETER_PRICE_TO = "priceTo";
-    public static final String FORM_PARAMETER_AMBIENT = "AMBIENT";
-    public static final String FROM_PARAMETER_PROTECTED = "PROTECTED";
-    public static final String FROM_PARAMETER_CHEAP = "CHEAP";
-    public static final String FROM_PARAMETER_NOKIA = "NOKIA";
-    public static final String FROM_PARAMETER_SIGMA = "SIGMA";
-    public static final String FROM_PARAMETER_APPLE = "APPLE";
-    private String SELECT_PRODUCT_BY_PARAMETER = "SELECT *, pr.id as pr_id FROM shop.manufacturer AS mn inner join shop.product AS pr ON mn.id=pr.manufacture_id inner join shop.product_type as prt ON prt.id=pr.product_type_id where pr.product_type_id = prt.id and pr.manufacture_id = mn.id ";
+    private String SELECT_PRODUCT_BY_PARAMETER = "SELECT *, pr.id as pr_id " +
+            "FROM shop.product as pr " +
+            "inner join shop.product_type as prt on pr.product_type_id = prt.id " +
+            "inner join shop.manufacturer as mn on pr.manufacture_id = mn.id " +
+            "WHERE ";
     private String sqlPriceTo = " AND pr.price <= ?";
     private String sqlPriceFrom = " AND pr.price >= ?";
+    private String sqlTittle = " pr.name LIKE '%' ? '%'";
     private String sqlType = " prt.type = ?";
-    private String sqlTypes = "";
     private String sqlManufacturer = "mn.manufacturer = ?";
-    private String sqlManufacturers = "";
-
+    private String sqlOrder = " order by";
+    private String sqlLimit = " limit";
     private List<String> types = new ArrayList<>();
     private List<String> manufacturers = new ArrayList<>();
+    private String priceSQLPart = "";
+    private String typeSQLPart = "";
+    private String manufacturerSQLPart = "";
+    private String orderSQLPart = "";
+    private String limitSQLPart = "";
+    private String tittleSQLPart = "";
+    private String resultSQLQuery = "";
+    private List<String> paramValues = new ArrayList<>();
 
 
-    public ArrayList<ProductFormParamBean> parse(ProductFormBean productFormBean) {
-        ArrayList<ProductFormParamBean> productFormParamBeans = new ArrayList<>();
+    public PrepareStatementBuilderParamsBean parse(ProductFormBean productFormBean) {
+        generateTittle(productFormBean);
+        log.debug(tittleSQLPart);
+        generatePricePart(productFormBean);
+        log.debug(priceSQLPart);
+        generateProductType(productFormBean);
+        log.debug(typeSQLPart);
+        generateProductManufacture(productFormBean);
+        log.debug(manufacturerSQLPart);
+        generateProductOrder(productFormBean);
+        log.debug(orderSQLPart);
+        generateLimit(productFormBean);
+        log.debug(limitSQLPart);
+        stickTogetherAllSQLPartToResultSQLQuery();
+        log.debug(resultSQLQuery );
+        PrepareStatementBuilderParamsBean prepareStatementBuilderParamsBean = generatePrepareStatementBuilderParams();
+        toDefaultValue();
+        return prepareStatementBuilderParamsBean;
+    }
+
+    private void toDefaultValue() {
+        types = new ArrayList<>();
+        manufacturers = new ArrayList<>();
+        priceSQLPart = "";
+        typeSQLPart = "";
+        manufacturerSQLPart = "";
+        orderSQLPart = "";
+        limitSQLPart = "";
+        tittleSQLPart = "";
+        resultSQLQuery = "";
+        paramValues = new ArrayList<>();
+    }
+
+    private PrepareStatementBuilderParamsBean generatePrepareStatementBuilderParams() {
+        PrepareStatementBuilderParamsBean builderParamsBean = new PrepareStatementBuilderParamsBean();
+        builderParamsBean.setPrepareStatementParams(paramValues);
+        builderParamsBean.setSqlQuery(resultSQLQuery);
+        return builderParamsBean;
+    }
+
+    private void stickTogetherAllSQLPartToResultSQLQuery() {
+        resultSQLQuery = SELECT_PRODUCT_BY_PARAMETER + tittleSQLPart + priceSQLPart + typeSQLPart +
+                manufacturerSQLPart + orderSQLPart + limitSQLPart + ";";
+    }
+
+    private void generateLimit(ProductFormBean productFormBean) {
+        if (isParameterExist(productFormBean.getNumberItems()) && isParameterExist(productFormBean.getCurrentPage())) {
+            limitSQLPart = sqlLimit+" "+productFormBean.getCurrentPage()+", "+productFormBean.getNumberItems();
+        }
+    }
+
+    private void generateProductOrder(ProductFormBean productFormBean) {
+        if (isParameterExist(productFormBean.getOrder())) {
+            if (productFormBean.getOrder().equals(ProductOrderConst.MANUFACTURE_A_TO_Z)) {
+                orderSQLPart += sqlOrder +" mn.manufacturer";
+                return;
+            }
+            if (productFormBean.getOrder().equals(ProductOrderConst.MANUFACTURE_Z_TO_A)) {
+                orderSQLPart += sqlOrder + " mn.manufacturer DESC";
+                return;
+            }
+            if (productFormBean.getOrder().equals(ProductOrderConst.PRICE_HEIGHT_LOW)) {
+                orderSQLPart += sqlOrder +" pr.price";
+                return;
+            }
+            if (productFormBean.getOrder().equals(ProductOrderConst.PRICE_LOW_HEIGHT)) {
+                orderSQLPart += sqlOrder + " pr.price DESC";
+                return;
+            }
+            if (productFormBean.getOrder().equals(ProductOrderConst.TYPE_A_TO_Z)) {
+                orderSQLPart += sqlOrder+ " prt.type";
+                return;
+            }
+            if (productFormBean.getOrder().equals(ProductOrderConst.TYPE_Z_TO_A)) {
+                orderSQLPart += sqlOrder + " prt.type DESC";
+            }
+        }
+    }
+
+    private void generateTittle(ProductFormBean productFormBean) {
         if (isParameterExist(productFormBean.getTitle())) {
-            setParameterFromBean(productFormParamBeans, FORM_PARAMETER_TITLE, productFormBean.getTitle());
+            tittleSQLPart = sqlTittle;
+            addParamValue(productFormBean.getTitle());
+        } else {
+            tittleSQLPart = " pr.name LIKE '%%'";
         }
-        if (isParameterExist(productFormBean.getPriceFrom())) {
-            setParameterFromBean(productFormParamBeans, FORM_PARAMETER_PRICE_FROM, productFormBean.getPriceFrom());
-        }
-        if (isParameterExist(productFormBean.getPriceTo())) {
-            setParameterFromBean(productFormParamBeans, FORM_PARAMETER_PRICE_TO, productFormBean.getPriceTo());
-        }
-        if (isParameterExist(productFormBean.getAmbientType())) {
-            setParameterFromBean(productFormParamBeans, FORM_PARAMETER_AMBIENT, AMBIENT_PRODUCT_TYPE);
-            types.add(productFormBean.getAmbientType());
-        }
-        if (isParameterExist(productFormBean.getProtectedType())) {
-            setParameterFromBean(productFormParamBeans, FROM_PARAMETER_PROTECTED, PROTECTED_PRODUCT_TYPE);
-            types.add(productFormBean.getProtectedType());
-        }
-        if (isParameterExist(productFormBean.getCheapType())) {
-            setParameterFromBean(productFormParamBeans, FROM_PARAMETER_CHEAP, CHEAP_PRODUCT_TYPE);
-            types.add(productFormBean.getCheapType());
-        }
+    }
+
+    private boolean addParamValue(String value) {
+        return paramValues.add(value);
+    }
+
+    private void generateProductManufacture(ProductFormBean productFormBean) {
         if (isParameterExist(productFormBean.getNokia())) {
-            setParameterFromBean(productFormParamBeans, FROM_PARAMETER_NOKIA, NOKIA_PRODUCT_MANUFACTURES);
-            manufacturers.add(productFormBean.getNokia());
+            manufacturers.add("nokia");
         }
         if (isParameterExist(productFormBean.getSigma())) {
-            setParameterFromBean(productFormParamBeans, FROM_PARAMETER_SIGMA, SIGMA_PRODUCT_MANUFACTURES);
-            manufacturers.add(productFormBean.getSigma());
+            manufacturers.add("sigma");
         }
         if (isParameterExist(productFormBean.getApple())) {
-            setParameterFromBean(productFormParamBeans, FROM_PARAMETER_APPLE, APPLE_PRODUCT_MANUFACTURES);
-            manufacturers.add(productFormBean.getApple());
+            manufacturers.add("apple");
         }
-        return productFormParamBeans;
+
+        if (manufacturers.size() == 1) {
+            manufacturerSQLPart = " AND "+sqlManufacturer;
+            paramValues.addAll(manufacturers);
+            return;
+        }
+
+        if (manufacturers.size() > 1) {
+            manufacturerSQLPart = " AND( " + sqlManufacturer;
+            for (int i = 0; i < manufacturers.size() - 1; i++) {
+                manufacturerSQLPart += " OR " + sqlManufacturer;
+            }
+            manufacturerSQLPart += ")";
+            paramValues.addAll(manufacturers);
+        }
+    }
+
+    private void generateProductType(ProductFormBean productFormBean) {
+        if (isParameterExist(productFormBean.getAmbientType())) {
+            types.add("AMBIENT");
+        }
+        if (isParameterExist(productFormBean.getProtectedType())) {
+            types.add("PROTECTED");
+        }
+        if (isParameterExist(productFormBean.getCheapType())) {
+            types.add("CHEAP");
+        }
+        if (types.size() == 1) {
+            typeSQLPart = " AND "+sqlType;
+            paramValues.addAll(types);
+            return;
+        }
+        if (types.size() > 1) {
+            typeSQLPart = " AND( " + sqlType;
+            for (int i = 0; i < types.size() - 1; i++) {
+                typeSQLPart += " OR " + sqlType;
+            }
+            typeSQLPart += ")";
+            paramValues.addAll(types);
+        }
+    }
+
+    private void generatePricePart(ProductFormBean productFormBean) {
+        if (isParameterExist(productFormBean.getPriceFrom())) {
+            priceSQLPart += sqlPriceFrom;
+            addParamValue(productFormBean.getPriceFrom());
+        }
+        if (isParameterExist(productFormBean.getPriceTo())) {
+            priceSQLPart += sqlPriceTo;
+            addParamValue(productFormBean.getPriceTo());
+        }
     }
 
     private boolean isParameterExist(String parameter) {
         log.debug(parameter);
         return parameter != null && !parameter.isEmpty();
-    }
-
-    private void setParameterFromBean(
-            ArrayList<ProductFormParamBean> productFormParamBeans, String formParameter, String paramValue) {
-        ProductFormParamBean paramBean = new ProductFormParamBean();
-        paramBean.setName(formParameter);
-        paramBean.setValue(paramValue);
-        productFormParamBeans.add(paramBean);
     }
 }
