@@ -110,42 +110,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div id="order-result-castum">
-                        <div id="order-shop-main">
-                            <div id="order-shop-main-title">Order:</div>
-                            <div id="order-shop-main-select">
-                                <select id="order-shop-main-select-tag">
-                                    <option value="priceLowHeight">by price low to height</option>
-                                    <option value="priceHeightLow">by price height to low</option>
-                                    <option value="typeAToZ">by type a to z</option>
-                                    <option value="typeZToA">by type z to a</option>
-                                    <option value="manufacturerAToZ">by manufacturer a to a</option>
-                                    <option value="manufacturerZToA">by manufacturer z to a</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div id="result-shop-main">
-                            <div id="result-shop-main-title">Results:</div>
-                            <select id="result-shop-select">
-                                <option value="5" >5 items/page</option>
-                                <option value="15" >15 items/page</option>
-                                <option value="25" >25 items/page</option>
-                            </select>
-                        </div>
-                    </div>
-                   <!-- <div id="pagination-order-result">
-                        <ul class="pagination">
-                            <li class="active"><a class="paginationLi">1</a></li>
-                            <li><a class="paginationLi">2</a></li>
-                            <li><a class="paginationLi">3</a></li>
-                            <li><a class="paginationStub">...</a></li>
-                            <li><a class="paginationLi">27</a></li>
-                        </ul>
-                    </div>-->
-                </div>
-            </div>
-        </div>
+                <sel:ItemNumbersOrderTag/>
         <!--/header-bottom-->
 </header>
 <!--/header-->

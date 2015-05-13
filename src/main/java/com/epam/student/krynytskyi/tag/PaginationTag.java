@@ -24,15 +24,16 @@ public class PaginationTag extends SimpleTagSupport {
         int currentPage = Integer.parseInt(productFormBean.getCurrentPage());
         int numberItems = Integer.parseInt(productFormBean.getNumberItems());
         int pageNumbers = countPageNumbers(productNumber, numberItems);
-        renderPaginationBlock(currentPage, pageNumbers);
+        renderPaginationBlock(currentPage, pageNumbers, productNumber );
     }
 
     private int countPageNumbers(int productNumber, int numberItems) {
-        return (Math.ceil(productNumber / numberItems) > 0) ? (int) Math.ceil(productNumber / numberItems) : 1;
+        double pages = Math.ceil((double)productNumber / (double)numberItems);
+        return (pages > 0) ? (int)  pages : 1;
     }
 
-    private void renderPaginationBlock(int currentPage, int pageNumbers) throws IOException {
-        if (pageNumbers >= currentPage) {
+    private void renderPaginationBlock(int currentPage, int pageNumbers, int productNumber ) throws IOException {
+        if (pageNumbers >= currentPage && productNumber  != 0) {
             if (currentPage > 2 && (pageNumbers - currentPage) - 2 > 0) {
                 renderFirstFourPage(currentPage, pageNumbers);
             } else if (currentPage > 4) {
@@ -87,7 +88,7 @@ public class PaginationTag extends SimpleTagSupport {
 
     private void renderBeforeFourthPage(int currentPage, int pageNumbers) throws IOException {
         String html = " <ul class=\"pagination\">";
-        for (int i = 1; i <= 4; i++) {
+        for (int i = 1; i <= pageNumbers-1; i++) {
             if (i == currentPage)
                 html += "<li class=\"active\"><a class=\"paginationLi\">" + (currentPage) + "</a></li>";
             else
@@ -95,8 +96,12 @@ public class PaginationTag extends SimpleTagSupport {
         }
         if (pageNumbers - 1 > currentPage)
             html += " <li><a class=\"paginationLi\">...</a></li><li><a class=\"paginationLi\">" + pageNumbers + "</a></li></ul>";
-        if (pageNumbers > currentPage && !(pageNumbers - 1 > currentPage))
-            html += " <li><a class=\"paginationLi\">" + pageNumbers + "</a></li></ul>";
+        if (pageNumbers >= currentPage && !(pageNumbers - 1 > currentPage)) {
+            if(pageNumbers == currentPage)
+                html += " <li class=\"active\"><a class=\"paginationLi\">" + pageNumbers + "</a></li></ul>";
+            else
+                html += " <li><a class=\"paginationLi\">" + pageNumbers + "</a></li></ul>";
+        }
         getJspContext().getOut().write(html);
     }
 }
