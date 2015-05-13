@@ -27,7 +27,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGeneratorTest {
     }
 
     @Test
-    public void testShouldReturnSQLQueryWhenPutProductFormBeanWithCurrentPageAndNumberItemsAndOrderParameters(){
+    public void testShouldReturnCorrectSQLQueryWhenPutProductFormBeanWithCurrentPageAndNumberItemsAndOrderParameters(){
         String expectedSqlQuery = "SELECT *, pr.id as pr_id FROM shop.product as pr " +
                 "inner join shop.product_type as prt on pr.product_type_id = prt.id " +
                 "inner join shop.manufacturer as mn on pr.manufacture_id = mn.id " +
@@ -42,7 +42,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGeneratorTest {
     }
 
     @Test
-    public void testShouldReturnSQLQueryWhenPutProductFormBeanWithCurrentPageAndNegativeNumberItemsAndOrderParameters(){
+    public void testShouldReturnCorrectSQLQueryWhenPutProductFormBeanWithCurrentPageAndNegativeNumberItemsAndOrderParameters(){
         String expectedSqlQuery = "SELECT *, pr.id as pr_id FROM shop.product as pr " +
                 "inner join shop.product_type as prt on pr.product_type_id = prt.id " +
                 "inner join shop.manufacturer as mn on pr.manufacture_id = mn.id " +
@@ -50,6 +50,21 @@ public class SQLSelectByParamPrepareStatementBuilderParamGeneratorTest {
         ProductFormBean productFormBean = new ProductFormBean();
         productFormBean.setCurrentPage("1");
         productFormBean.setNumberItems("-5");
+        productFormBean.setOrder(ProductOrderConst.PRICE_HEIGHT_LOW);
+        PrepareStatementBuilderParamsBean generate = paramGenerator.generate(productFormBean);
+        String actualQuery = generate.getSqlQuery();
+        Assert.assertEquals(expectedSqlQuery,actualQuery);
+    }
+
+    @Test
+    public void testShouldReturnCorrectSQLQueryWhenPutProductFormBeanWithCurrentPageAndNumberItemsAndNegativeOrderParameters(){
+        String expectedSqlQuery = "SELECT *, pr.id as pr_id FROM shop.product as pr " +
+                "inner join shop.product_type as prt on pr.product_type_id = prt.id " +
+                "inner join shop.manufacturer as mn on pr.manufacture_id = mn.id " +
+                "WHERE  pr.name LIKE '%%' order by pr.price limit 0, 5;";
+        ProductFormBean productFormBean = new ProductFormBean();
+        productFormBean.setCurrentPage("-1");
+        productFormBean.setNumberItems("5");
         productFormBean.setOrder(ProductOrderConst.PRICE_HEIGHT_LOW);
         PrepareStatementBuilderParamsBean generate = paramGenerator.generate(productFormBean);
         String actualQuery = generate.getSqlQuery();

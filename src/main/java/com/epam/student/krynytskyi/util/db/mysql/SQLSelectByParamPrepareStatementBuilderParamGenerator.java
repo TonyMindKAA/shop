@@ -85,7 +85,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
     private int getCurrentPage(String currentPageStr) {
         int number = convertToNum(currentPageStr);
         if(currentPageStr == null || number <= 0) {
-            return 0;
+            return 1;
         }
         return number;
     }
