@@ -6,6 +6,8 @@ import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.provider.CaptchaProviderFactory;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaCookieProvider;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaHiddenProvider;
+import com.epam.student.krynytskyi.service.ProductService;
+import com.epam.student.krynytskyi.service.ProductServiceImpl;
 import com.epam.student.krynytskyi.service.UserServiceImpl;
 
 import javax.servlet.ServletContext;
@@ -34,6 +36,13 @@ public class ContextListener implements ServletContextListener {
 		setToContextTimeVerification(servletContext);
 		setToContextProvider(servletContext);
 		setToContextDefaultSettingOfFindProducts(servletContext);
+		setToContextProductService(servletContext);
+
+	}
+
+	private void setToContextProductService(ServletContext servletContext) {
+		ProductService productService = new ProductServiceImpl();
+		servletContext.setAttribute("productService",productService);
 	}
 
 	private void setToContextDefaultSettingOfFindProducts(ServletContext servletContext) {

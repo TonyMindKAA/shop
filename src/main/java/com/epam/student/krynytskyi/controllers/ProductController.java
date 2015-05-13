@@ -19,7 +19,12 @@ import java.util.List;
 public class ProductController extends HttpServlet {
     private static final Logger log = Logger.getLogger(ProductController.class);
     private static final long serialVersionUID = 1L;
-    private ProductService productService = new ProductServiceImpl();
+    private ProductService productService;
+
+    @Override
+    public void init() throws ServletException {
+        productService = (ProductService) getServletContext().getAttribute("productService");
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
