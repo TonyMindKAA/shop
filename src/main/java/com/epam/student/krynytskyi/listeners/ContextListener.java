@@ -1,5 +1,6 @@
 package com.epam.student.krynytskyi.listeners;
 
+import com.epam.student.krynytskyi.beans.ProductFormBean;
 import com.epam.student.krynytskyi.containers.handler.CaptchaCleanerThread;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.epam.student.krynytskyi.provider.CaptchaProviderFactory;
@@ -32,7 +33,15 @@ public class ContextListener implements ServletContextListener {
 		setToContextUserService(servletContext);
 		setToContextTimeVerification(servletContext);
 		setToContextProvider(servletContext);
+		setToContextDefaultSettingOfFindProducts(servletContext);
+	}
 
+	private void setToContextDefaultSettingOfFindProducts(ServletContext servletContext) {
+		ProductFormBean productFormBean = new ProductFormBean();
+		productFormBean.setOrder(servletContext.getInitParameter("productOrder"));
+		productFormBean.setNumberItems(servletContext.getInitParameter("productResultView"));
+		productFormBean.setCurrentPage(servletContext.getInitParameter("productCurrentPage"));
+		servletContext.setAttribute("productFormBean", productFormBean);
 	}
 
 	private void setToContextTimeVerification(ServletContext servletContext) {

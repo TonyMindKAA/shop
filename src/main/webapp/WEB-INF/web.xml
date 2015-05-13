@@ -33,13 +33,7 @@
         <servlet-name>LogOutController</servlet-name>
         <servlet-class>com.epam.student.krynytskyi.controllers.LogOutController</servlet-class>
     </servlet>
-    <servlet>
-        <description>
-        </description>
-        <display-name>FileUploadServlet</display-name>
-        <servlet-name>FileUploadServlet</servlet-name>
-        <servlet-class>com.epam.student.krynytskyi.controllers.FileUploadServlet</servlet-class>
-    </servlet>
+
     <servlet-mapping>
         <servlet-name>Captcha</servlet-name>
         <url-pattern>/captcha</url-pattern>
@@ -52,10 +46,6 @@
         <servlet-name>LogOutController</servlet-name>
         <url-pattern>/LogOutController</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>FileUploadServlet</servlet-name>
-        <url-pattern>/FileUploadServlet</url-pattern>
-    </servlet-mapping>
 
     <listener>
         <listener-class>
@@ -63,7 +53,7 @@
         </listener-class>
     </listener>
 
-<!-- Context parameters-->
+    <!-- Context parameters-->
     <context-param>
         <param-name>captchaProvider</param-name>
         <param-value>session</param-value>
@@ -90,7 +80,7 @@
     </context-param>
 
     <context-param>
-        <param-name>productcurrentPage</param-name>
+        <param-name>productCurrentPage</param-name>
         <param-value>1</param-value>
     </context-param>
 
