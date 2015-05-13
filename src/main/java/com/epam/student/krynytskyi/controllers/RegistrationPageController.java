@@ -50,7 +50,6 @@ public class RegistrationPageController extends HttpServlet {
         userService = (UserService) getServletContext().getAttribute(USER_SERVICE);
     }
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CaptchaBean captcha = new CaptchaBeanGenerator().generate();
