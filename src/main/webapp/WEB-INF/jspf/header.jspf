@@ -120,7 +120,7 @@
                                     <option value="priceHeightLow">by price height to low</option>
                                     <option value="typeAToZ">by type a to z</option>
                                     <option value="typeZToA">by type z to a</option>
-                                    <option value="manufacturerAToA">by manufacturer a to a</option>
+                                    <option value="manufacturerAToZ">by manufacturer a to a</option>
                                     <option value="manufacturerZToA">by manufacturer z to a</option>
                                 </select>
                             </div>

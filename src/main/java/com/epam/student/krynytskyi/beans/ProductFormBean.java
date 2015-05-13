@@ -13,6 +13,36 @@ public class ProductFormBean {
     private String nokia;
     private String sigma;
     private String apple;
+    private String order;
+    private String numberItems;
+    private String currentPage;
+
+    public String getOrder() {
+        return order;
+    }
+
+    public ProductFormBean setOrder(String order) {
+        this.order = order;
+        return this;
+    }
+
+    public String getNumberItems() {
+        return numberItems;
+    }
+
+    public ProductFormBean setNumberItems(String numberItems) {
+        this.numberItems = numberItems;
+        return this;
+    }
+
+    public String getCurrentPage() {
+        return currentPage;
+    }
+
+    public ProductFormBean setCurrentPage(String currentPage) {
+        this.currentPage = currentPage;
+        return this;
+    }
 
     public String getProtectedType() {
         return protectedType;
@@ -107,6 +137,9 @@ public class ProductFormBean {
         sb.append(", nokia='").append(nokia).append('\'');
         sb.append(", sigma='").append(sigma).append('\'');
         sb.append(", apple='").append(apple).append('\'');
+        sb.append(", order='").append(order).append('\'');
+        sb.append(", numberItems='").append(numberItems).append('\'');
+        sb.append(", currentPage='").append(currentPage).append('\'');
         sb.append('}');
         return sb.toString();
     }
