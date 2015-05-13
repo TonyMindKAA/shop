@@ -123,7 +123,7 @@
 
                             <div class="well">
                                 <div class="price-main-page">
-                                    <input type="hidden" id="orderHidden" name="order" value="priceLowHight">
+                                    <input type="hidden" id="orderHidden" name="order" value="priceLowHeight">
                                     <input type="hidden" id="resultHidden" name="numberItems" value="5">
                                     <input type="hidden" id="currentPageHidden" name="currentPage" value="1">
                                     <input type="submit" id="submit-button-main-page" class="btn-default add-to-cart"

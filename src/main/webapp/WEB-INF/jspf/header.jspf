@@ -116,8 +116,8 @@
                             <div id="order-shop-main-title">Order:</div>
                             <div id="order-shop-main-select">
                                 <select id="order-shop-main-select-tag">
-                                    <option value="priceLowHight">by price low to height</option>
-                                    <option value="priceHightLow">by price height to low</option>
+                                    <option value="priceLowHeight">by price low to height</option>
+                                    <option value="priceHeightLow">by price height to low</option>
                                     <option value="typeAToZ">by type a to z</option>
                                     <option value="typeZToA">by type z to a</option>
                                     <option value="manufacturerAToA">by manufacturer a to a</option>
