@@ -3,7 +3,6 @@ package com.epam.student.krynytskyi.controllers;
 import com.epam.student.krynytskyi.beans.ProductFormBean;
 import com.epam.student.krynytskyi.entity.Product;
 import com.epam.student.krynytskyi.service.ProductService;
-import com.epam.student.krynytskyi.service.ProductServiceImpl;
 import com.epam.student.krynytskyi.util.bean.creator.ProductFormBeanCreator;
 import org.apache.log4j.Logger;
 
@@ -24,12 +23,12 @@ public class ProductController extends HttpServlet {
     @Override
     public void init() throws ServletException {
         productService = (ProductService) getServletContext().getAttribute("productService");
+
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
         ProductFormBeanCreator formBeanCreator = new ProductFormBeanCreator();
         ProductFormBean productFormBean = formBeanCreator.create(req);
         List<Product> products = getProductFormUserParams(productFormBean, resp);

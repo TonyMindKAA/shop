@@ -4,7 +4,11 @@ import com.epam.student.krynytskyi.beans.ProductFormBean;
 import com.epam.student.krynytskyi.service.ProductService;
 import org.apache.log4j.Logger;
 
+import javax.servlet.ServletContext;
+import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 
@@ -14,7 +18,13 @@ public class PaginationTag extends SimpleTagSupport {
     @Override
     public void doTag() throws JspException, IOException {
         ProductFormBean productFormBean = (ProductFormBean) getJspContext().findAttribute("productFormBean");
-        ProductService productService = (ProductService) getJspContext().getAttribute("productService");
+        PageContext context = (PageContext) getJspContext();
+        ServletRequest request = (HttpServletRequest) context.getRequest();
+        ServletContext servletContext = request.getServletContext();
+        ProductService productService = (ProductService)servletContext.getAttribute("productService");
+
+
+        //int productNumbers = (Integer) getJspContext().getAttribute("productNumber");
 
         int productNumber = 0;
         try {
@@ -54,7 +64,8 @@ public class PaginationTag extends SimpleTagSupport {
             for (int i = 1; i <= pageNumbers; i++) {
                 if (i == currentPage)
                     html += "<li class=\"active\"><a class=\"paginationLi\">" + (currentPage) + "</a></li>";
-                html += "<li><a class=\"paginationLi\">" + i + "</a></li>";
+                else
+                    html += "<li><a class=\"paginationLi\">" + i + "</a></li>";
             }
             html += "</ul>";
             getJspContext().getOut().write(html);

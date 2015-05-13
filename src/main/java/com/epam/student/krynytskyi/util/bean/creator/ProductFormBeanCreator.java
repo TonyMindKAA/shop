@@ -32,10 +32,34 @@ public class ProductFormBeanCreator {
         productFormBean.setNokia(req.getParameter(FROM_PARAMETER_NOKIA));
         productFormBean.setSigma(req.getParameter(FROM_PARAMETER_SIGMA));
         productFormBean.setApple(req.getParameter(FROM_PARAMETER_APPLE));
-        productFormBean.setOrder(req.getParameter(FROM_PARAMETER_ORDER));
-        productFormBean.setNumberItems(req.getParameter(FROM_PARAMETER_NUMBER_ITEMS));
-        productFormBean.setCurrentPage(req.getParameter(FROM_PARAMETER_CURRENT_PAGE));
+        setOrder(req, productFormBean);
+        setNumberItems(req, productFormBean);
+        setCurrentPage(req, productFormBean);
 
         return productFormBean;
+    }
+
+    private void setCurrentPage(HttpServletRequest req, ProductFormBean productFormBean) {
+        String currentPage = req.getParameter(FROM_PARAMETER_CURRENT_PAGE);
+        if (currentPage == null)
+            productFormBean.setCurrentPage((String) req.getServletContext().getAttribute("productCurrentPage"));
+        else
+            productFormBean.setCurrentPage(currentPage);
+    }
+
+    private void setNumberItems(HttpServletRequest req, ProductFormBean productFormBean) {
+        String numberItems = req.getParameter(FROM_PARAMETER_NUMBER_ITEMS);
+        if (numberItems == null)
+            productFormBean.setNumberItems((String) req.getServletContext().getAttribute("productResultView"));
+        else
+            productFormBean.setNumberItems(numberItems);
+    }
+
+    private void setOrder(HttpServletRequest req, ProductFormBean productFormBean) {
+        String order = req.getParameter(FROM_PARAMETER_ORDER);
+        if (order == null)
+            productFormBean.setOrder((String) req.getServletContext().getAttribute("productOrder"));
+        else
+            productFormBean.setOrder(order);
     }
 }

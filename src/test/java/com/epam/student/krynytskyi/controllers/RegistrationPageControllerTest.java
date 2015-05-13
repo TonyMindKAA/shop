@@ -1,21 +1,5 @@
 package com.epam.student.krynytskyi.controllers;
 
-import java.io.IOException;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
-
 import com.epam.student.krynytskyi.beans.RegistrationFormBean;
 import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
 import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
@@ -28,6 +12,20 @@ import com.epam.student.krynytskyi.util.bean.creator.RegistrationFormBeanCreator
 import com.epam.student.krynytskyi.util.bean.creator.ValidateDataRegistrationFormCreator;
 import com.epam.student.krynytskyi.validator.form.FullRegistrationFormValidator;
 import com.epam.student.krynytskyi.validator.report.RegistrationFormValidationReport;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 
 public class RegistrationPageControllerTest {
 	private static final String LOGIN_SERVLET = "login";
@@ -102,7 +100,7 @@ public class RegistrationPageControllerTest {
 	}
 
 	@Test
-	public void testShouldInvokeGenerateRaportObjectWhenValidMethodFromFullRegistrationFormValidatorReturnFalse()
+	public void testShouldInvokeGenerateReportObjectWhenValidMethodFromFullRegistrationFormValidatorReturnFalse()
 			throws ServletException, IOException {
 		RegistrationFormReportBean report = new RegistrationFormReportBean();
 		RegistrationFormBean formBean = new RegistrationFormBean();

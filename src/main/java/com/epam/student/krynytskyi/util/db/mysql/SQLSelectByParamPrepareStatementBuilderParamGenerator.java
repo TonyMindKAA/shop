@@ -76,10 +76,26 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
         if (isParameterExist(productFormBean.getNumberItems()) && isParameterExist(productFormBean.getCurrentPage())) {
             String numberItemsStr = productFormBean.getNumberItems();
             String currentPageStr = productFormBean.getCurrentPage();
-            int currentPage = convertToNum(currentPageStr);
-            int numberItems = convertToNum(numberItemsStr);
-            limitSQLPart = sqlLimit + " " + (currentPage * numberItems) + ", " + numberItems;
+            int currentPage = getCurrentPage(currentPageStr);
+            int numberItems = getNumberItem(numberItemsStr);
+            limitSQLPart = sqlLimit + " " + ((currentPage-1) * numberItems) + ", " + numberItems;
         }
+    }
+
+    private int getCurrentPage(String currentPageStr) {
+        int number = convertToNum(currentPageStr);
+        if(currentPageStr == null || number <= 0) {
+            return 0;
+        }
+        return number;
+    }
+
+    private int getNumberItem(String numberItemsStr) {
+        int number = convertToNum(numberItemsStr);
+        if(numberItemsStr == null || number <= 0) {
+            return 5;
+        }
+        return number;
     }
 
     private int convertToNum(String currentPageStr) {

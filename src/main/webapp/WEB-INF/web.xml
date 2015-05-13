@@ -3,17 +3,8 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
     <welcome-file-list>
-        <welcome-file>main.jsp</welcome-file>
+        <welcome-file>products</welcome-file>
     </welcome-file-list>
-
-    <servlet>
-        <servlet-name>Main</servlet-name>
-        <jsp-file>/WEB-INF/pages/shop.jsp</jsp-file>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>Main</servlet-name>
-        <url-pattern>/main.jsp</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>Captcha</servlet-name>
