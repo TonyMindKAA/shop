@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.beans;
+package com.epam.student.krynytskyi.beans.registration;
 
 public class RegistrationFormReportBean {
 	private RegistrationFormBean registrationFormBean;

@@ -1,9 +1,9 @@
 package com.epam.student.krynytskyi.controllers;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormReportBean;
+import com.epam.student.krynytskyi.beans.registration.ValidateDataRegistrationFormBean;
 import com.epam.student.krynytskyi.convertor.RegistrationFormBeanToUserConverter;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;

@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.controllers;
 
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 import com.github.cage.Cage;
 import org.apache.log4j.Logger;
@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class CapchaController extends HttpServlet {
-    private static final Logger log = Logger.getLogger(CapchaController.class);
+public class CaptchaController extends HttpServlet {
+    private static final Logger log = Logger.getLogger(CaptchaController.class);
     private static final long serialVersionUID = 1L;
     private CaptchaProvider capthcaPrvider;
 

@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.service;
 
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.product.ProductFormBean;
 import com.epam.student.krynytskyi.entity.Product;
 
 import java.util.List;

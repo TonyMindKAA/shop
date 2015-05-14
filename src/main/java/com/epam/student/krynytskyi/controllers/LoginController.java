@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-import com.epam.student.krynytskyi.beans.LoginFormBean;
+import com.epam.student.krynytskyi.beans.login.LoginFormBean;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.service.UserService;
 

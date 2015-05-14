@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.product.ProductFormBean;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
@@ -143,7 +143,6 @@ public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
     }
 
     private boolean isParameterExist(String parameter) {
-        log.debug(parameter);
         return parameter != null && !parameter.isEmpty();
     }
 }

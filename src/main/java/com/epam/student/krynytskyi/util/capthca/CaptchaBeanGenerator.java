@@ -2,7 +2,7 @@ package com.epam.student.krynytskyi.util.capthca;
 
 import java.util.UUID;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
 
 public class CaptchaBeanGenerator {
 	public CaptchaBean generate() {

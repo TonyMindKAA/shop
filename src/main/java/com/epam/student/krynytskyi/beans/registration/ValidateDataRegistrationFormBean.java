@@ -1,4 +1,6 @@
-package com.epam.student.krynytskyi.beans;
+package com.epam.student.krynytskyi.beans.registration;
+
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
 
 public class ValidateDataRegistrationFormBean {
 	private RegistrationFormBean formBean;

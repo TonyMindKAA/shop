@@ -8,7 +8,7 @@
 
     <servlet>
         <servlet-name>Captcha</servlet-name>
-        <servlet-class>com.epam.student.krynytskyi.controllers.CapchaController</servlet-class>
+        <servlet-class>com.epam.student.krynytskyi.controllers.CaptchaController</servlet-class>
     </servlet>
     <servlet>
         <description>

@@ -4,7 +4,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
 import com.epam.student.krynytskyi.containers.CapthcaBeanContainer;
 
 public  class CaptchaCookieProvider extends AbstractCaptchaInnerStoregeProvider {

@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.beans;
+package com.epam.student.krynytskyi.beans.captcha;
 
 import java.util.Date;
 

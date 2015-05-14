@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.convertor;
 
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
 import com.epam.student.krynytskyi.entity.Role;
 import com.epam.student.krynytskyi.entity.User;
 

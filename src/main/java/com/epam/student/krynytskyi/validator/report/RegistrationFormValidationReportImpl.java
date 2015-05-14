@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.validator.report;
 
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.RegistrationFormReportBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormReportBean;
 import com.epam.student.krynytskyi.validator.form.field.impl.ConfirmFieldsValidator;
 import com.epam.student.krynytskyi.validator.form.field.impl.EmailFieldValidator;
 import com.epam.student.krynytskyi.validator.form.field.impl.LastNameFieldValidator;

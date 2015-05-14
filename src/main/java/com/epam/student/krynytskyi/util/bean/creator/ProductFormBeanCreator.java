@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.util.bean.creator;
 
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.product.ProductFormBean;
 
 import javax.servlet.http.HttpServletRequest;
 

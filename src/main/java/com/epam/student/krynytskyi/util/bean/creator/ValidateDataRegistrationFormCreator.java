@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.util.bean.creator;
 
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.ValidateDataRegistrationFormBean;
 import com.epam.student.krynytskyi.provider.CaptchaProvider;
 
 import javax.servlet.http.HttpServletRequest;

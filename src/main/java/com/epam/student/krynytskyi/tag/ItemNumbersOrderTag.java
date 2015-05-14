@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.tag;
 
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.product.ProductFormBean;
 import com.epam.student.krynytskyi.db.constant.ProductOrderConst;
 import org.apache.log4j.Logger;
 
@@ -81,7 +81,6 @@ public class ItemNumbersOrderTag extends SimpleTagSupport {
                 "                </div>\n" +
                 "            </div>\n" +
                 "        </div>";
-        log.debug(html);
         getJspContext().getOut().write(html);
     }
 

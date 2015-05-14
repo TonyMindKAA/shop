@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.product.ProductFormBean;
 import com.epam.student.krynytskyi.db.constant.ProductOrderConst;
 import org.junit.Assert;
 import org.junit.Before;

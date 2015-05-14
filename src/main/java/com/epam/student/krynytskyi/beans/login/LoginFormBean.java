@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.beans;
+package com.epam.student.krynytskyi.beans.login;
 
 public class LoginFormBean {
 	private String email;

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
 
 public class CapthcaBeanContainerImpl implements CapthcaBeanContainer {
 	

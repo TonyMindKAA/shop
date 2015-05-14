@@ -7,7 +7,7 @@ import java.security.NoSuchAlgorithmException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
 
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
 import com.epam.student.krynytskyi.util.hashcode.generator.Sha1HexGenerator;
 
 public class AvatarWriter {

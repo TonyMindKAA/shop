@@ -1,8 +1,8 @@
 package com.epam.student.krynytskyi.validator.form;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.ValidateDataRegistrationFormBean;
 import com.epam.student.krynytskyi.validator.form.field.impl.ConfirmFieldsValidator;
 import com.epam.student.krynytskyi.validator.form.field.impl.EmailFieldValidator;
 import com.epam.student.krynytskyi.validator.form.field.impl.LastNameFieldValidator;

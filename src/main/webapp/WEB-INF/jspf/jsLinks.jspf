@@ -9,5 +9,26 @@
 <script type="text/javascript">
     $(document).ready(function () {
         turnOnOrderPaginationHandling();
+        $(".item-form-product-submit").on( "click", function(e){
+            e.preventDefault();
+            var productId = $(this).prev().val();
+            var json = "{ id: \"+productId+\" }";
+
+           $.ajax({
+             dataType: 'JSON',
+             method: "POST",
+             url: "card",
+             data: json,
+             data:{
+                id:productId
+             },
+             success: function(numbersProduct){
+                console.log(numbersProduct);
+             },
+             error: function(msg){
+                console.log("error");
+             }
+           })
+        });
     });
 </script>

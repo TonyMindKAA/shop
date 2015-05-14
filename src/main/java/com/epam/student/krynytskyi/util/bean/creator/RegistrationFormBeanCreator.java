@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
 
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
 
 public class RegistrationFormBeanCreator {
 	private static final Logger log = Logger.getLogger(RegistrationFormBeanCreator.class);

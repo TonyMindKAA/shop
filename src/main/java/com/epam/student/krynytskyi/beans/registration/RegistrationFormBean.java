@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.beans;
+package com.epam.student.krynytskyi.beans.registration;
 
 import javax.servlet.http.Part;
 

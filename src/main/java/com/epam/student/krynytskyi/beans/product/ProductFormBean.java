@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.beans;
+package com.epam.student.krynytskyi.beans.product;
 
 /**
  * Created by Anton_Krynytskyi on 5/8/2015.

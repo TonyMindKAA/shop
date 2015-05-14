@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.service;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.product.ProductFormBean;
 import com.epam.student.krynytskyi.db.dao.mysql.MySqlProductDao;
 import com.epam.student.krynytskyi.db.dao.mysql.impl.MySqlProductDaoImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionManager;

@@ -6,9 +6,9 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
-import com.epam.student.krynytskyi.beans.RegistrationFormBean;
-import com.epam.student.krynytskyi.beans.ValidateDataRegistrationFormBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
+import com.epam.student.krynytskyi.beans.registration.RegistrationFormBean;
+import com.epam.student.krynytskyi.beans.registration.ValidateDataRegistrationFormBean;
 
 public class FullRegistrationFormValidatorTest {
 	private FullRegistrationFormValidator formValidator;

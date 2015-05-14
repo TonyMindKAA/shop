@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.containers;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
 
 public interface CapthcaBeanContainer {
 	CaptchaBean getById(int id);

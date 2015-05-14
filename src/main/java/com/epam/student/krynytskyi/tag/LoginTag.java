@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-import com.epam.student.krynytskyi.beans.LoginFormBean;
+import com.epam.student.krynytskyi.beans.login.LoginFormBean;
 import com.epam.student.krynytskyi.entity.User;
 
 public class LoginTag extends SimpleTagSupport{

@@ -3,7 +3,7 @@ package com.epam.student.krynytskyi.provider.inner.storege;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.epam.student.krynytskyi.beans.CaptchaBean;
+import com.epam.student.krynytskyi.beans.captcha.CaptchaBean;
 import com.epam.student.krynytskyi.containers.CapthcaBeanContainer;
 
 public class CaptchaHiddenProvider extends AbstractCaptchaInnerStoregeProvider {

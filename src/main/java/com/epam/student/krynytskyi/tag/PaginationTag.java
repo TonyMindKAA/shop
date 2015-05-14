@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.tag;
 
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.product.ProductFormBean;
 import com.epam.student.krynytskyi.service.ProductService;
 import org.apache.log4j.Logger;
 

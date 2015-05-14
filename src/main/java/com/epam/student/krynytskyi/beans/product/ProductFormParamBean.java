@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.beans;
+package com.epam.student.krynytskyi.beans.product;
 
 public class ProductFormParamBean {
 	private String name;
