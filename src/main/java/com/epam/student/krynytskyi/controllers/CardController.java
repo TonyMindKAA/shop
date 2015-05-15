@@ -35,14 +35,13 @@ public class CardController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CardContainer card = (CardContainer) req.getSession().getAttribute("card");
+        ProductService productService = (ProductService) req.getServletContext().getAttribute("productService");
         if(card == null){
             card = new CardContainer();
         }
-
-
-
-        String s = req.getParameter("id");
-        System.out.println(s);
+        String productId = req.getParameter("id");
+      //  productService.getById(productId);
+        System.out.println(productId);
 
         Integer product = new Integer("23");
         print(resp, product);
