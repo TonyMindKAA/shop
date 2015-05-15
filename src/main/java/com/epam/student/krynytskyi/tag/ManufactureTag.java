@@ -1,8 +1,8 @@
 package com.epam.student.krynytskyi.tag;
 
 import com.epam.student.krynytskyi.beans.ProductFacetQueryData;
-import com.epam.student.krynytskyi.entity.ProductType;
-import com.epam.student.krynytskyi.service.TypeService;
+import com.epam.student.krynytskyi.entity.Manufacture;
+import com.epam.student.krynytskyi.service.ManufactureService;
 import org.apache.log4j.Logger;
 
 import javax.servlet.jsp.JspException;
@@ -11,34 +11,34 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductTypeTag extends SimpleTagSupport {
-    private static final Logger log = Logger.getLogger(ProductTypeTag.class);
+public class ManufactureTag  extends SimpleTagSupport {
+    private static final Logger log = Logger.getLogger( ManufactureTag.class);
 
     @Override
     public void doTag() throws JspException, IOException {
         ProductFacetQueryData productFormBean = (ProductFacetQueryData) getJspContext().findAttribute("productFormBean");
-        List<ProductType> types = getAllTypes();
-        List<String> checkedTypes = productFormBean.getProductTypes();
+        List<Manufacture> manufacture = getAllManufactures();
+        List<String> checkedManufactures = productFormBean.getProductTypes();
 
         StringBuilder html = new StringBuilder();
         html.append(" <div class=\"brands_products\"><!--brands_products-->\n" +
-                "                            <h2>Types</h2>\n" +
+                "                            <h2>Brands</h2>\n" +
                 "                            <div class=\"panel-group category-products\" id=\"accordian\"><!--category-productsr-->\n");
-        for (int i = 0; i < types.size(); i++) {
-            if (checkedTypes.contains(types.get(i).getType()))
+        for (int i = 0; i < manufacture.size(); i++) {
+            if (checkedManufactures.contains(manufacture.get(i).getManufacture()))
                 html.append("<div class=\"panel panel-default\">\n" +
                         "                                    <div class=\"panel-heading\">\n" +
                         "                                        <h4 class=\"panel-title\">" +
-                        "                                        <input name=\"type\" value=\"" + types.get(i).getType() + "\" type=\"checkbox\" checked>" +
-                        "                                        <a>" + types.get(i).getType().toUpperCase() + "</a></h4>\n" +
+                        "                                        <input name=\"manufacture\" value=\"" + manufacture.get(i).getManufacture() + "\" type=\"checkbox\" checked>" +
+                        "                                        <a>" + manufacture.get(i).getManufacture().toUpperCase() + "</a></h4>\n" +
                         "                                    </div>\n" +
                         "                                </div>");
             else
                 html.append("<div class=\"panel panel-default\">\n" +
                         "                                    <div class=\"panel-heading\">\n" +
                         "                                        <h4 class=\"panel-title\">" +
-                        "                                        <input name=\"type\" value=\"" + types.get(i).getType() + "\" type=\"checkbox\">" +
-                        "                                        <a>" + types.get(i).getType().toUpperCase() + "</a></h4>\n" +
+                        "                                        <input name=\"manufacture\" value=\"" + manufacture.get(i).getManufacture() + "\" type=\"checkbox\">" +
+                        "                                        <a>" + manufacture.get(i).getManufacture().toUpperCase() + "</a></h4>\n" +
                         "                                    </div>\n" +
                         "                                </div>");
         }
@@ -48,10 +48,10 @@ public class ProductTypeTag extends SimpleTagSupport {
         getJspContext().getOut().write(html.toString());
     }
 
-    private List<ProductType> getAllTypes() {
-        TypeService typeService = (TypeService) getJspContext().findAttribute("typeService");
+    private List<Manufacture> getAllManufactures() {
+        ManufactureService manufactureService = (ManufactureService) getJspContext().findAttribute("manufactureService");
         try {
-            return typeService.getAll();
+            return manufactureService.getAll();
         } catch (Exception e) {
             log.error(e.getMessage());
             return new ArrayList<>();

@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.epam.student.krynytskyi.util.number.NumberUtil.isNumber;
+
 
 public class ProductQueryGenerator {
     private static final Logger log = Logger.getLogger(ProductQueryGenerator.class);
@@ -144,6 +146,12 @@ public class ProductQueryGenerator {
 
     private void generateProductManufacture(ProductFacetQueryData productFormBean) {
         List<String> manufactures = productFormBean.getProductManufactures();
+        if (manufactures.size() == 1) {
+            manufacturerSQLPart = " AND " + sqlManufacturer;
+            paramValues.addAll(manufactures);
+            return;
+        }
+
         if (manufactures.size() > 1) {
             manufacturerSQLPart = " AND( " + sqlManufacturer;
             for (int i = 0; i < manufactures.size() - 1; i++) {
@@ -172,17 +180,17 @@ public class ProductQueryGenerator {
     }
 
     private void generatePricePart(ProductFacetQueryData productFormBean) {
-        if (isParameterExist(productFormBean.getPriceFrom())) {
+        if (isParameterExist(productFormBean.getPriceFrom()) && isNumber(productFormBean.getPriceFrom())) {
             priceSQLPart += sqlPriceFrom;
             addParamValue(productFormBean.getPriceFrom());
         }
-        if (isParameterExist(productFormBean.getPriceTo())) {
+        if (isParameterExist(productFormBean.getPriceTo()) && isNumber(productFormBean.getPriceTo())) {
             priceSQLPart += sqlPriceTo;
             addParamValue(productFormBean.getPriceTo());
         }
     }
 
     private boolean isParameterExist(String parameter) {
-        return parameter != null && !parameter.isEmpty();
+        return parameter != null && !parameter.trim().isEmpty();
     }
 }

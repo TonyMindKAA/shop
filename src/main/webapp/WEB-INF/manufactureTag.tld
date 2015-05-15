@@ -5,12 +5,12 @@
     <description>My Tags.. My Own Tags..</description>
     <display-name>My Tags Display Name Here.</display-name>
     <tlib-version>1</tlib-version>
-    <short-name>productTypeTag</short-name>
-    <uri>http://koraytugay.com/productTypeTag</uri>
+    <short-name>manufactureTag</short-name>
+    <uri>http://koraytugay.com/manufactureTag</uri>
     <tag>
         <description>Login tag</description>
-        <name>productTypeTag</name>
-        <tag-class>com.epam.student.krynytskyi.tag.ProductTypeTag</tag-class>
+        <name>manufactureTag</name>
+        <tag-class>com.epam.student.krynytskyi.tag.ManufactureTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 </taglib>

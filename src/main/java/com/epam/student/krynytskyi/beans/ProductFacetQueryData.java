@@ -2,19 +2,10 @@ package com.epam.student.krynytskyi.beans;
 
 import java.util.List;
 
-/**
- * Created by Anton_Krynytskyi on 5/8/2015.
- */
 public class ProductFacetQueryData {
     private String title;
     private String priceFrom;
     private String priceTo;
-    private String ambientType;
-    private String protectedType;
-    private String cheapType;
-    private String nokia;
-    private String sigma;
-    private String apple;
     private String order;
     private String numberItems;
     private String currentPage;
@@ -64,14 +55,6 @@ public class ProductFacetQueryData {
         return this;
     }
 
-    public String getProtectedType() {
-        return protectedType;
-    }
-
-    public ProductFacetQueryData setProtectedType(String protectedType) {
-        this.protectedType = protectedType;
-        return this;
-    }
 
     public String getTitle() {
         return title;
@@ -100,68 +83,18 @@ public class ProductFacetQueryData {
         return this;
     }
 
-    public String getAmbientType() {
-        return ambientType;
-    }
-
-    public ProductFacetQueryData setAmbientType(String ambientType) {
-        this.ambientType = ambientType;
-        return this;
-    }
-
-    public String getCheapType() {
-        return cheapType;
-    }
-
-    public ProductFacetQueryData setCheapType(String cheapType) {
-        this.cheapType = cheapType;
-        return this;
-    }
-
-    public String getNokia() {
-        return nokia;
-    }
-
-    public ProductFacetQueryData setNokia(String nokia) {
-        this.nokia = nokia;
-        return this;
-    }
-
-    public String getSigma() {
-        return sigma;
-    }
-
-    public ProductFacetQueryData setSigma(String sigma) {
-        this.sigma = sigma;
-        return this;
-    }
-
-    public String getApple() {
-        return apple;
-    }
-
-    public ProductFacetQueryData setApple(String apple) {
-        this.apple = apple;
-        return this;
-    }
-
     @Override
     public String toString() {
-        return "ProductFacetQueryData{" +
-                "title='" + title + '\'' +
-                ", priceFrom='" + priceFrom + '\'' +
-                ", priceTo='" + priceTo + '\'' +
-                ", ambientType='" + ambientType + '\'' +
-                ", protectedType='" + protectedType + '\'' +
-                ", cheapType='" + cheapType + '\'' +
-                ", nokia='" + nokia + '\'' +
-                ", sigma='" + sigma + '\'' +
-                ", apple='" + apple + '\'' +
-                ", order='" + order + '\'' +
-                ", numberItems='" + numberItems + '\'' +
-                ", currentPage='" + currentPage + '\'' +
-                ", productTypes=" + productTypes +
-                ", productManufactures=" + productManufactures +
-                '}';
+        final StringBuilder sb = new StringBuilder("ProductFacetQueryData{");
+        sb.append("title='").append(title).append('\'');
+        sb.append(", priceFrom='").append(priceFrom).append('\'');
+        sb.append(", priceTo='").append(priceTo).append('\'');
+        sb.append(", order='").append(order).append('\'');
+        sb.append(", numberItems='").append(numberItems).append('\'');
+        sb.append(", currentPage='").append(currentPage).append('\'');
+        sb.append(", productTypes=").append(productTypes);
+        sb.append(", productManufactures=").append(productManufactures);
+        sb.append('}');
+        return sb.toString();
     }
 }

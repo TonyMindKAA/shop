@@ -1,6 +1,7 @@
 package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
+import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.util.List;
 
 
 public class PrepareStatementBuilderImpl implements PrepareStatementBuilder {
+    private static final Logger log = Logger.getLogger(PrepareStatementBuilderImpl.class);
     private PrepareStatementBuilderParamsBean paramsBean;
 
     public PrepareStatementBuilderImpl(PrepareStatementBuilderParamsBean paramsBean) {
@@ -27,6 +29,7 @@ public class PrepareStatementBuilderImpl implements PrepareStatementBuilder {
     private void populateQueryParameters(PreparedStatement query, List<String> parameters) throws SQLException {
         for (int i = 0; i < parameters.size(); i++) {
             query.setString(i+1,parameters.get(i));
+            log.debug(parameters.get(i));
         }
     }
 }

@@ -15,7 +15,6 @@ import java.util.List;
 
 public class MySqlProductDao implements ProductDao {
     private static final Logger log = Logger.getLogger(MySqlProductDao.class);
-    private static final String SQL_COUNT_PRODUCTS = "SELECT COUNT(pr.id) AS counter FROM product as pr;";
     private ProductDTO productDTO = new ProductDTOImpl();
 
     @Override
@@ -45,7 +44,7 @@ public class MySqlProductDao implements ProductDao {
         String sqlQuery = statementBuilder.getQuery();
         try (PreparedStatement prst = conn.prepareStatement(sqlQuery)) {
             statementBuilder.build(prst);
-            prst.execute();
+            prst.executeQuery();
             ResultSet resSet = prst.getResultSet();
             if (resSet.next())
                 return resSet.getInt("numberProduct");

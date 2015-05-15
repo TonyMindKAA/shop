@@ -96,13 +96,13 @@ public class ContextListener implements ServletContextListener {
 	}
 
 	private void setToContextProvider(ServletContext servletContext) {
-		String captchaProviderItem = getCapchaProviderItem(servletContext);
+		String captchaProviderItem = getCaptchaProviderItem(servletContext);
 		CaptchaProvider provider = new CaptchaProviderFactory().getProvider(captchaProviderItem);
 		servletContext.setAttribute("captchaProvider", provider);
-		setCptchaClenerThread(provider);
+		setCaptchaCleanerThread(provider);
 	}
 
-	private void setCptchaClenerThread(CaptchaProvider provider) {
+	private void setCaptchaCleanerThread(CaptchaProvider provider) {
 		if(provider instanceof CaptchaHiddenProvider || provider instanceof CaptchaCookieProvider){
 			captchaCleanerThread = new CaptchaCleanerThread(provider, timeOut, timeVerification);
 		}
@@ -112,7 +112,7 @@ public class ContextListener implements ServletContextListener {
 		servletContext.setAttribute("userService", new UserServiceImpl());
 	}
 
-	private String getCapchaProviderItem(ServletContext servletContext) {
+	private String getCaptchaProviderItem(ServletContext servletContext) {
 		String captchaProviderItem = servletContext.getInitParameter("captchaProvider");
 		if (captchaProviderItem == null) {
 			return "hidden";

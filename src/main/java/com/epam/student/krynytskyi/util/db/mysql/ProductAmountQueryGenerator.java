@@ -7,6 +7,8 @@ import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.epam.student.krynytskyi.util.number.NumberUtil.isNumber;
+
 public class ProductAmountQueryGenerator {
 
     private static final Logger log = Logger.getLogger(ProductQueryGenerator.class);
@@ -23,8 +25,6 @@ public class ProductAmountQueryGenerator {
     private String sqlTittle = " pr.name LIKE '%' ? '%'";
     private String sqlType = " prt.type = ?";
     private String sqlManufacturer = "mn.manufacturer = ?";
-    private List<String> types = new ArrayList<>();
-    private List<String> manufacturers = new ArrayList<>();
     private String priceSQLPart = EMPTY;
     private String typeSQLPart = EMPTY;
     private String manufacturerSQLPart = EMPTY;
@@ -54,11 +54,11 @@ public class ProductAmountQueryGenerator {
     }
 
     private void generatePricePart(ProductFacetQueryData productFormBean) {
-        if (isParameterExist(productFormBean.getPriceFrom())) {
+        if (isParameterExist(productFormBean.getPriceFrom()) && isNumber(productFormBean.getPriceFrom())) {
             priceSQLPart += sqlPriceFrom;
             addParamValue(productFormBean.getPriceFrom());
         }
-        if (isParameterExist(productFormBean.getPriceTo())) {
+        if (isParameterExist(productFormBean.getPriceTo())&& isNumber(productFormBean.getPriceTo())) {
             priceSQLPart += sqlPriceTo;
             addParamValue(productFormBean.getPriceTo());
         }
@@ -81,42 +81,26 @@ public class ProductAmountQueryGenerator {
     }
 
     private void generateProductManufacture(ProductFacetQueryData productFormBean) {
-        if (isParameterExist(productFormBean.getNokia())) {
-            manufacturers.add("nokia");
-        }
-        if (isParameterExist(productFormBean.getSigma())) {
-            manufacturers.add("sigma");
-        }
-        if (isParameterExist(productFormBean.getApple())) {
-            manufacturers.add("apple");
-        }
+        List<String> manufactures = productFormBean.getProductManufactures();
 
-        if (manufacturers.size() == 1) {
+        if (manufactures.size() == 1) {
             manufacturerSQLPart = " AND "+sqlManufacturer;
-            paramValues.addAll(manufacturers);
+            paramValues.addAll(manufactures);
             return;
         }
 
-        if (manufacturers.size() > 1) {
+        if (manufactures.size() > 1) {
             manufacturerSQLPart = " AND( " + sqlManufacturer;
-            for (int i = 0; i < manufacturers.size() - 1; i++) {
+            for (int i = 0; i < manufactures.size() - 1; i++) {
                 manufacturerSQLPart += " OR " + sqlManufacturer;
             }
             manufacturerSQLPart += ")";
-            paramValues.addAll(manufacturers);
+            paramValues.addAll(manufactures);
         }
     }
 
     private void generateProductType(ProductFacetQueryData productFormBean) {
-        if (isParameterExist(productFormBean.getAmbientType())) {
-            types.add("AMBIENT");
-        }
-        if (isParameterExist(productFormBean.getProtectedType())) {
-            types.add("PROTECTED");
-        }
-        if (isParameterExist(productFormBean.getCheapType())) {
-            types.add("CHEAP");
-        }
+        List<String> types = productFormBean.getProductTypes();
         if (types.size() == 1) {
             typeSQLPart = " AND "+sqlType;
             paramValues.addAll(types);
@@ -133,12 +117,10 @@ public class ProductAmountQueryGenerator {
     }
 
     private boolean isParameterExist(String parameter) {
-        return parameter != null && !parameter.isEmpty();
+        return parameter != null && !parameter.trim().isEmpty();
     }
 
     private void toDefaultValue() {
-        types = new ArrayList<>();
-        manufacturers = new ArrayList<>();
         priceSQLPart = EMPTY;
         typeSQLPart = EMPTY;
         manufacturerSQLPart = EMPTY;

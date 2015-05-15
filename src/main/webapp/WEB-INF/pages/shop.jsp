@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="reg" uri="http://koraytugay.com/paginationTags" %>
-<%@ taglib prefix="sel" uri="http://koraytugay.com/ItemNumbersOrderTag" %>
+<%@ taglib prefix="sel" uri="http://koraytugay.com/ItemNumbersOrderTag"%>
+<%@ taglib prefix="chb" uri="http://koraytugay.com/productTypeTag"%>
+<%@ taglib prefix="chbm" uri="http://koraytugay.com/manufactureTag"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,8 +47,8 @@
 
                             <div class="well">
                                 <div class="price-main-page">
-                                    <input type="text" name="title" value="<c:out value="${productFormBean.title}" />"
-                                           size="20">
+                                    <input type="text" name="title" value="<c:out value=" ${productFormBean.title}" />"
+                                    size="20">
                                 </div>
                             </div>
                         </div>
@@ -56,78 +58,25 @@
 
                             <div class="well">
                                 <div class="price-main-page">
-                                    <input type="text" value="<c:out value="${productFormBean.priceFrom}"/>"
-                                           name="priceFrom" size="6">
+                                    <input type="text" value="<c:out value=" ${productFormBean.priceFrom}"/>"
+                                    name="priceFrom" size="6">
                                     to
-                                    <input type="text" value="<c:out value="${productFormBean.priceTo}"/>"
-                                           name="priceTo" size="6">
+                                    <input type="text" value="<c:out value=" ${productFormBean.priceTo}"/>"
+                                    name="priceTo" size="6">
                                 </div>
                             </div>
                         </div>
-                        <!--/price-range-->
-                        <h2>Types</h2>
-
-                        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><input name="type" value="AMBIENT" type="checkbox" <c:out
-                                            value="${empty productFormBean.ambientType ? ' ' : 'checked'}"/>> <a
-                                            href="#"> AMBIENT </a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><input name="type" value="PROTECTED" type="checkbox" <c:out
-                                            value="${empty productFormBean.protectedType ? ' ' : 'checked'}"/>><a
-                                            href="#"> PROTECTED </a></h4>
-                                </div>
-                            </div>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title"><input name="type" value="CHEAP" type="checkbox" <c:out
-                                            value="${empty productFormBean.cheapType ? ' ' : 'checked'}"/>> <a href="#">CHEAP</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/category-productsr-->
-                        <div class="brands_products"><!--brands_products-->
-                            <h2>Brands</h2>
-                            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title">
-                                            <input name="manufactures" value="NOKIA" type="checkbox" <c:out
-                                                value="${empty productFormBean.nokia ? ' ' : 'checked'}"/>> <a href="#">
-                                            NOKIA </a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><input name="manufactures" value="SIGMA" type="checkbox" <c:out
-                                                value="${empty productFormBean.sigma ? ' ' : 'checked'}"/>><a href="#">
-                                            SIGMA </a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><input name="manufactures" value="APPLE" type="checkbox" <c:out
-                                                value="${empty productFormBean.apple ? ' ' : 'checked'}"/>> <a href="#">APPLE</a>
-                                        </h4>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/category-productsr-->
-                        </div>
-
+                        <chb:productTypeTag/>
+                        <chbm:manufactureTag/>
                         <div class="price-range"><!--submit-button-->
                             <h2>Filtrate</h2>
-
                             <div class="well">
                                 <div class="price-main-page">
                                     <input type="hidden" id="orderHidden" name="order" value="${productFormBean.order}">
-                                    <input type="hidden" id="resultHidden" name="numberItems" value="${productFormBean.numberItems}">
-                                    <input type="hidden" id="currentPageHidden" name="currentPage" value="${productFormBean.currentPage}">
+                                    <input type="hidden" id="resultHidden" name="numberItems"
+                                           value="${productFormBean.numberItems}">
+                                    <input type="hidden" id="currentPageHidden" name="currentPage"
+                                           value="${productFormBean.currentPage}">
                                     <input type="submit" id="submit-button-main-page" class="btn-default add-to-cart"
                                            value="filtrate">
                                 </div>
@@ -139,18 +88,26 @@
     </form>
     <div class="col-sm-9 padding-right">
         <br class="features_items"><!--features_items-->
-        <h2 class="title text-center">Features Items(<c:out value='${productNumber}'/>)</h2>
+        <h2 class="title text-center">Features Items(
+            <c:out value='${productNumber}'/>
+            )
+        </h2>
         <c:forEach items="${products}" var="product">
             <div class="col-sm-4">
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
                             <img src="resources/products/<c:out value='${product.img}'/>" alt=""/>
-                            <h2><c:out value="${product.price}"/></h2>
-                            <p><c:out value="${product.name}"/></p>
+
+                            <h2>
+                                <c:out value="${product.price}"/>
+                            </h2>
+                            <p>
+                                <c:out value="${product.name}"/>
+                            </p>
                             <form class="item-form-product">
                                 <input type="hidden" name="productId" value="${product.id}">
-                                <button class="btn btn-default add-to-cart item-form-product-submit" >
+                                <button class="btn btn-default add-to-cart item-form-product-submit">
                                     <i class="fa fa-shopping-cart"></i>
                                     Add to cart
                                 </button>

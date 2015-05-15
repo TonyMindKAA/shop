@@ -18,7 +18,7 @@ public class ManufactureServiceImpl implements ManufactureService {
     private ManufactureDAO manufactureDAO = new MySqlManufactureDAO();
 
     @Override
-    public List<Manufacture> getAll(Connection connection) throws Exception {
+    public List<Manufacture> getAll() throws Exception {
         return (List<Manufacture>) transactionManager
                 .doInTransaction(new TransactionOperation() {
                     @Override
