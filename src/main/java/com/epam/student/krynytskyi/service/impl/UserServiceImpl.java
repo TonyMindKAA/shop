@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.service;
+package com.epam.student.krynytskyi.service.impl;
 
 import com.epam.student.krynytskyi.db.dao.mysql.UserDao;
 import com.epam.student.krynytskyi.db.dao.mysql.impl.MySqlUserDao;
@@ -6,6 +6,7 @@ import com.epam.student.krynytskyi.db.transaction.TransactionManager;
 import com.epam.student.krynytskyi.db.transaction.TransactionManagerImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionOperation;
 import com.epam.student.krynytskyi.entity.User;
+import com.epam.student.krynytskyi.service.UserService;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -16,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao = new MySqlUserDao();
 
 	@Override
-	public boolean authentificate(final String email, final String password)
+	public boolean authenticate(final String email, final String password)
 			throws Exception {
 		return (Boolean) transactionManager
 				.doInTransaction(new TransactionOperation() {

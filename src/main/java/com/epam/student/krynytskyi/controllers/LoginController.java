@@ -34,7 +34,7 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LoginFormBean loginFormBean = createLoginFormBean(request);
 		try {
-			if(userService.authentificate(loginFormBean.getEmail(), loginFormBean.getPassword())){
+			if(userService.authenticate(loginFormBean.getEmail(), loginFormBean.getPassword())){
 				User userByEmail = userService.getUserByEmail(loginFormBean.getEmail());
 				request.getSession().setAttribute("user", userByEmail);
 				response.sendRedirect("main.jsp");

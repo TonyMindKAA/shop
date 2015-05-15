@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.service;
+package com.epam.student.krynytskyi.service.impl;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
 import com.epam.student.krynytskyi.beans.ProductFacetQueryData;
@@ -8,6 +8,7 @@ import com.epam.student.krynytskyi.db.transaction.TransactionManager;
 import com.epam.student.krynytskyi.db.transaction.TransactionManagerImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionOperation;
 import com.epam.student.krynytskyi.entity.Product;
+import com.epam.student.krynytskyi.service.ProductService;
 import com.epam.student.krynytskyi.util.db.mysql.PrepareStatementBuilder;
 import com.epam.student.krynytskyi.util.db.mysql.PrepareStatementBuilderImpl;
 import com.epam.student.krynytskyi.util.db.mysql.ProductAmountQueryGenerator;

@@ -1,6 +1,6 @@
 package com.epam.student.krynytskyi.db.dao.mysql.impl;
 
-import com.epam.student.krynytskyi.db.dao.mysql.MnufactureDAO;
+import com.epam.student.krynytskyi.db.dao.mysql.ManufactureDAO;
 import com.epam.student.krynytskyi.entity.Manufacture;
 import com.epam.student.krynytskyi.entity.Product;
 import org.apache.log4j.Logger;
@@ -11,8 +11,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlMnufactureDAO implements MnufactureDAO {
-    private static final Logger log = Logger.getLogger(MySqlMnufactureDAO.class);
+public class MySqlManufactureDAO implements ManufactureDAO {
+    private static final Logger log = Logger.getLogger(MySqlManufactureDAO.class);
     public static final String SQL = "SELECT * FROM shop.manufacturer;";
 
     @Override

@@ -6,8 +6,10 @@ import com.epam.student.krynytskyi.provider.CaptchaProviderFactory;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaCookieProvider;
 import com.epam.student.krynytskyi.provider.inner.storege.CaptchaHiddenProvider;
 import com.epam.student.krynytskyi.service.ProductService;
-import com.epam.student.krynytskyi.service.ProductServiceImpl;
-import com.epam.student.krynytskyi.service.UserServiceImpl;
+import com.epam.student.krynytskyi.service.impl.ManufactureServiceImpl;
+import com.epam.student.krynytskyi.service.impl.ProductServiceImpl;
+import com.epam.student.krynytskyi.service.impl.TypeServiceImpl;
+import com.epam.student.krynytskyi.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
@@ -36,7 +38,17 @@ public class ContextListener implements ServletContextListener {
 		setToContextProvider(servletContext);
 		setToContextDefaultSettingOfFindProducts(servletContext);
 		setToContextProductService(servletContext);
+		setToContextTypeService(servletContext);
+		setToContextManufactureService(servletContext);
 
+	}
+
+	private void setToContextManufactureService(ServletContext servletContext) {
+		servletContext.setAttribute("manufactureService", new ManufactureServiceImpl());
+	}
+
+	private void setToContextTypeService(ServletContext servletContext) {
+		servletContext.setAttribute("typeService", new TypeServiceImpl());
 	}
 
 	private void setToContextProductService(ServletContext servletContext) {

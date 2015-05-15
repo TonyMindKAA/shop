@@ -5,6 +5,6 @@ import com.epam.student.krynytskyi.entity.Manufacture;
 import java.sql.Connection;
 import java.util.List;
 
-public interface MnufactureDAO {
+public interface ManufactureDAO {
     List<Manufacture> getAll(Connection connection) throws Exception;
 }
