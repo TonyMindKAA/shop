@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
-import com.epam.student.krynytskyi.beans.ProductFormBean;
+import com.epam.student.krynytskyi.beans.ProductFacetQueryData;
 import com.epam.student.krynytskyi.db.constant.ProductOrderConst;
 import org.apache.log4j.Logger;
 
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
-    private static final Logger log = Logger.getLogger(SQLSelectByParamPrepareStatementBuilderParamGenerator.class);
+public class ProductQueryGenerator {
+    private static final Logger log = Logger.getLogger(ProductQueryGenerator.class);
     private String SELECT_PRODUCT_BY_PARAMETER = "SELECT *, pr.id as pr_id " +
             "FROM shop.product as pr " +
             "inner join shop.product_type as prt on pr.product_type_id = prt.id " +
@@ -34,7 +34,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
     private String resultSQLQuery = "";
     private List<String> paramValues = new ArrayList<>();
 
-    public PrepareStatementBuilderParamsBean generate(ProductFormBean productFormBean) {
+    public PrepareStatementBuilderParamsBean generate(ProductFacetQueryData productFormBean) {
         generateTittle(productFormBean);
         generatePricePart(productFormBean);
         generateProductType(productFormBean);
@@ -72,27 +72,26 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
                 manufacturerSQLPart + orderSQLPart + limitSQLPart + ";";
     }
 
-    private void generateLimit(ProductFormBean productFormBean) {
-        if (isParameterExist(productFormBean.getNumberItems()) && isParameterExist(productFormBean.getCurrentPage())) {
-            String numberItemsStr = productFormBean.getNumberItems();
-            String currentPageStr = productFormBean.getCurrentPage();
-            int currentPage = getCurrentPage(currentPageStr);
-            int numberItems = getNumberItem(numberItemsStr);
-            limitSQLPart = sqlLimit + " " + ((currentPage-1) * numberItems) + ", " + numberItems;
+    private void generateLimit(ProductFacetQueryData facetQueryData) {
+        if (isParameterExist(facetQueryData.getNumberItems()) && isParameterExist(facetQueryData.getCurrentPage())) {
+            int currentPage = getCurrentPage(facetQueryData);
+            int pageSize = getPageSize(facetQueryData);
+            int offset = (currentPage - 1) * pageSize;
+            limitSQLPart = sqlLimit + " " + offset + ", " + pageSize;
         }
     }
 
-    private int getCurrentPage(String currentPageStr) {
-        int number = convertToNum(currentPageStr);
-        if(currentPageStr == null || number <= 0) {
+    private int getCurrentPage(ProductFacetQueryData facetQueryData) {
+        int currentPage = convertToNum(facetQueryData.getCurrentPage());
+        if(currentPage <= 0) {
             return 1;
         }
-        return number;
+        return currentPage;
     }
 
-    private int getNumberItem(String numberItemsStr) {
-        int number = convertToNum(numberItemsStr);
-        if(numberItemsStr == null || number <= 0) {
+    private int getPageSize(ProductFacetQueryData facetQueryData) {
+        int number = convertToNum(facetQueryData.getNumberItems());
+        if(number <= 0) {
             return 5;
         }
         return number;
@@ -106,7 +105,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
         }
     }
 
-    private void generateProductOrder(ProductFormBean productFormBean) {
+    private void generateProductOrder(ProductFacetQueryData productFormBean) {
         if (isParameterExist(productFormBean.getOrder())) {
             if (productFormBean.getOrder().equals(ProductOrderConst.MANUFACTURE_A_TO_Z)) {
                 orderSQLPart += sqlOrder + " mn.manufacturer";
@@ -134,7 +133,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
         }
     }
 
-    private void generateTittle(ProductFormBean productFormBean) {
+    private void generateTittle(ProductFacetQueryData productFormBean) {
         if (isParameterExist(productFormBean.getTitle())) {
             tittleSQLPart = sqlTittle;
             addParamValue(productFormBean.getTitle());
@@ -147,7 +146,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
         return paramValues.add(value);
     }
 
-    private void generateProductManufacture(ProductFormBean productFormBean) {
+    private void generateProductManufacture(ProductFacetQueryData productFormBean) {
         if (isParameterExist(productFormBean.getNokia())) {
             manufacturers.add("nokia");
         }
@@ -174,7 +173,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
         }
     }
 
-    private void generateProductType(ProductFormBean productFormBean) {
+    private void generateProductType(ProductFacetQueryData productFormBean) {
         if (isParameterExist(productFormBean.getAmbientType())) {
             types.add("AMBIENT");
         }
@@ -199,7 +198,7 @@ public class SQLSelectByParamPrepareStatementBuilderParamGenerator {
         }
     }
 
-    private void generatePricePart(ProductFormBean productFormBean) {
+    private void generatePricePart(ProductFacetQueryData productFormBean) {
         if (isParameterExist(productFormBean.getPriceFrom())) {
             priceSQLPart += sqlPriceFrom;
             addParamValue(productFormBean.getPriceFrom());
