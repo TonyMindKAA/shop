@@ -1,6 +1,9 @@
 package com.epam.student.krynytskyi.tag;
 
+import java.util.List;
+
 import com.epam.student.krynytskyi.beans.product.ProductFormBean;
+import com.epam.student.krynytskyi.beans.ProductFacetQueryData;
 import com.epam.student.krynytskyi.db.constant.ProductOrderConst;
 import org.apache.log4j.Logger;
 
@@ -46,9 +49,7 @@ public class ItemNumbersOrderTag extends SimpleTagSupport {
         List<SelectItem> orderItems = getOrderItems();
         List<SelectItem> numbersElementsOnPageItems = getNumbersElementsOnPageItems();
 
-        ProductFormBean productFormBean = (ProductFormBean) getJspContext().findAttribute("productFormBean");
-
-
+        ProductFacetQueryData productFormBean = (ProductFacetQueryData) getJspContext().findAttribute("productFormBean");
 
         String html = " <div class=\"col-sm-3\">\n" +
                 "                    <div id=\"order-result-castum\">\n" +

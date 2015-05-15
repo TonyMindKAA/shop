@@ -18,11 +18,15 @@ public class PrepareStatementBuilderImpl implements PrepareStatementBuilder {
         return paramsBean.getSqlQuery();
     }
 
-    public PreparedStatement build(PreparedStatement statement) throws SQLException {
-        List<String> prepareStatementParams = paramsBean.getPrepareStatementParams();
-        for (int i = 0; i < prepareStatementParams.size(); i++) {
-            statement.setString(i+1,prepareStatementParams.get(i));
+    public PreparedStatement build(PreparedStatement query) throws SQLException {
+        List<String> parameters = paramsBean.getPrepareStatementParams();
+        populateQueryParameters(query, parameters);
+        return query;
+    }
+
+    private void populateQueryParameters(PreparedStatement query, List<String> parameters) throws SQLException {
+        for (int i = 0; i < parameters.size(); i++) {
+            query.setString(i+1,parameters.get(i));
         }
-        return statement;
     }
 }

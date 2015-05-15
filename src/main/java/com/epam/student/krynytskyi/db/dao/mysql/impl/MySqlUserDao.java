@@ -12,12 +12,12 @@ import java.util.UUID;
 import org.apache.log4j.Logger;
 
 import com.epam.student.krynytskyi.db.dao.exception.DAOException;
-import com.epam.student.krynytskyi.db.dao.mysql.MySqlUserDao;
+import com.epam.student.krynytskyi.db.dao.mysql.UserDao;
 import com.epam.student.krynytskyi.entity.Role;
 import com.epam.student.krynytskyi.entity.User;
 
-public class MySqlUserDaoImpl implements MySqlUserDao {
-	private static final Logger log = Logger.getLogger(MySqlUserDaoImpl.class);
+public class MySqlUserDao implements UserDao {
+	private static final Logger log = Logger.getLogger(MySqlUserDao.class);
 	private static final String SQL_GET_ALL_USERS = "SELECT *,user.id as userId FROM user, role where role.id = user.idRole;";
 	private static final String SQL_GET_USER_BY_EMAIL = "SELECT *,user.id as userId FROM user, role where role.id = user.idRole and email = ?;";
 	private static final String SQL_INSERT_NEW_USER = "INSERT INTO user (name,last_name,phone,password,email,img,idRole,id) VALUES (?,?,?,?,?,?,?,?);";

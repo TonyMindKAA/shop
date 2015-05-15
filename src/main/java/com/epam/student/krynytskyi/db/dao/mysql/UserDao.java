@@ -6,7 +6,7 @@ import java.util.List;
 import com.epam.student.krynytskyi.db.dao.exception.DAOException;
 import com.epam.student.krynytskyi.entity.User;
 
-public interface MySqlUserDao {
+public interface UserDao {
 	public User getUserByEmail(Connection conn, String email) throws DAOException;
 
 	public List<User> getAll(Connection conn) throws DAOException;

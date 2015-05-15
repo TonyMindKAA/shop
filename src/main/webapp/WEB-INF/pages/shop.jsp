@@ -70,21 +70,21 @@
                         <div class="panel-group category-products" id="accordian"><!--category-productsr-->
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><input name="AMBIENT" type="checkbox" <c:out
+                                    <h4 class="panel-title"><input name="type" value="AMBIENT" type="checkbox" <c:out
                                             value="${empty productFormBean.ambientType ? ' ' : 'checked'}"/>> <a
                                             href="#"> AMBIENT </a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><input name="PROTECTED" type="checkbox" <c:out
+                                    <h4 class="panel-title"><input name="type" value="PROTECTED" type="checkbox" <c:out
                                             value="${empty productFormBean.protectedType ? ' ' : 'checked'}"/>><a
                                             href="#"> PROTECTED </a></h4>
                                 </div>
                             </div>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h4 class="panel-title"><input name="CHEAP" type="checkbox" <c:out
+                                    <h4 class="panel-title"><input name="type" value="CHEAP" type="checkbox" <c:out
                                             value="${empty productFormBean.cheapType ? ' ' : 'checked'}"/>> <a href="#">CHEAP</a>
                                     </h4>
                                 </div>
@@ -93,25 +93,25 @@
                         <!--/category-productsr-->
                         <div class="brands_products"><!--brands_products-->
                             <h2>Brands</h2>
-
                             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><input name="NOKIA" type="checkbox" <c:out
+                                        <h4 class="panel-title">
+                                            <input name="manufactures" value="NOKIA" type="checkbox" <c:out
                                                 value="${empty productFormBean.nokia ? ' ' : 'checked'}"/>> <a href="#">
                                             NOKIA </a></h4>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><input name="SIGMA" type="checkbox" <c:out
+                                        <h4 class="panel-title"><input name="manufactures" value="SIGMA" type="checkbox" <c:out
                                                 value="${empty productFormBean.sigma ? ' ' : 'checked'}"/>><a href="#">
                                             SIGMA </a></h4>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><input name="APPLE" type="checkbox" <c:out
+                                        <h4 class="panel-title"><input name="manufactures" value="APPLE" type="checkbox" <c:out
                                                 value="${empty productFormBean.apple ? ' ' : 'checked'}"/>> <a href="#">APPLE</a>
                                         </h4>
                                     </div>

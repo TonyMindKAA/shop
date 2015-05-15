@@ -1,19 +1,22 @@
 package com.epam.student.krynytskyi.util.db.mysql;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
-import com.epam.student.krynytskyi.beans.product.ProductFormBean;
+import com.epam.student.krynytskyi.beans.ProductFacetQueryData;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
+public class ProductAmountQueryGenerator {
 
-    private static final Logger log = Logger.getLogger(SQLSelectByParamPrepareStatementBuilderParamGenerator.class);
-    private String SELECT_PRODUCT_BY_PARAMETER = "SELECT COUNT(pr.id) numberProduct " +
+    private static final Logger log = Logger.getLogger(ProductQueryGenerator.class);
+    private static final String EMPTY = "";
+    private static final String END_OF_LINE = ";";
+
+    private String BASE_QUERY = "SELECT COUNT(pr.id) numberProduct " +
             "FROM shop.product as pr " +
-            "inner join shop.product_type as prt on pr.product_type_id = prt.id " +
-            "inner join shop.manufacturer as mn on pr.manufacture_id = mn.id " +
+            "INNER JOIN shop.product_type as prt ON pr.product_type_id = prt.id " +
+            "INNER JOIN shop.manufacturer as mn ON pr.manufacture_id = mn.id " +
             "WHERE ";
     private String sqlPriceTo = " AND pr.price <= ?";
     private String sqlPriceFrom = " AND pr.price >= ?";
@@ -22,15 +25,15 @@ public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
     private String sqlManufacturer = "mn.manufacturer = ?";
     private List<String> types = new ArrayList<>();
     private List<String> manufacturers = new ArrayList<>();
-    private String priceSQLPart = "";
-    private String typeSQLPart = "";
-    private String manufacturerSQLPart = "";
-    private String tittleSQLPart = "";
-    private String resultSQLQuery = "";
+    private String priceSQLPart = EMPTY;
+    private String typeSQLPart = EMPTY;
+    private String manufacturerSQLPart = EMPTY;
+    private String tittleSQLPart = EMPTY;
+    private String resultSQLQuery = EMPTY;
     private List<String> paramValues = new ArrayList<>();
 
 
-    public PrepareStatementBuilderParamsBean generate(ProductFormBean productFormBean) {
+    public PrepareStatementBuilderParamsBean generate(ProductFacetQueryData productFormBean) {
         generateTittle(productFormBean);
         generatePricePart(productFormBean);
         generateProductType(productFormBean);
@@ -41,15 +44,24 @@ public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
         return prepareStatementBuilderParamsBean;
     }
 
-    private void toDefaultValue() {
-        types = new ArrayList<>();
-        manufacturers = new ArrayList<>();
-        priceSQLPart = "";
-        typeSQLPart = "";
-        manufacturerSQLPart = "";
-        tittleSQLPart = "";
-        resultSQLQuery = "";
-        paramValues = new ArrayList<>();
+    private void generateTittle(ProductFacetQueryData productFormBean) {
+        if (isParameterExist(productFormBean.getTitle())) {
+            tittleSQLPart = sqlTittle;
+            addParamValue(productFormBean.getTitle());
+        } else {
+            tittleSQLPart = " pr.name LIKE '%%'";
+        }
+    }
+
+    private void generatePricePart(ProductFacetQueryData productFormBean) {
+        if (isParameterExist(productFormBean.getPriceFrom())) {
+            priceSQLPart += sqlPriceFrom;
+            addParamValue(productFormBean.getPriceFrom());
+        }
+        if (isParameterExist(productFormBean.getPriceTo())) {
+            priceSQLPart += sqlPriceTo;
+            addParamValue(productFormBean.getPriceTo());
+        }
     }
 
     private PrepareStatementBuilderParamsBean generatePrepareStatementBuilderParams() {
@@ -60,26 +72,15 @@ public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
     }
 
     private void stickTogetherAllSQLPartToResultSQLQuery() {
-        resultSQLQuery = SELECT_PRODUCT_BY_PARAMETER + tittleSQLPart + priceSQLPart + typeSQLPart +
-                manufacturerSQLPart + ";";
-    }
-
-
-
-    private void generateTittle(ProductFormBean productFormBean) {
-        if (isParameterExist(productFormBean.getTitle())) {
-            tittleSQLPart = sqlTittle;
-            addParamValue(productFormBean.getTitle());
-        } else {
-            tittleSQLPart = " pr.name LIKE '%%'";
-        }
+        resultSQLQuery = BASE_QUERY + tittleSQLPart + priceSQLPart + typeSQLPart +
+                manufacturerSQLPart + END_OF_LINE;
     }
 
     private boolean addParamValue(String value) {
         return paramValues.add(value);
     }
 
-    private void generateProductManufacture(ProductFormBean productFormBean) {
+    private void generateProductManufacture(ProductFacetQueryData productFormBean) {
         if (isParameterExist(productFormBean.getNokia())) {
             manufacturers.add("nokia");
         }
@@ -106,7 +107,7 @@ public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
         }
     }
 
-    private void generateProductType(ProductFormBean productFormBean) {
+    private void generateProductType(ProductFacetQueryData productFormBean) {
         if (isParameterExist(productFormBean.getAmbientType())) {
             types.add("AMBIENT");
         }
@@ -131,18 +132,18 @@ public class SQLCountProductByParamPrepareStatementBuilderParamGenerator {
         }
     }
 
-    private void generatePricePart(ProductFormBean productFormBean) {
-        if (isParameterExist(productFormBean.getPriceFrom())) {
-            priceSQLPart += sqlPriceFrom;
-            addParamValue(productFormBean.getPriceFrom());
-        }
-        if (isParameterExist(productFormBean.getPriceTo())) {
-            priceSQLPart += sqlPriceTo;
-            addParamValue(productFormBean.getPriceTo());
-        }
-    }
-
     private boolean isParameterExist(String parameter) {
         return parameter != null && !parameter.isEmpty();
+    }
+
+    private void toDefaultValue() {
+        types = new ArrayList<>();
+        manufacturers = new ArrayList<>();
+        priceSQLPart = EMPTY;
+        typeSQLPart = EMPTY;
+        manufacturerSQLPart = EMPTY;
+        tittleSQLPart = EMPTY;
+        resultSQLQuery = EMPTY;
+        paramValues = new ArrayList<>();
     }
 }

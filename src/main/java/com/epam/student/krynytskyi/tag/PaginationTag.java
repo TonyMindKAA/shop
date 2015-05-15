@@ -1,6 +1,7 @@
 package com.epam.student.krynytskyi.tag;
 
 import com.epam.student.krynytskyi.beans.product.ProductFormBean;
+import com.epam.student.krynytskyi.beans.ProductFacetQueryData;
 import com.epam.student.krynytskyi.service.ProductService;
 import org.apache.log4j.Logger;
 
@@ -18,7 +19,7 @@ public class PaginationTag extends SimpleTagSupport {
 
     @Override
     public void doTag() throws JspException, IOException {
-        ProductFormBean productFormBean = (ProductFormBean) getJspContext().findAttribute("productFormBean");
+        ProductFacetQueryData productFormBean = (ProductFacetQueryData) getJspContext().findAttribute("productFormBean");
         ProductService productService = getProductService();
         int productNumber = getProductNumber(productFormBean, productService);
         int currentPage = Integer.parseInt(productFormBean.getCurrentPage());
@@ -44,7 +45,7 @@ public class PaginationTag extends SimpleTagSupport {
         }
     }
 
-    private int getProductNumber(ProductFormBean productFormBean, ProductService productService) {
+    private int getProductNumber(ProductFacetQueryData productFormBean, ProductService productService) {
         int productNumber = 0;
         try {
             productNumber = productService.countProducts(productFormBean);
