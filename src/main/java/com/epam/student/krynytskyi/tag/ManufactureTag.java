@@ -18,7 +18,7 @@ public class ManufactureTag  extends SimpleTagSupport {
     public void doTag() throws JspException, IOException {
         ProductFacetQueryData productFormBean = (ProductFacetQueryData) getJspContext().findAttribute("productFormBean");
         List<Manufacture> manufacture = getAllManufactures();
-        List<String> checkedManufactures = productFormBean.getProductTypes();
+        List<String> checkedManufactures = productFormBean.getProductManufactures();
 
         StringBuilder html = new StringBuilder();
         html.append(" <div class=\"brands_products\"><!--brands_products-->\n" +
