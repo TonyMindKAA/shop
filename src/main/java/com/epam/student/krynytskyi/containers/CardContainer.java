@@ -10,7 +10,13 @@ public class CardContainer {
     private Map<ProductFixedPrice, Integer> card = new HashMap<>();
 
     public void add(Product product, int numbers) {
-        card.put(new ProductFixedPrice(product), numbers);
+        ProductFixedPrice immutableProduct = new ProductFixedPrice(product);
+        if (card.containsKey(immutableProduct)) {
+            int currentNumbers = card.get(immutableProduct);
+            int resultNumbers = numbers + currentNumbers;
+            card.put(immutableProduct, resultNumbers);
+        } else
+            card.put(immutableProduct, numbers);
     }
 
     public void remove(Product product) {
@@ -18,13 +24,17 @@ public class CardContainer {
     }
 
     public int size() {
-        return card.size();
+        int cardSize = 0;
+        for (Map.Entry<ProductFixedPrice, Integer> entry : card.entrySet()) {
+            cardSize += entry.getValue();
+        }
+        return cardSize;
     }
 
     public List<CardItem> getAll() {
         List<CardItem> cardItems = new ArrayList<>();
         for (Map.Entry<ProductFixedPrice, Integer> entry : card.entrySet()) {
-            cardItems.add(new CardItem(entry.getKey(),entry.getValue()));
+            cardItems.add(new CardItem(entry.getKey(), entry.getValue()));
         }
         return cardItems;
     }
@@ -34,7 +44,7 @@ public class CardContainer {
         for (Map.Entry<ProductFixedPrice, Integer> entry : card.entrySet()) {
             ProductFixedPrice product = entry.getKey();
             Integer itemNumbers = entry.getValue();
-            totalProducts += product.getPrice()*itemNumbers;
+            totalProducts += product.getPrice() * itemNumbers;
         }
         return totalProducts;
     }

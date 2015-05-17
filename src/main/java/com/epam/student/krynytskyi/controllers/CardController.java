@@ -1,7 +1,10 @@
 package com.epam.student.krynytskyi.controllers;
 
 
+import com.epam.student.krynytskyi.beans.card.CardInfo;
+import com.epam.student.krynytskyi.beans.card.ProductFixedPrice;
 import com.epam.student.krynytskyi.containers.CardContainer;
+import com.epam.student.krynytskyi.entity.Product;
 import com.epam.student.krynytskyi.service.ProductService;
 import com.epam.student.krynytskyi.util.JSONSerializer;
 import org.apache.log4j.Logger;
@@ -38,13 +41,31 @@ public class CardController extends HttpServlet {
         ProductService productService = (ProductService) req.getServletContext().getAttribute("productService");
         if(card == null){
             card = new CardContainer();
+            req.getSession().setAttribute("card",card);
+            log.debug("Card created.");
         }
         String productId = req.getParameter("id");
-      //  productService.getById(productId);
-        System.out.println(productId);
+        Product product = getProductById(productService, productId);
+        ProductFixedPrice one = new ProductFixedPrice(product);
+        ProductFixedPrice two = new ProductFixedPrice(product);
+        log.debug(one.equals(two) + " :: " + one.hashCode() + " || " + two.hashCode());
+        card.add(product, 1);
+        CardInfo cardInfo = new CardInfo();
+        cardInfo.setProductsNumber(card.size());
+        cardInfo.setTotalCost(card.calculationPurchases());
 
-        Integer product = new Integer("23");
-        print(resp, product);
+        log.debug(productId + " :: card-size: " + card.size() + " items :: result price " + card.calculationPurchases());
+        req.getSession().setAttribute("cardInfo",cardInfo);
+        print(resp, cardInfo);
+    }
+
+    private Product getProductById(ProductService productService, String productId) {
+        try {
+            return productService.getById(productId);
+        } catch (Exception e) {
+            log.error(e);
+            return  null;
+        }
     }
 
     protected void print(HttpServletResponse response, Object o) throws IOException {

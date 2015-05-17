@@ -47,4 +47,14 @@ public class ProductServiceImpl implements ProductService {
             }
         });
     }
+
+    @Override
+    public Product getById(final String id) throws Exception {
+        return (Product) transactionManager.doInTransaction(new TransactionOperation() {
+            @Override
+            public Object execute(Connection conn) throws Exception {
+                return mySqlProductDao.getById(conn,id);
+            }
+        });
+    }
 }

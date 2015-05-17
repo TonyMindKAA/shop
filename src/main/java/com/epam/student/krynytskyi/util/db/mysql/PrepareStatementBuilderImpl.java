@@ -29,7 +29,6 @@ public class PrepareStatementBuilderImpl implements PrepareStatementBuilder {
     private void populateQueryParameters(PreparedStatement query, List<String> parameters) throws SQLException {
         for (int i = 0; i < parameters.size(); i++) {
             query.setString(i+1,parameters.get(i));
-            log.debug(parameters.get(i));
         }
     }
 }

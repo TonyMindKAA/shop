@@ -22,8 +22,19 @@
              data:{
                 id:productId
              },
-             success: function(numbersProduct){
-                console.log(numbersProduct);
+             success: function(cardInfo){
+                 if(cardInfo != null){
+                    $("#car-info-state")
+                            .html(
+                            "<i class=\"fa fa-shopping-cart\"></i><b> Cart("+cardInfo.productsNumber+") total cost: "+ cardInfo.totalCost+"</b>");
+                     $( "#car-info-state" ).focus();
+                 }else{
+                     $("#car-info-state")
+                             .html(
+                             "<i class=\"fa fa-shopping-cart\"></i><b>Cart(0) total cost: 0 uah</b>");
+                 }
+
+                console.log(cardInfo);
              },
              error: function(msg){
                 console.log("error");

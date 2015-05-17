@@ -34,7 +34,7 @@ public class ManufactureTag  extends SimpleTagSupport {
                         "                                    </div>\n" +
                         "                                </div>");
             else
-                html.append("<div class=\"panel panel-default\">\n" +
+                html.append("<div classn=\"panel panel-default\">\n" +
                         "                                    <div class=\"panel-heading\">\n" +
                         "                                        <h4 class=\"panel-title\">" +
                         "                                        <input name=\"manufacture\" value=\"" + manufacture.get(i).getManufacture() + "\" type=\"checkbox\">" +

@@ -4,6 +4,7 @@
 <%@ taglib prefix="sel" uri="http://koraytugay.com/ItemNumbersOrderTag"%>
 <%@ taglib prefix="chb" uri="http://koraytugay.com/productTypeTag"%>
 <%@ taglib prefix="chbm" uri="http://koraytugay.com/manufactureTag"%>
+<%@ taglib prefix="cardInf" uri="http://koraytugay.com/cardInfoTag"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

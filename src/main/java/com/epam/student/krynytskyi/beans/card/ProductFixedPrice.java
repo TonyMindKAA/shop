@@ -22,16 +22,19 @@ public class ProductFixedPrice {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || (getClass() != o.getClass() && o.getClass() != Product.class)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         ProductFixedPrice that = (ProductFixedPrice) o;
 
+        if (price != that.price) return false;
         return !(product != null ? !product.equals(that.product) : that.product != null);
 
     }
 
     @Override
     public int hashCode() {
-        return product != null ? product.hashCode() : 0;
+        int result = product != null ? product.hashCode() : 0;
+        result = 31 * result + (int) (price ^ (price >>> 32));
+        return result;
     }
 }
