@@ -1,4 +1,4 @@
-.cart_quantity_apply{
+a.cart_quantity_apply {
     background: #F0F0E9;
     color: #696763;
     display: inline-block;
@@ -13,4 +13,8 @@
 
 .card-continue{
     padding-left: 39%;
+}
+
+.cart_quantity_button_card{
+     margin-left: 16%;
 }

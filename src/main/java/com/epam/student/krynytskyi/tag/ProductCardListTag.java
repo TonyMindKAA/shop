@@ -44,10 +44,10 @@ public class ProductCardListTag extends SimpleTagSupport {
                         "\t\t\t\t\t\t\t</td>\n" +
                         "\t\t\t\t\t\t\t<td class=\"cart_quantity\">\n" +
                         "\t\t\t\t\t\t\t\t<div class=\"cart_quantity_button\">\n" +
-                        "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_up\"> + </a>\n" +
+                        "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_up\" href=\"\"> + </a>\n" +
                         "\t\t\t\t\t\t\t\t\t<input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value=\"" + numberItems + "\" autocomplete=\"off\" size=\"2\" readonly>\n" +
-                        "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_down\"> - </a>\n" +
-                        "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_apply\"> apply </a>\n" +
+                        "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_down\" href=\"\"> - </a>\n" +
+                        "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_apply\" href=\"\">apply</a>\n" +
                         "\t\t\t\t\t\t\t\t</div>\n" +
                         "\t\t\t\t\t\t\t</td>\n" +
                         "\t\t\t\t\t\t\t<td class=\"cart_total\">\n" +
@@ -72,11 +72,13 @@ public class ProductCardListTag extends SimpleTagSupport {
                     "\t\t\t\t\t\t\t</td>\n" +
                     "\t\t\t\t\t\t\t<td class=\"cart_quantity\">\n" +
                     "\t\t\t\t\t\t\t\t<div class=\"cart_quantity_button\">\n" +
-                    "\t\t\t\t\t\t\t\t\t<input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value=\"" + card.size() + "\" autocomplete=\"off\" size=\"2\" readonly>\n" +
+                    "\t\t\t\t\t\t\t\t\t<div class=\"cart_quantity_button_card\">\n" +
+                    "\t\t\t\t\t\t\t\t\t\t\t<input id=\"cart_quantity_input_result\" class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value=\"" + card.size() + "\" autocomplete=\"off\" size=\"2\" readonly>\n" +
+                    "\t\t\t\t\t\t\t\t\t</div>\n" +
                     "\t\t\t\t\t\t\t\t</div>\n" +
                     "\t\t\t\t\t\t\t</td>\n" +
                     "\t\t\t\t\t\t\t<td class=\"cart_total\">\n" +
-                    "\t\t\t\t\t\t\t\t<p class=\"cart_total_price\">" + card.calculationPurchases() + " uah</p>\n" +
+                    "\t\t\t\t\t\t\t\t<p id=\"cart_total_price_result\" class=\"cart_total_price\">" + card.calculationPurchases() + " uah</p>\n" +
                     "\t\t\t\t\t\t\t</td>\n" +
                     "\t\t\t\t\t\t\t<td>\n" +
                     "\t\t\t\t\t\t\t\t<a></a>\n" +
