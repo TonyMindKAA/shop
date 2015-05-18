@@ -1,0 +1,16 @@
+.cart_quantity_apply{
+    background: #F0F0E9;
+    color: #696763;
+    display: inline-block;
+    font-size: 15px;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    margin-left: 7px;
+    height: 27px;
+    width: 53px;
+}
+
+.card-continue{
+    padding-left: 39%;
+}
