@@ -28,7 +28,7 @@ public class CardController extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        productService = (ProductService) getServletContext().getAttribute("");
+        productService = (ProductService) getServletContext().getAttribute("productService");
         jsonSerializer = new JSONSerializer();
     }
 

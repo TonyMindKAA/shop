@@ -366,6 +366,42 @@
 <script src="resources/js/jquery.prettyPhoto.js"></script>
 <script src="resources/js/main.js"></script>
 <script type="text/javascript">
+
+        $(".cart_quantity_delete").on( "click", function(e){
+            e.preventDefault();
+            var resultTotalPrice = parseInt($(this).parent().prev().children().html().split(" ")[0]);
+            var productNumbers = parseInt($(".cart_quantity_delete").parent().prev().prev().children().children().next().val());
+            var generalResultTotalPrice = parseInt($("#cart_total_price_result").html().split(" ")[0]);
+            var generalProductNumbers = parseInt($("#cart_total_price_result").parent().prev().children().children().children().val());
+            generalProductNumbers -= productNumbers;
+            generalResultTotalPrice -= resultTotalPrice;
+
+            $("#cart_total_price_result").parent().prev().children().children().children().val(generalProductNumbers);
+            $("#cart_total_price_result").html(generalResultTotalPrice+" uah");
+            $(this).parent().parent().remove();
+
+        });
+
+
+
+        $(".cart_quantity_apply").on( "click", function(e){
+            e.preventDefault();
+            var productId = $(this).parent().parent().prev().prev().children().next().html().split(" ")[2];
+            var productsNumber = $(this).prev().prev().val();
+            var json = "{ id: \"+productId+\",productsNumber: \"+productsNumber+\"  }";
+
+             $.ajax({
+                method : 'post',
+                url : 'carders',
+                dataType : 'json',
+                data:{ 'id': productId, 'productsNumber': productsNumber },
+                success : function(data) {
+                    console.log(data);
+
+                }
+            });
+        });
+
         $(".cart_quantity_up").on( "click", function(e){
             e.preventDefault();
             var numberProducts = $(this).next().val();
@@ -401,16 +437,12 @@
 
         function addToTotalResult(money){
                 var totalPriceResult = parseInt($("#cart_total_price_result").text().split(" ")[0]);
-                console.log(totalPriceResult);
-                console.log(money);
                 totalPriceResult = totalPriceResult +  money;
                 $("#cart_total_price_result").text(totalPriceResult+" uah");
         }
 
         function minusFromTotalResult(money){
                 var totalPriceResult = parseInt($("#cart_total_price_result").text().split(" ")[0]);
-                console.log(totalPriceResult);
-                console.log(money);
                 totalPriceResult = totalPriceResult -  money;
                 $("#cart_total_price_result").text(totalPriceResult+" uah");
         }
@@ -426,6 +458,7 @@
             var totalPriceResult = parseInt($("#cart_quantity_input_result").val());
             $("#cart_quantity_input_result").val(--totalPriceResult);
         }
+
 </script>
 </body>
 </html>
