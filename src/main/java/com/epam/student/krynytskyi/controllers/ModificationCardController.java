@@ -1,5 +1,6 @@
 package com.epam.student.krynytskyi.controllers;
 
+import com.epam.student.krynytskyi.beans.card.CardInfo;
 import com.epam.student.krynytskyi.containers.CardContainer;
 import com.epam.student.krynytskyi.entity.Product;
 import com.epam.student.krynytskyi.service.ProductService;
@@ -16,24 +17,67 @@ import java.io.IOException;
 @WebServlet("/carders")
 public class ModificationCardController extends HttpServlet {
     private static final Logger log = Logger.getLogger(ModificationCardController.class);
+    public static final String CARD_INFO_SESSION_ATTRIBUTE = "cardInfo";
+    private CardContainer card;
+    private ProductService productService;
+
+    @Override
+    public void init() throws ServletException {
+        productService = (ProductService) getServletContext().getAttribute("productService");
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CardContainer card = (CardContainer) req.getSession().getAttribute("card");
-        ProductService productService = (ProductService) getServletContext().getAttribute("productService");
-        log.debug("KAA-PRO");
-        String productId = req.getParameter("id");
-        log.debug(productId);
-        String  productsNumber = req.getParameter("productsNumber");
-        log.debug(productsNumber);
+        card = (CardContainer) req.getSession().getAttribute("card");
+        String command = req.getParameter("command");
+        executeCommand(req, resp, command);
+        CardInfo cardInfo = createCardInfo(card);
+        req.getSession().setAttribute(CARD_INFO_SESSION_ATTRIBUTE, cardInfo);
+    }
+
+    private void executeCommand(HttpServletRequest req, HttpServletResponse resp, String command) {
+        if (command != null) {
+            switch (command) {
+                case "delete":
+                    deleteProduct(req);
+                    break;
+                case "update":
+                    updateProduct(req);
+                    break;
+                default:
+                    resp.setStatus(500);
+            }
+        }
+    }
+
+    private void updateProduct(HttpServletRequest req) {
+        String id = req.getParameter("id");
+        String productsNumber = req.getParameter("productsNumber");
+        int productsNumberInt = Integer.parseInt(productsNumber);
         Product product = null;
         try {
-            product = productService.getById(productId);
+            product = productService.getById(id);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if(product != null) {
-            int numbers = Integer.parseInt(productsNumber);
-            card.add(product, numbers);
+        card.set(product, productsNumberInt);
+    }
+
+    private void deleteProduct(HttpServletRequest req) {
+        String id = req.getParameter("id");
+        Product product = null;
+        try {
+            product = productService.getById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        card.remove(product);
+    }
+
+    private CardInfo createCardInfo(CardContainer card) {
+        CardInfo cardInfo = new CardInfo();
+        cardInfo.setProductsNumber(card.size());
+        cardInfo.setTotalCost(card.calculationPurchases());
+        return cardInfo;
     }
 }

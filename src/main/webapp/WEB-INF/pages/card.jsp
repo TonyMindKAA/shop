@@ -359,106 +359,11 @@
 </footer>
 <!--/Footer-->
 
-
 <script src="resources/js/jquery.js"></script>
 <script src="resources/js/bootstrap.min.js"></script>
 <script src="resources/js/jquery.scrollUp.min.js"></script>
 <script src="resources/js/jquery.prettyPhoto.js"></script>
 <script src="resources/js/main.js"></script>
-<script type="text/javascript">
-
-        $(".cart_quantity_delete").on( "click", function(e){
-            e.preventDefault();
-            var resultTotalPrice = parseInt($(this).parent().prev().children().html().split(" ")[0]);
-            var productNumbers = parseInt($(".cart_quantity_delete").parent().prev().prev().children().children().next().val());
-            var generalResultTotalPrice = parseInt($("#cart_total_price_result").html().split(" ")[0]);
-            var generalProductNumbers = parseInt($("#cart_total_price_result").parent().prev().children().children().children().val());
-            generalProductNumbers -= productNumbers;
-            generalResultTotalPrice -= resultTotalPrice;
-
-            $("#cart_total_price_result").parent().prev().children().children().children().val(generalProductNumbers);
-            $("#cart_total_price_result").html(generalResultTotalPrice+" uah");
-            $(this).parent().parent().remove();
-
-        });
-
-
-
-        $(".cart_quantity_apply").on( "click", function(e){
-            e.preventDefault();
-            var productId = $(this).parent().parent().prev().prev().children().next().html().split(" ")[2];
-            var productsNumber = $(this).prev().prev().val();
-            var json = "{ id: \"+productId+\",productsNumber: \"+productsNumber+\"  }";
-
-             $.ajax({
-                method : 'post',
-                url : 'carders',
-                dataType : 'json',
-                data:{ 'id': productId, 'productsNumber': productsNumber },
-                success : function(data) {
-                    console.log(data);
-
-                }
-            });
-        });
-
-        $(".cart_quantity_up").on( "click", function(e){
-            e.preventDefault();
-            var numberProducts = $(this).next().val();
-            if(numberProducts < 100){
-                $(this).next().val(++numberProducts);
-                updateTotalPrice($(this), numberProducts);
-                 var totalPrice = parseInt($(this).parent().parent().prev().text().split(" ")[0]);
-                addToTotalResult(totalPrice);
-                incrementProductTotalNumber();
-            }
-        });
-
-        $(".cart_quantity_down").on( "click", function(e){
-            e.preventDefault();
-            var numberProducts = $(this).prev().val();
-            if(numberProducts > 1){
-                $(this).prev().val(--numberProducts);
-                updateTotalPrice($(this), numberProducts);
-                var totalPrice = parseInt($(this).parent().parent().prev().text().split(" ")[0]);
-                minusFromTotalResult(totalPrice);
-                decrementProductTotalNumber();
-            }
-        });
-
-        function updateTotalPrice(referenceOnSelf, numberProducts){
-                var resultPriceText = referenceOnSelf.parent().parent().prev().text();
-                var defaultPriceA = referenceOnSelf.parent().parent().prev().prev();
-                var totalPrice = parseInt(resultPriceText.split(" ")[0]);
-                var newResultPrice = parseInt(numberProducts) * totalPrice;
-                var resultNumber = newResultPrice + " uah";
-                referenceOnSelf.parent().parent().next().children().first().text(resultNumber);
-        }
-
-        function addToTotalResult(money){
-                var totalPriceResult = parseInt($("#cart_total_price_result").text().split(" ")[0]);
-                totalPriceResult = totalPriceResult +  money;
-                $("#cart_total_price_result").text(totalPriceResult+" uah");
-        }
-
-        function minusFromTotalResult(money){
-                var totalPriceResult = parseInt($("#cart_total_price_result").text().split(" ")[0]);
-                totalPriceResult = totalPriceResult -  money;
-                $("#cart_total_price_result").text(totalPriceResult+" uah");
-        }
-
-        function incrementProductTotalNumber(){
-            cart_quantity_input_result
-            var totalPriceResult = parseInt($("#cart_quantity_input_result").val());
-            $("#cart_quantity_input_result").val(++totalPriceResult);
-        }
-
-        function decrementProductTotalNumber(){
-            cart_quantity_input_result
-            var totalPriceResult = parseInt($("#cart_quantity_input_result").val());
-            $("#cart_quantity_input_result").val(--totalPriceResult);
-        }
-
-</script>
+<script src="resources/js/card.js"></script>
 </body>
 </html>

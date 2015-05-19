@@ -47,7 +47,6 @@ public class ProductCardListTag extends SimpleTagSupport {
                         "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_up\" href=\"\"> + </a>\n" +
                         "\t\t\t\t\t\t\t\t\t<input class=\"cart_quantity_input\" type=\"text\" name=\"quantity\" value=\"" + numberItems + "\" autocomplete=\"off\" size=\"2\" readonly>\n" +
                         "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_down\" href=\"\"> - </a>\n" +
-                        "\t\t\t\t\t\t\t\t\t<a class=\"cart_quantity_apply\" href=\"\">apply</a>\n" +
                         "\t\t\t\t\t\t\t\t</div>\n" +
                         "\t\t\t\t\t\t\t</td>\n" +
                         "\t\t\t\t\t\t\t<td class=\"cart_total\">\n" +

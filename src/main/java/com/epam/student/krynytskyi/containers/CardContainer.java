@@ -19,8 +19,14 @@ public class CardContainer {
             card.put(immutableProduct, numbers);
     }
 
+    public void set(Product product, int numbers) {
+        ProductFixedPrice immutableProduct = new ProductFixedPrice(product);
+        card.put(immutableProduct, numbers);
+    }
+
+
     public void remove(Product product) {
-        card.remove(product);
+        card.remove(new ProductFixedPrice(product));
     }
 
     public int size() {
