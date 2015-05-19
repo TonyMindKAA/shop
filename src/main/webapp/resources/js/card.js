@@ -24,7 +24,7 @@
              console.log(productId);
              $.ajax({
                 method : 'post',
-                url : 'carders',
+                url : 'card/info',
                 dataType : 'json',
                 data:{ 'id': productId, 'command': 'delete'},
                 success : function() {
@@ -37,7 +37,7 @@
         function updateCardProduct( productId, productsNumber){
              $.ajax({
                 method : 'post',
-                url : 'carders',
+                url : 'card/info',
                 dataType : 'json',
                 data:{ 'id': productId, 'productsNumber': productsNumber,'command': 'update' },
                 success : function() {

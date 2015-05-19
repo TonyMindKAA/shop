@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="cardTab" uri="http://koraytugay.com/productCardListTag" %>
+<%@ taglib prefix="cardInf" uri="http://koraytugay.com/productCardInfoListTag" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,7 +164,7 @@
                 <li class="active">Shopping Cart</li>
             </ol>
         </div>
-        <cardTab:productCardListTag/>
+        <cardInf:productCardInfoListTag/>
     </div>
 </section>
 <!--/#cart_items-->
@@ -175,8 +175,66 @@
             <div class="col-sm-12">
                 <div class="chose_area">
                     <div class="card-continue">
-                        <a class="btn btn-default update" href="products">To products</a>
-                        <a class="btn btn-default check_out" href="delivery">Continue</a>
+                        <form>
+                            <table>
+                                <tr>
+                                    <td>Type of delivery:</td>
+                                    <td>
+                                        <select>
+                                            <option disabled>Select the type of delivery</option>
+                                            <option>Pickup delivery</option>
+                                            <option>Courier delivery</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Select type of payment:</td>
+                                    <td>
+                                        <select>
+                                            <option disabled>Select the type of payment:</option>
+                                            <option>cash</option>
+                                            <option>card</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Write bank card number: </td>
+                                    <td><input type="text" name="bankCardNumber"></td>
+                                </tr>
+                                <tr>
+                                    <td>Write address: </td>
+                                    <td><input type="text" name="clientAddress"></td>
+                                </tr>
+                                <tr>
+                                    <td>Select store: </td>
+                                    <td>
+                                        <select>
+                                            <option> store one</option>
+                                            <option> store two</option>
+                                            <option> store three</option>
+                                        </select>
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+
+<section id="do_action">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="chose_area">
+                    <div class="card-continue">
+                        <a class="btn btn-default update" href="card">Prev step</a>
+                        <a class="btn btn-default check_out" href="order">Create an order</a>
                     </div>
                 </div>
             </div>

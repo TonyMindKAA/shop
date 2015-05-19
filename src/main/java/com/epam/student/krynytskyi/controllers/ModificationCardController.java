@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/carders")
+@WebServlet("/card/info")
 public class ModificationCardController extends HttpServlet {
     private static final Logger log = Logger.getLogger(ModificationCardController.class);
     public static final String CARD_INFO_SESSION_ATTRIBUTE = "cardInfo";
