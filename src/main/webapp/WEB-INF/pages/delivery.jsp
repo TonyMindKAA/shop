@@ -180,7 +180,7 @@
                                 <tr>
                                     <td>Type of delivery:</td>
                                     <td>
-                                        <select>
+                                        <select id="typeDelivery">
                                             <option disabled>Select the type of delivery</option>
                                             <option>Pickup delivery</option>
                                             <option>Courier delivery</option>
@@ -190,30 +190,29 @@
                                 <tr>
                                     <td>Select type of payment:</td>
                                     <td>
-                                        <select>
+                                        <select id="typeofPayment">
                                             <option disabled>Select the type of payment:</option>
                                             <option>cash</option>
                                             <option>card</option>
                                         </select>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>Write bank card number: </td>
+                                <tr id="writeBankCardNumber">
+                                    <td>Write bank card number:</td>
                                     <td><input type="text" name="bankCardNumber"></td>
                                 </tr>
-                                <tr>
-                                    <td>Write address: </td>
+                                <tr id="writeAddress">
+                                    <td>Write address:</td>
                                     <td><input type="text" name="clientAddress"></td>
                                 </tr>
-                                <tr>
-                                    <td>Select store: </td>
+                                <tr id="selectStore">
+                                    <td>Select store:</td>
                                     <td>
                                         <select>
                                             <option> store one</option>
                                             <option> store two</option>
                                             <option> store three</option>
                                         </select>
-
                                     </td>
                                 </tr>
                             </table>
@@ -423,5 +422,26 @@
 <script src="resources/js/jquery.prettyPhoto.js"></script>
 <script src="resources/js/main.js"></script>
 <script src="resources/js/card.js"></script>
+<script type="text/javascript">
+    $('#typeDelivery').on('change', function () {
+        if ($(this).val() === "Pickup delivery") {
+            $("#writeAddress").hide();
+            $("#selectStore").show();
+        }
+        if ($(this).val() === "Courier delivery") {
+            $("#selectStore").hide();
+            $("#writeAddress").show();
+        }
+    });
+
+    $('#typeofPayment').on('change', function () {
+        if ($(this).val() === "cash") {
+            $("#writeBankCardNumber").hide();
+        }
+        if ($(this).val() === "card") {
+            $("#writeBankCardNumber").show();
+        }
+    });
+</script>
 </body>
 </html>

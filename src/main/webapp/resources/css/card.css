@@ -18,3 +18,11 @@ a.cart_quantity_apply {
 .cart_quantity_button_card{
      margin-left: 16%;
 }
+
+#writeAddress{
+    display: none;
+}
+
+#writeBankCardNumber{
+    display: none;
+}
