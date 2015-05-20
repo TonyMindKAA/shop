@@ -1,20 +1,15 @@
-package com.epam.student.krynytskyi.db.dao.mysql.impl;
+package com.epam.student.krynytskyi.db.dao.mysql;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import com.epam.student.krynytskyi.db.dao.UserDao;
+import com.epam.student.krynytskyi.db.dao.exception.DAOException;
+import com.epam.student.krynytskyi.entity.Role;
+import com.epam.student.krynytskyi.entity.User;
+import org.apache.log4j.Logger;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
-import org.apache.log4j.Logger;
-
-import com.epam.student.krynytskyi.db.dao.exception.DAOException;
-import com.epam.student.krynytskyi.db.dao.mysql.UserDao;
-import com.epam.student.krynytskyi.entity.Role;
-import com.epam.student.krynytskyi.entity.User;
 
 public class MySqlUserDao implements UserDao {
 	private static final Logger log = Logger.getLogger(MySqlUserDao.class);

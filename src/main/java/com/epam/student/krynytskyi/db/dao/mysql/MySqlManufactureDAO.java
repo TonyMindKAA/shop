@@ -1,8 +1,8 @@
-package com.epam.student.krynytskyi.db.dao.mysql.impl;
+package com.epam.student.krynytskyi.db.dao.mysql;
 
-import com.epam.student.krynytskyi.db.dao.mysql.TypeDao;
+import com.epam.student.krynytskyi.db.dao.ManufactureDAO;
+import com.epam.student.krynytskyi.entity.Manufacture;
 import com.epam.student.krynytskyi.entity.Product;
-import com.epam.student.krynytskyi.entity.ProductType;
 import org.apache.log4j.Logger;
 
 import java.sql.Connection;
@@ -11,26 +11,26 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySqlTypeDao implements TypeDao {
-    private static final Logger log = Logger.getLogger(MySqlTypeDao.class);
-    public static final String SQL = "SELECT * FROM shop.product_type;";
+public class MySqlManufactureDAO implements ManufactureDAO {
+    private static final Logger log = Logger.getLogger(MySqlManufactureDAO.class);
+    public static final String SQL = "SELECT * FROM shop.manufacturer;";
 
     @Override
-    public List<ProductType> getAll(Connection conn) throws Exception {
-        List<ProductType> productType = new ArrayList<>();
+    public List<Manufacture> getAll(Connection conn) throws Exception {
+        List<Manufacture> manufactures = new ArrayList<>();
         try (PreparedStatement prst = conn.prepareStatement(SQL)) {
             prst.execute();
             ResultSet resSet = prst.getResultSet();
             while (resSet.next()) {
-                ProductType newManufacture = new ProductType();
+                Manufacture newManufacture = new Manufacture();
                 newManufacture.setId(resSet.getInt("id"));
-                newManufacture.setType(resSet.getString("type"));
-                productType.add(newManufacture);
+                newManufacture.setManufacture(resSet.getString("manufacturer"));
+                manufactures.add(newManufacture);
             }
         } catch (Exception e) {
             throwExceptionUp(e);
         }
-        return  productType;
+        return manufactures;
     }
 
     private List<Product> throwExceptionUp(Exception e) throws Exception {

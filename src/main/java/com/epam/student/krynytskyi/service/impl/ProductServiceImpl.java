@@ -2,8 +2,8 @@ package com.epam.student.krynytskyi.service.impl;
 
 import com.epam.student.krynytskyi.beans.PrepareStatementBuilderParamsBean;
 import com.epam.student.krynytskyi.beans.ProductFacetQueryData;
-import com.epam.student.krynytskyi.db.dao.mysql.ProductDao;
-import com.epam.student.krynytskyi.db.dao.mysql.impl.MySqlProductDao;
+import com.epam.student.krynytskyi.db.dao.ProductDao;
+import com.epam.student.krynytskyi.db.dao.mysql.MySqlProductDao;
 import com.epam.student.krynytskyi.db.transaction.TransactionManager;
 import com.epam.student.krynytskyi.db.transaction.TransactionManagerImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionOperation;

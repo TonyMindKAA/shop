@@ -26,3 +26,11 @@ a.cart_quantity_apply {
 #writeBankCardNumber{
     display: none;
 }
+
+.orderCreated{
+    color: rgba(255, 135, 18, 0.92); font-family: 'Raleway',sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 36px;
+    margin-left: -5%;
+}

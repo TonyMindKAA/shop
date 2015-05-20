@@ -160,11 +160,10 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Shopping Cart</li>
+                <li><a href="products">Home</a></li>
+                <li class="active">Order created</li>
             </ol>
         </div>
-        <cardInf:productCardInfoListTag/>
     </div>
 </section>
 <!--/#cart_items-->
@@ -175,67 +174,10 @@
             <div class="col-sm-12">
                 <div class="chose_area">
                     <div class="card-continue">
-                        <form>
-                            <table>
-                                <tr>
-                                    <td>Type of delivery:</td>
-                                    <td>
-                                        <select id="typeDelivery">
-                                            <option disabled>Select the type of delivery</option>
-                                            <option>Pickup delivery</option>
-                                            <option>Courier delivery</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Select type of payment:</td>
-                                    <td>
-                                        <select id="typeofPayment">
-                                            <option disabled>Select the type of payment:</option>
-                                            <option>cash</option>
-                                            <option>card</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr id="writeBankCardNumber">
-                                    <td>Write bank card number:</td>
-                                    <td><input type="text" name="bankCardNumber"></td>
-                                </tr>
-                                <tr id="writeAddress">
-                                    <td>Write address:</td>
-                                    <td><input type="text" name="clientAddress"></td>
-                                </tr>
-                                <tr id="selectStore">
-                                    <td>Select store:</td>
-                                    <td>
-                                        <select>
-                                            <option> store one</option>
-                                            <option> store two</option>
-                                            <option> store three</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-
-<section id="do_action">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="chose_area">
-                    <div class="card-continue">
-                        <a class="btn btn-default update" href="card">Prev step</a>
-                        <form action="order" method="post">
-                            <input type="submit" class="btn btn-default check_out" value="Create an order">
-                        </form>
+                        <div class="orderCreated">
+                            <p>Thank you for your purchase.</p>
+                            <p>The order are in processing.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -444,6 +386,7 @@
             $("#writeBankCardNumber").show();
         }
     });
+
 </script>
 </body>
 </html>

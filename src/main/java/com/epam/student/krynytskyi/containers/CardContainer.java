@@ -19,6 +19,10 @@ public class CardContainer {
             card.put(immutableProduct, numbers);
     }
 
+    public void clear(){
+        card.clear();
+    }
+
     public void set(Product product, int numbers) {
         ProductFixedPrice immutableProduct = new ProductFixedPrice(product);
         card.put(immutableProduct, numbers);
@@ -40,7 +44,7 @@ public class CardContainer {
     public List<CardItem> getAll() {
         List<CardItem> cardItems = new ArrayList<>();
         for (Map.Entry<ProductFixedPrice, Integer> entry : card.entrySet()) {
-            cardItems.add(new CardItem(entry.getKey(), entry.getValue()));
+            cardItems.add(new CardItem(entry.getKey(), entry.getValue(),entry.getKey().getPrice()));
         }
         return cardItems;
     }

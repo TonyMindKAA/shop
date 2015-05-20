@@ -1,7 +1,7 @@
 package com.epam.student.krynytskyi.service.impl;
 
-import com.epam.student.krynytskyi.db.dao.mysql.ManufactureDAO;
-import com.epam.student.krynytskyi.db.dao.mysql.impl.MySqlManufactureDAO;
+import com.epam.student.krynytskyi.db.dao.ManufactureDAO;
+import com.epam.student.krynytskyi.db.dao.mysql.MySqlManufactureDAO;
 import com.epam.student.krynytskyi.db.transaction.TransactionManager;
 import com.epam.student.krynytskyi.db.transaction.TransactionManagerImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionOperation;

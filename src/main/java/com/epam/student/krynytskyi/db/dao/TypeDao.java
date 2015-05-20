@@ -1,4 +1,4 @@
-package com.epam.student.krynytskyi.db.dao.mysql;
+package com.epam.student.krynytskyi.db.dao;
 
 import com.epam.student.krynytskyi.entity.ProductType;
 

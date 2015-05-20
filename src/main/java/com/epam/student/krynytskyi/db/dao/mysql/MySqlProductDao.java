@@ -1,6 +1,6 @@
-package com.epam.student.krynytskyi.db.dao.mysql.impl;
+package com.epam.student.krynytskyi.db.dao.mysql;
 
-import com.epam.student.krynytskyi.db.dao.mysql.ProductDao;
+import com.epam.student.krynytskyi.db.dao.ProductDao;
 import com.epam.student.krynytskyi.db.dto.ProductDTO;
 import com.epam.student.krynytskyi.db.dto.ProductDTOImpl;
 import com.epam.student.krynytskyi.entity.Product;
