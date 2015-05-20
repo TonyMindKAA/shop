@@ -11,7 +11,6 @@ import java.util.List;
 
 public class OrderCreator {
 
-
     public Order create(User user, CardContainer card) {
         Order newOrder = new Order();
         DeliveryType deliveryType = getDefaultDeliveryType();

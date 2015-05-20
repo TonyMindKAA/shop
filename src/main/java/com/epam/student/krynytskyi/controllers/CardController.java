@@ -5,6 +5,7 @@ import com.epam.student.krynytskyi.containers.CardContainer;
 import com.epam.student.krynytskyi.entity.Product;
 import com.epam.student.krynytskyi.service.ProductService;
 import com.epam.student.krynytskyi.util.JSONSerializer;
+import com.epam.student.krynytskyi.util.bean.creator.CardInfoCreator;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -25,10 +26,11 @@ public class CardController extends HttpServlet {
     public static final String CARD_SESSION_ATTRIBUTE = "card";
     private JSONSerializer jsonSerializer;
     private ProductService productService;
+    private CardInfoCreator cardInfoCreator = new CardInfoCreator();
 
     @Override
     public void init() throws ServletException {
-        productService = (ProductService) getServletContext().getAttribute("productService");
+        productService =(ProductService) getServletContext().getAttribute(PRODUCT_SERVICE_PARAMETER);
         jsonSerializer = new JSONSerializer();
     }
 
@@ -39,10 +41,9 @@ public class CardController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProductService productService = (ProductService) req.getServletContext().getAttribute(PRODUCT_SERVICE_PARAMETER);
         CardContainer card = getCardContainer(req);
         addProductToCard(req, productService, card);
-        CardInfo cardInfo = createCardInfo(card);
+        CardInfo cardInfo = cardInfoCreator.create(card);
         req.getSession().setAttribute(CARD_INFO_SESSION_ATTRIBUTE, cardInfo);
         print(resp, cardInfo);
     }
@@ -62,12 +63,6 @@ public class CardController extends HttpServlet {
         card.add(product, 1);
     }
 
-    private CardInfo createCardInfo(CardContainer card) {
-        CardInfo cardInfo = new CardInfo();
-        cardInfo.setProductsNumber(card.size());
-        cardInfo.setTotalCost(card.calculationPurchases());
-        return cardInfo;
-    }
 
     private Product getProductById(ProductService productService, String productId) {
         try {

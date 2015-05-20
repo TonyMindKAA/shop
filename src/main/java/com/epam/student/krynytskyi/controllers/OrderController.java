@@ -63,7 +63,7 @@ public class OrderController extends HttpServlet {
             orderService.addOrder(newOrder);
             return true;
         } catch (Exception e) {
-            log.debug(e.getMessage());
+            log.error(e.getMessage());
             return false;
         }
     }

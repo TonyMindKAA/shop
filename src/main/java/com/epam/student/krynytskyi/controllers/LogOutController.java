@@ -16,6 +16,6 @@ public class LogOutController extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getSession().removeAttribute("user");
-		response.sendRedirect("main.jsp");
+		response.sendRedirect("products");
 	}
 }
