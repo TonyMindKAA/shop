@@ -10,13 +10,14 @@ import java.util.Date;
 
 public class MySqlOrderDao implements OrderDao {
     private static final Logger log = Logger.getLogger(MySqlOrderDao.class);
+    public static final String SQL_INSERT_ORDER = "INSERT INTO `shop`.`order` (`user_id`, `shipping_address`, `create_on`, `shipping_status_id`," +
+            " `total_price`, `bank_card`, `delivery_type_id`," +
+            " `quantity`, `shipping_status_description`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
     @Override
     public Order addOrder(Connection conn, Order order) throws Exception {
         try (PreparedStatement pstmt = conn
-                .prepareStatement("INSERT INTO `shop`.`order` (`user_id`, `shipping_address`, `create_on`, `shipping_status_id`," +
-                        " `total_price`, `bank_card`, `delivery_type_id`," +
-                        " `quantity`, `shipping_status_description`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);", Statement.RETURN_GENERATED_KEYS)) {
+                .prepareStatement(SQL_INSERT_ORDER, Statement.RETURN_GENERATED_KEYS)) {
             packOrderDTO(order, pstmt);
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();

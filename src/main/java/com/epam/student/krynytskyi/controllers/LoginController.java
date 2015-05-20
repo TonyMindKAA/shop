@@ -1,18 +1,16 @@
 package com.epam.student.krynytskyi.controllers;
 
-import java.io.IOException;
+import com.epam.student.krynytskyi.beans.login.LoginFormBean;
+import com.epam.student.krynytskyi.entity.User;
+import com.epam.student.krynytskyi.service.UserService;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.log4j.Logger;
-
-import com.epam.student.krynytskyi.beans.login.LoginFormBean;
-import com.epam.student.krynytskyi.entity.User;
-import com.epam.student.krynytskyi.service.UserService;
+import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginController extends HttpServlet {
@@ -37,7 +35,7 @@ public class LoginController extends HttpServlet {
 			if(userService.authenticate(loginFormBean.getEmail(), loginFormBean.getPassword())){
 				User userByEmail = userService.getUserByEmail(loginFormBean.getEmail());
 				request.getSession().setAttribute("user", userByEmail);
-				response.sendRedirect("main.jsp");
+				response.sendRedirect("products");
 			}else{
 				request.setAttribute("loginFormDate", loginFormBean);
 				request.getRequestDispatcher(LOGIN_PAGE).forward(request, response);
