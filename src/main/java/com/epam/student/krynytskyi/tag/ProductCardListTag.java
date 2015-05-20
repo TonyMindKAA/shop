@@ -88,7 +88,7 @@ public class ProductCardListTag extends SimpleTagSupport {
                     "\t\t\t</div>\n");
             getJspContext().getOut().write(html.toString());
         } else {
-            getJspContext().getOut().write("<p>Card is empty</p><a href=\"products\">to products list</a>");
+            getJspContext().getOut().write("<div class=\"empty-card-block\"><p>Card is empty</p></div>");
         }
     }
 }
