@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@include file="/WEB-INF/jspf/generaJstl.jspf" %>
 <%@ taglib prefix="cardTab" uri="http://koraytugay.com/productCardListTag" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="cardInf" uri="http://koraytugay.com/cardInfoTag"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>

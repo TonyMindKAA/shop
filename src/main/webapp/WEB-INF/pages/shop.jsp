@@ -1,5 +1,6 @@
 <%@include file="/WEB-INF/jspf/generaJstl.jspf" %>
 <%@include file="/WEB-INF/jspf/shopTagLib.jspf" %>
+<%@ taglib prefix="sel" uri="http://koraytugay.com/ItemNumbersOrderTag"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
