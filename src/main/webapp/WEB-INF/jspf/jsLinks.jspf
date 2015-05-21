@@ -6,40 +6,4 @@
 <script src="resources/js/jquery.prettyPhoto.js"></script>
 <script src="resources/js/main.js"></script>
 <script src="resources/js/pagination.orders.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        turnOnOrderPaginationHandling();
-        $(".item-form-product-submit").on( "click", function(e){
-            e.preventDefault();
-            var productId = $(this).prev().val();
-            var json = "{ id: \"+productId+\" }";
 
-           $.ajax({
-             dataType: 'JSON',
-             method: "POST",
-             url: "card",
-             data: json,
-             data:{
-                id:productId
-             },
-             success: function(cardInfo){
-                 if(cardInfo != null){
-                    $("#car-info-state")
-                            .html(
-                            "<i class=\"fa fa-shopping-cart\"></i><b> Cart("+cardInfo.productsNumber+") total cost: "+ cardInfo.totalCost+"</b>");
-                     $( "#car-info-state" ).focus();
-                 }else{
-                     $("#car-info-state")
-                             .html(
-                             "<i class=\"fa fa-shopping-cart\"></i><b>Cart(0) total cost: 0 uah</b>");
-                 }
-
-                console.log(cardInfo);
-             },
-             error: function(msg){
-                console.log("error");
-             }
-           })
-        });
-    });
-</script>

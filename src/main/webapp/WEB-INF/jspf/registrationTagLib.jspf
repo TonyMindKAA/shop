@@ -1,0 +1,2 @@
+<%@ taglib prefix="reg" uri="http://koraytugay.com/capthcaTags" %>
+<%@ taglib prefix="cardInf" uri="http://koraytugay.com/cardInfoTag"%>

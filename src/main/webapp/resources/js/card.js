@@ -108,3 +108,4 @@
             var totalPriceResult = parseInt($("#cart_quantity_input_result").val());
             $("#cart_quantity_input_result").val(--totalPriceResult);
         }
+

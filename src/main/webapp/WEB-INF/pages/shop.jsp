@@ -1,43 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="reg" uri="http://koraytugay.com/paginationTags" %>
-<%@ taglib prefix="sel" uri="http://koraytugay.com/ItemNumbersOrderTag"%>
-<%@ taglib prefix="chb" uri="http://koraytugay.com/productTypeTag"%>
-<%@ taglib prefix="chbm" uri="http://koraytugay.com/manufactureTag"%>
-<%@ taglib prefix="cardInf" uri="http://koraytugay.com/cardInfoTag"%>
-<%@ taglib tagdir="/WEB-INF/tags" prefix="shop"%>
+<%@include file="/WEB-INF/jspf/generaJstl.jspf" %>
+<%@include file="/WEB-INF/jspf/shopTagLib.jspf" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Shop | E-Shopper</title>
-    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
-    <link href="resources/css/font-awesome.min.css" rel="stylesheet">
-    <link href="resources/css/prettyPhoto.css" rel="stylesheet">
-    <link href="resources/css/price-range.css" rel="stylesheet">
-    <link href="resources/css/animate.css" rel="stylesheet">
-    <link href="resources/css/main.css" rel="stylesheet">
-    <link href="resources/css/responsive.css" rel="stylesheet">
-    <link href="resources/css/main-page.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="resources/images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="resources/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="resources/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="resources/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="resources/images/ico/apple-touch-icon-57-precomposed.png">
+<%@include file="/WEB-INF/jspf/head.jspf" %>
 </head>
-<!--/head-->
 <body>
-<shop:locale />
 <%@include file="/WEB-INF/jspf/header.jspf" %>
 <section>
     <form method="get" action="products" id="filterForm">
@@ -91,10 +59,7 @@
     </form>
     <div class="col-sm-9 padding-right">
         <br class="features_items"><!--features_items-->
-        <h2 class="title text-center">Features Items(
-            <c:out value='${productNumber}'/>
-            )
-        </h2>
+        <h2 class="title text-center">Features Items(<c:out value='${productNumber}'/>)</h2>
         <c:forEach items="${products}" var="product">
             <div class="col-sm-4">
                 <div class="product-image-wrapper">
@@ -127,5 +92,42 @@
 </section>
 <%@include file="/WEB-INF/jspf/fotter.jspf" %>
 <%@include file="/WEB-INF/jspf/jsLinks.jspf" %>
+<script type="text/javascript">
+    $(document).ready(function () {
+        turnOnOrderPaginationHandling();
+        $(".item-form-product-submit").on( "click", function(e){
+            e.preventDefault();
+            var productId = $(this).prev().val();
+            var json = "{ id: \"+productId+\" }";
+
+           $.ajax({
+             dataType: 'JSON',
+             method: "POST",
+             url: "card",
+             data: json,
+             data:{
+                id:productId
+             },
+             success: function(cardInfo){
+                 if(cardInfo != null){
+                    $("#car-info-state")
+                            .html(
+                            "<i class=\"fa fa-shopping-cart\"></i><b> Cart("+cardInfo.productsNumber+") total cost: "+ cardInfo.totalCost+"</b>");
+                     $( "#car-info-state" ).focus();
+                 }else{
+                     $("#car-info-state")
+                             .html(
+                             "<i class=\"fa fa-shopping-cart\"></i><b>Cart(0) total cost: 0 uah</b>");
+                 }
+
+                console.log(cardInfo);
+             },
+             error: function(msg){
+                console.log("error");
+             }
+           })
+        });
+    });
+</script>
 </body>
 </html>
