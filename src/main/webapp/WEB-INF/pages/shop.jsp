@@ -5,6 +5,7 @@
 <%@ taglib prefix="chb" uri="http://koraytugay.com/productTypeTag"%>
 <%@ taglib prefix="chbm" uri="http://koraytugay.com/manufactureTag"%>
 <%@ taglib prefix="cardInf" uri="http://koraytugay.com/cardInfoTag"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="shop"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +37,7 @@
 </head>
 <!--/head-->
 <body>
+<shop:locale />
 <%@include file="/WEB-INF/jspf/header.jspf" %>
 <section>
     <form method="get" action="products" id="filterForm">
