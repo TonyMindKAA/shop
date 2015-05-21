@@ -6,4 +6,5 @@
 <script src="resources/js/jquery.prettyPhoto.js"></script>
 <script src="resources/js/main.js"></script>
 <script src="resources/js/pagination.orders.js"></script>
+<script src="resources/js/card.js"></script>
 

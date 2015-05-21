@@ -11,9 +11,9 @@
     <link href="resources/css/animate.css" rel="stylesheet">
     <link href="resources/css/main.css" rel="stylesheet">
     <link href="resources/css/responsive.css" rel="stylesheet">
+    <script src="resources/js/html5shiv.js"></script>
+    <script src="resources/js/respond.min.js"></script>
     <link rel="shortcut icon" href="resources/images/ico/favicon.ico">
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="resources/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="resources/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="resources/images/ico/apple-touch-icon-72-precomposed.png">
@@ -21,3 +21,4 @@
 
     <link href="resources/css/main-page.css" rel="stylesheet">
     <link href="resources/css/error.css" rel="stylesheet">
+    <link href="resources/css/card.css" rel="stylesheet">
