@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="reg" uri="http://koraytugay.com/capthcaTags" %>
+<fmt:setBundle basename="messages" var="bundle" scope="request" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,25 +61,25 @@
 						<h2>New User Signup!</h2>
 						<form action="registration" method="post" enctype="multipart/form-data" id="registrationForm">
 							<div class="${registrationFormReport.nameValid? ' ': 'errorClass'}">
-								<input type="text" id="name" name="name"  value="${registrationFormReport.registrationFormBean.name}" placeholder="Name"/>
+								<input type="text" id="name" name="name"  value="${registrationFormReport.registrationFormBean.name}" placeholder="<fmt:message key="form.registration.name" bundle="${bundle}" />"/>
 							</div>
 							<div class="${registrationFormReport.lastNameValid? ' ': 'errorClass'}">
-								<input type="text" id="lastName" value="${registrationFormReport.registrationFormBean.lastName}"   name="lastName" placeholder="Last name"/>
+								<input type="text" id="lastName" value="${registrationFormReport.registrationFormBean.lastName}"   name="lastName" placeholder="<fmt:message key="form.registration.last.name" bundle="${bundle}" />"/>
 							</div>
 							<div class="${registrationFormReport.emailAddressValid? ' ': 'errorClass'}">
-								<input type="email" id="emailAddress" value="${registrationFormReport.registrationFormBean.emailAddress}"  name="emailAddress" placeholder="Email Address"/>
+								<input type="email" id="emailAddress" value="${registrationFormReport.registrationFormBean.emailAddress}"  name="emailAddress" placeholder="<fmt:message key="form.registration.email" bundle="${bundle}" />"/>
 							</div>
 							<div class="${registrationFormReport.confirmEmailAddressValid? ' ': 'errorClass'}">
-								<input type="email" id="confirmEmailAddress" value="${registrationFormReport.registrationFormBean.confirmEmailAddress}"  name="confirmEmailAddress" placeholder="Confirm email Address"/>
+								<input type="email" id="confirmEmailAddress" value="${registrationFormReport.registrationFormBean.confirmEmailAddress}"  name="confirmEmailAddress" placeholder="<fmt:message key="form.registration.email.confirm" bundle="${bundle}" />"/>
 							</div>
 							<div class="${registrationFormReport.passwordValid? ' ': 'errorClass'}">
-								<input type="password" id ="password"  name="password" placeholder="Password"/>
+								<input type="password" id ="password"  name="password" placeholder="<fmt:message key="form.registration.password" bundle="${bundle}" />"/>
 							</div>
 							<div class="${registrationFormReport.confirmPasswordValid? ' ': 'errorClass'}">
-								<input type="password" id="confirmPassword"  name ="confirmPassword" placeholder="Confirm password"/>
+								<input type="password" id="confirmPassword"  name ="confirmPassword" placeholder="<fmt:message key="form.registration.password.confirm" bundle="${bundle}" />"/>
 							</div >
 							<div class="${registrationFormReport.phoneValid? ' ': 'errorClass'}">
-								<input type="text" id="phone" name="phone" value="${registrationFormReport.registrationFormBean.phone}"  placeholder="Phone"/>
+								<input type="text" id="phone" name="phone" value="${registrationFormReport.registrationFormBean.phone}"  placeholder="<fmt:message key="form.registration.password.phone" bundle="${bundle}" />"/>
 							</div>						
 							<reg:capthcaTags />
 							<input type="file" name="avatar" name="uploadFile" />

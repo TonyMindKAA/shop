@@ -75,8 +75,55 @@
         <param-value>1</param-value>
     </context-param>
 
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </context-param>
+
+    <context-param>
+        <description>We allow 2 mods session, cookie</description>
+        <param-name>localeMode</param-name>
+        <param-value>cookie</param-value>
+    </context-param>
+
+    <context-param>
+        <description>It is relevant only for cookie locale mode. defaultValue 60*60*24*365(1 year)</description>
+        <param-name>localeLifetime</param-name>
+        <param-value>31536000</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>availableLocales</param-name>
+        <param-value>en,ru</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>defaultLocale</param-name>
+        <param-value>en</param-value>
+    </context-param>
+
     <resource-env-ref>
         <resource-env-ref-name>jdbc/krynytskyiSop</resource-env-ref-name>
         <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
     </resource-env-ref>
+
+    <filter>
+        <display-name>LocaleFilter</display-name>
+        <filter-name>LocaleFilter</filter-name>
+        <filter-class>com.epam.student.krynytskyi.filter.LocaleFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LocaleFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <display-name>EncodingCacheFilter</display-name>
+        <filter-name>EncodingCacheFilter</filter-name>
+        <filter-class>com.epam.student.krynytskyi.filter.EncodingCacheFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingCacheFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>
