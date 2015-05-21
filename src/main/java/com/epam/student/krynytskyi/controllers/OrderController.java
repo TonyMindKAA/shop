@@ -25,15 +25,9 @@ public class OrderController extends HttpServlet {
     private static final String PAGES_FINISH_ORDER_JSP = "/WEB-INF/pages/finishOrder.jsp";
     private static final String PAGES_ERROR_JSP_PATH = "/WEB-INF/pages/error.jsp";
     private static final String LOGIN_SERVLET_PATH = "login";
-    private static final String PAGES_FINISH_ORDER_JSP_PATH = "/WEB-INF/pages/finishOrder.jsp";
     private OrderService orderService = new OrderServiceImpl();
     private CardInfoCreator cardInfoCreator = new CardInfoCreator();
     private OrderCreator orderCreator = new OrderCreator();
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher(PAGES_FINISH_ORDER_JSP_PATH).forward(req, resp);
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
