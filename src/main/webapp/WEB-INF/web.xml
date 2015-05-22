@@ -107,23 +107,38 @@
         <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
     </resource-env-ref>
 
-    <filter>
-        <display-name>LocaleFilter</display-name>
-        <filter-name>LocaleFilter</filter-name>
-        <filter-class>com.epam.student.krynytskyi.filter.LocaleFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>LocaleFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
+    <!--Filters -->
     <filter>
         <display-name>EncodingCacheFilter</display-name>
         <filter-name>EncodingCacheFilter</filter-name>
         <filter-class>com.epam.student.krynytskyi.filter.EncodingCacheFilter</filter-class>
     </filter>
+
+    <filter>
+        <display-name>GZipFilter</display-name>
+        <filter-name>GZipFilter</filter-name>
+        <filter-class>com.epam.student.krynytskyi.filter.GZipFilter</filter-class>
+    </filter>
+
+    <filter>
+        <display-name>LocaleFilter</display-name>
+        <filter-name>LocaleFilter</filter-name>
+        <filter-class>com.epam.student.krynytskyi.filter.LocaleFilter</filter-class>
+    </filter>
+
     <filter-mapping>
         <filter-name>EncodingCacheFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>GZipFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>LocaleFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
