@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LoginFormBean loginFormBean = createLoginFormBean(request);
 		try {
-			if(userService.authenticate(loginFormBean.getEmail(), loginFormBean.getPassword())){
+			if(userService.authenticate(loginFormBean.getEmail(), loginFormBean.getPassword(),request)){
 				User userByEmail = userService.getUserByEmail(loginFormBean.getEmail());
 				request.getSession().setAttribute("user", userByEmail);
 				response.sendRedirect("products");

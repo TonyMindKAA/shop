@@ -40,7 +40,14 @@ public class ContextListener implements ServletContextListener {
 		setToContextProductService(servletContext);
 		setToContextTypeService(servletContext);
 		setToContextManufactureService(servletContext);
+		setToContextUserBanSettings(servletContext);
+	}
 
+	private void setToContextUserBanSettings(ServletContext servletContext) {
+		String errorEntry = servletContext.getInitParameter("errorEntry");
+		String banTime = servletContext.getInitParameter("banTime");
+		servletContext.setAttribute("errorEntry",Integer.parseInt(errorEntry));
+		servletContext.setAttribute("banTime", Integer.parseInt(banTime));
 	}
 
 	private void setToContextManufactureService(ServletContext servletContext) {
@@ -119,4 +126,6 @@ public class ContextListener implements ServletContextListener {
 		}
 		return captchaProviderItem;
 	}
+
+
 }

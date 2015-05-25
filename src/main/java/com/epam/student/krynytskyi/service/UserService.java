@@ -2,8 +2,10 @@ package com.epam.student.krynytskyi.service;
 
 import com.epam.student.krynytskyi.entity.User;
 
+import javax.servlet.http.HttpServletRequest;
+
 public interface UserService {
-    boolean authenticate(String email, String password) throws Exception;
+    boolean authenticate(String email, String password, HttpServletRequest req) throws Exception;
 
     boolean isExistUser(String email) throws Exception;
 

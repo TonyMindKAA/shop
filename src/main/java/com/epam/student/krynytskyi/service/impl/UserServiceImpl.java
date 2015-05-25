@@ -7,17 +7,20 @@ import com.epam.student.krynytskyi.db.transaction.TransactionManagerImpl;
 import com.epam.student.krynytskyi.db.transaction.TransactionOperation;
 import com.epam.student.krynytskyi.entity.User;
 import com.epam.student.krynytskyi.service.UserService;
+import com.epam.student.krynytskyi.util.UserBanManager;
 import org.apache.log4j.Logger;
 
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Connection;
 
 public class UserServiceImpl implements UserService {
 	private static final Logger log = Logger.getLogger(UserServiceImpl.class);
 	private TransactionManager transactionManager = new TransactionManagerImpl();
 	private UserDao userDao = new MySqlUserDao();
+	private UserBanManager userBanManager = new UserBanManager();
 
 	@Override
-	public boolean authenticate(final String email, final String password)
+	public boolean authenticate(final String email, final String password,final HttpServletRequest req)
 			throws Exception {
 		return (Boolean) transactionManager
 				.doInTransaction(new TransactionOperation() {
@@ -33,8 +36,11 @@ public class UserServiceImpl implements UserService {
 						if (userDTO == null)
 							return false;
 						if (!userDTO.getPassword().equals(password)
-								|| !userDTO.getEmail().equals(email))
+								|| !userDTO.getEmail().equals(email)) {
+							userBanManager.managerAccess(userDTO,req);
 							return false;
+						}
+						else
 						return true;
 					}
 				});

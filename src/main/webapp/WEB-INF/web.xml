@@ -102,6 +102,18 @@
         <param-value>en</param-value>
     </context-param>
 
+    <!-- BanTime in seconds-->
+    <context-param>
+        <param-name>banTime</param-name>
+        <param-value>90</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>errorEntry</param-name>
+        <param-value>3</param-value>
+    </context-param>
+
+
     <resource-env-ref>
         <resource-env-ref-name>jdbc/krynytskyiSop</resource-env-ref-name>
         <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
