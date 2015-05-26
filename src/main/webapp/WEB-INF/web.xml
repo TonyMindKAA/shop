@@ -113,6 +113,10 @@
         <param-value>3</param-value>
     </context-param>
 
+    <context-param>
+        <param-name>securityXmlPath</param-name>
+        <param-value>d:/xml/security.xml</param-value>
+    </context-param>
 
     <resource-env-ref>
         <resource-env-ref-name>jdbc/krynytskyiSop</resource-env-ref-name>
@@ -120,6 +124,12 @@
     </resource-env-ref>
 
     <!--Filters -->
+    <filter>
+        <display-name>AccessFilter</display-name>
+        <filter-name>AccessFilter</filter-name>
+        <filter-class>com.epam.student.krynytskyi.filter.AccessFilter</filter-class>
+    </filter>
+
     <filter>
         <display-name>EncodingCacheFilter</display-name>
         <filter-name>EncodingCacheFilter</filter-name>
@@ -137,6 +147,18 @@
         <filter-name>LocaleFilter</filter-name>
         <filter-class>com.epam.student.krynytskyi.filter.LocaleFilter</filter-class>
     </filter>
+
+    <filter-mapping>
+        <filter-name>AccessFilter</filter-name>
+        <url-pattern>/card</url-pattern>
+        <url-pattern>/delivery</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/logOut</url-pattern>
+        <url-pattern>/card/info</url-pattern>
+        <url-pattern>/order</url-pattern>
+        <url-pattern>/products</url-pattern>
+        <url-pattern>/registration</url-pattern>
+    </filter-mapping>
 
     <filter-mapping>
         <filter-name>EncodingCacheFilter</filter-name>

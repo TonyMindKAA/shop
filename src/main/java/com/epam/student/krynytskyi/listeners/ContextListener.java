@@ -10,13 +10,17 @@ import com.epam.student.krynytskyi.service.impl.ManufactureServiceImpl;
 import com.epam.student.krynytskyi.service.impl.ProductServiceImpl;
 import com.epam.student.krynytskyi.service.impl.TypeServiceImpl;
 import com.epam.student.krynytskyi.service.impl.UserServiceImpl;
+import com.epam.student.krynytskyi.xml.SecurityUnMarshaling;
+import com.epam.student.krynytskyi.xml.model.Security;
+import org.apache.log4j.Logger;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import javax.xml.bind.JAXBException;
 
 public class ContextListener implements ServletContextListener {
-
+	private static final Logger log = Logger.getLogger(ContextListener.class);
 	private static final Long DEFAULT_CAPTCHA_TIME_OUT = new Long("60000");
 	private static final Object DEFAULT_CAPTCHA_TIME_VERIFICATION = new Long("60000");
 	private CaptchaCleanerThread captchaCleanerThread;
@@ -41,6 +45,18 @@ public class ContextListener implements ServletContextListener {
 		setToContextTypeService(servletContext);
 		setToContextManufactureService(servletContext);
 		setToContextUserBanSettings(servletContext);
+		setToContextSecuritySettings(servletContext);
+	}
+
+	private void setToContextSecuritySettings(ServletContext servletContext) {
+		SecurityUnMarshaling unMarshaling = new SecurityUnMarshaling();
+		String url = servletContext.getInitParameter("securityXmlPath");
+		try {
+			Security security = unMarshaling.unMarshal(url);
+			servletContext.setAttribute("security",security);
+		} catch (JAXBException e) {
+			log.error("Can not read security.xml. " + e.getMessage());
+		}
 	}
 
 	private void setToContextUserBanSettings(ServletContext servletContext) {
@@ -126,6 +142,4 @@ public class ContextListener implements ServletContextListener {
 		}
 		return captchaProviderItem;
 	}
-
-
 }
